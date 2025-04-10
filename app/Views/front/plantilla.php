@@ -4,17 +4,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/css/miestilo.css">
-    <title>Titulo</title>
+    <link rel="stylesheet" href="<?= base_url('public/assets/css/bootstrap.min.css') ?>">
+    <link rel="stylesheet" href="<?= base_url('public/assets/css/miestilo.css') ?>">
+    <title>titulo</title>
 </head>
 
 <body>
     <!-- Navbar -->
     <section class="container-fluid">
-    <nav class="navbar navbar-expand-lg bg-dark border-bottom border-body" data-bs-theme="dark">
+    <nav class="navbar navbar-expand-lg border-bottom border-body">
             <div class="container-fluid">
-                <img style="width: 50px" src="assets/img/logo.png" alt="responsive">
+                <img style="width: 50px" src="<?= base_url('assets/img/logo.png') ?>" alt="responsive">
                 <a class="text-white navbar-brand" href="#">Navbar</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll"
                     aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
@@ -67,21 +67,21 @@
             </div>
             <div class="carousel-inner">
                 <div class="carousel-item active"> 
-                    <img src="assets/img/color.png" class="d-block w-100" alt="...">
+                    <img src="<?= base_url('public/assets/img/color.png') ?>" class="d-block w-100" alt="...">
                     <div class="carousel-caption d-none d-md-block">
                         <h5>First slide label</h5>
                         <p>Some representative placeholder content for the first slide.</p>
                     </div>
                 </div>
                 <div class="carousel-item">
-                    <img src="assets/img/color (1).png" class="d-block w-100" alt="...">
+                    <img src="<?= base_url('public/assets/img/color (1).png') ?>" class="d-block w-100" alt="...">
                     <div class="carousel-caption d-none d-md-block">
                         <h5>Second slide label</h5>
                         <p>Some representative placeholder content for the second slide.</p>
                     </div>
                 </div>
                 <div class="carousel-item">
-                    <img src="assets/img/color (2).png" class="d-block w-100" alt="...">
+                    <img src="<?= base_url('public/assets/img/color (2).png') ?>" class="d-block w-100" alt="...">
                     <div class="carousel-caption d-none d-md-block">
                         <h5>Third slide label</h5>
                         <p>Some representative placeholder content for the third slide.</p>
