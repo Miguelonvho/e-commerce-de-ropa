@@ -121,10 +121,10 @@
         </div>
         <div class="d-flex flex-wrap p-5 gap-3 text-white justify-content-center">
             <div class="bg-black text-white  card" style="width: 18rem;">
-                <img src="..." class="card-img-top" alt="...">
+                <img style="object-fit: cover; height: 60%;" src="<?= base_url('public/assets/img/remera-New-Balance.jpg') ?>" class="card-img-top" alt="...">
                 <div class="d-flex flex-column bg-black text-white card-body justify-content-between">
                     <div class="d-flex flex-column gap-5">
-                        <h4>Nike Run-swift</h4>
+                        <h4>Remera New Balance</h4>
                     </div>
                     <div class="d-flex flex-column gap-3 text-center">
                         <h1 class="card-title">$xxxxxx</h1>
@@ -136,7 +136,7 @@
                 </div>
             </div>
             <div class="bg-black text-white card" style="width: 18rem;">
-                <img src="..." class="card-img-top" alt="...">
+                <img style="object-fit: cover; height: 60%;" src="<?= base_url('public/assets/img/remera-New-Balance.jpg') ?>" class="card-img-top" alt="...">
                 <div class="d-flex bg-black text-white card-body flex-column justify-content-between">
                     <div class="d-flex flex-column gap-5">
                         <h4>Remera Essentials Stacked</h>
@@ -151,10 +151,10 @@
                 </div>
             </div>
             <div class="bg-black text-white card" style="width: 18rem;">
-                <img src="..." class="card-img-top" alt="...">
+                <img style="object-fit: cover; height: 60%;" src="<?= base_url('public/assets/img/jeans-Levis-hombre.jpg') ?>" class="card-img-top" alt="...">
                 <div class="d-flex bg-black text-white card-body flex-column justify-content-between">
                     <div class="d-flex flex-column gap-5">
-                        <h4>Jean Levi's</h4>
+                        <h4>Jeans Levi's hombre</h4>
                     </div>
                     <div class="d-flex flex-column gap-3 text-center">
                         <h1 class="card-title">$xxxxxx</h1>
@@ -166,7 +166,7 @@
                 </div>
             </div>
             <div class="bg-black text-white card" style="width: 18rem;">
-                <img src="..." class="card-img-top" alt="...">
+            <img style="object-fit: cover; height: 60%;" src="<?= base_url('public/assets/img/buzo-Nike.jpg') ?>" class="card-img-top" alt="...">
                 <div class="d-flex bg-black text-white card-body flex-column justify-content-between">
                     <div class="d-flex flex-column gap-5">
                         <h3>Buzo Nike</h3>
