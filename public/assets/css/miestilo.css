@@ -1,2 +1,30 @@
+@media (max-width: 768px) {
+    .iconos-informativos p {
+        font-size: small;
+        padding-top: 20px;
+    }
+    .iconos-informativos img {
+        width: 10px;
+        height: auto;
+    }
+}
 
+@media (max-width: 500px) {
+    .iconos-informativos p {
+        font-size: x-small;
+    }
+    .iconos-informativos img {
+        width: 30px;
+        height: 30px;
+    }
+}
 
+.navbar-toggler {
+    border-color: rgba(255, 255, 255, 0.5);
+}
+
+.iconos-informativos img {
+    width: 50px;
+    height: auto;
+}
+  

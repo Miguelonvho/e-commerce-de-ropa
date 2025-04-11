@@ -11,52 +11,44 @@
 
 <body>
     <!-- Navbar -->
-    <section class="container-fluid">
-    <nav class="navbar navbar-expand-lg border-bottom border-body">
+    <section class="container-fluid p-0">
+        <nav class="navbar bg-black navbar-expand-lg border-body" data-bs-theme="dark">
             <div class="container-fluid">
-                <img style="width: 50px" src="<?= base_url('assets/img/logo.png') ?>" alt="responsive">
-                <a class="text-white navbar-brand" href="#">Navbar</a>
+                <a href=""><img style="width: 100px" src="<?= base_url('public/assets/img/logo.png') ?>" alt="responsive"></a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll"
                     aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarScroll">
                     <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
-                        <li class="nav-item">
-                            <a class="text-white nav-link active" aria-current="page" href="#">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="text-white nav-link" href="#">Link</a>
-                        </li>
                         <li class="nav-item dropdown">
                             <a class="text-white nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
                                 aria-expanded="false">
-                                Link
+                                Géneros
                             </a>
-                            <ul class="dropdown-menu">
-                                <li><a class="text-white dropdown-item" href="#">Action</a></li>
-                                <li><a class="text-white dropdown-item" href="#">Another action</a></li>
-                                <li>
-                                    <hr class="dropdown-divider">
-                                </li>
-                                <li><a class="text-white dropdown-item" href="#">Something else here</a></li>
+                            <ul class="dropdown-menu bg-black">
+                                <li><a class="text-white dropdown-item" href="#">Masculino</a></li>
+                                <li><a class="text-white dropdown-item" href="#">Femenino</a></li>
                             </ul>
                         </li>
                         <li class="nav-item">
-                            <a class="text-white nav-link disabled" aria-disabled="true">Link</a>
+                            <a class="text-white nav-link" href="#">Niños</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="text-white nav-link" href="#">Nosotros</a>
                         </li>
                     </ul>
                     <form class="d-flex" role="search">
-                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                        <button class="btn btn-dark" type="submit">Search</button>
+                        <input class="bg-white form-control me-2" type="search" aria-label="Search">
+                        <button class="btn btn-outline-light" type="submit">Buscar</button>
                     </form>
                 </div>
             </div>
         </nav>
     </section>
-    <!-- Carrusel -->
-    <section class="container">
-        <div id="carouselExampleCaptions" class="carousel slide">
+    <!-- Carrousel -->
+    <section class="container-fluid p-0">
+        <div id="carouselExampleCaptions" class="carousel carousel-dark slide" data-bs-ride="carousel" data-bs-interval="2000">
             <div class="carousel-indicators">
                 <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
                     aria-current="true" aria-label="Slide 1"></button>
@@ -66,26 +58,14 @@
                     aria-label="Slide 3"></button>
             </div>
             <div class="carousel-inner">
-                <div class="carousel-item active"> 
-                    <img src="<?= base_url('public/assets/img/color.png') ?>" class="d-block w-100" alt="...">
-                    <div class="carousel-caption d-none d-md-block">
-                        <h5>First slide label</h5>
-                        <p>Some representative placeholder content for the first slide.</p>
-                    </div>
+                <div class="carousel-item active">
+                    <img src="<?= base_url('public/assets/img/oferta.png') ?>" class="d-block w-100" alt="...">
                 </div>
                 <div class="carousel-item">
-                    <img src="<?= base_url('public/assets/img/color (1).png') ?>" class="d-block w-100" alt="...">
-                    <div class="carousel-caption d-none d-md-block">
-                        <h5>Second slide label</h5>
-                        <p>Some representative placeholder content for the second slide.</p>
-                    </div>
+                    <img src="<?= base_url('public/assets/img/remeras.png') ?>" class="d-block w-100" alt="...">
                 </div>
                 <div class="carousel-item">
-                    <img src="<?= base_url('public/assets/img/color (2).png') ?>" class="d-block w-100" alt="...">
-                    <div class="carousel-caption d-none d-md-block">
-                        <h5>Third slide label</h5>
-                        <p>Some representative placeholder content for the third slide.</p>
-                    </div>
+                    <img src="<?= base_url('public/assets/img/zapatillas.png') ?>" class="d-block w-100" alt="...">
                 </div>
             </div>
             <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
@@ -101,34 +81,70 @@
         </div>
     </section>
     <!-- Contenido -->
-    <section class="container text-white text-center">
-        <p class="m-5 fs-1 fw-bold fst-italic">
-            Titulo de ejemplo
-        </p>
-        <p class="m-5">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-            Error eveniet, dicta quos doloremque, consequuntur repellendus, 
-            vel minus pariatur facilis accusantium deserunt ea molestias aliquam. 
-            Eligendi quisquam ullam assumenda ea nobis?
-        </p>
-        <p class="m-5">            
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-            Error eveniet, dicta quos doloremque, consequuntur repellendus, 
-            vel minus pariatur facilis accusantium deserunt ea molestias aliquam. 
-            Eligendi quisquam ullam assumenda ea nobis?
-        </p>
-        <p class="m-5">            
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-            Error eveniet, dicta quos doloremque, consequuntur repellendus, 
-            vel minus pariatur facilis accusantium deserunt ea molestias aliquam. 
-            Eligendi quisquam ullam assumenda ea nobis?
-        </p>
+    <!-- Seccion de iconos informativos -->
+    <section class="d-flex justify-content-center p-4 align-items-center gap-5 container-fluid bg-black text-center text-white">
+        <div class="iconos-informativos d-flex flex-column align-items-center">
+            <img src="<?= base_url('public/assets/img/entrega.png') ?>" alt="">
+            <p class="pt-3 m-0">Entregas a todo el pais</p>
+        </div>
+        <div class="iconos-informativos d-flex flex-column align-items-center">
+            <img src="<?= base_url('public/assets/img/metodo-de-pago.png') ?>" alt="">
+            <p class="pt-3 m-0">Todos los medios de pago</p>
+        </div>
+        <div class="iconos-informativos d-flex flex-column align-items-center">
+            <img src="<?= base_url('public/assets/img/cambio-de-ropa.png') ?>" alt="">
+            <p class="pt-3 m-0">Aceptamos cambios</p>
+        </div>
+        <div class="iconos-informativos d-flex flex-column align-items-center">
+            <img src="<?= base_url('public/assets/img/insignia.png') ?>" alt="">
+            <p class="pt-3 m-0">Mas de 1000 clientes satisfechos</p>
+        </div>
+    </section>
+    <!-- Indumentaria destacada -->
+    <section class="container-fluid">
+        <div>
+            <h1 class="text-black text-center pt-5">Destacado</h1>
+        </div>
+        <div class="d-flex flex-wrap p-5 gap-4 text-white text-center justify-content-center">
+        <div class="bg-black text-white  card" style="width: 18rem;">
+            <img src="..." class="card-img-top" alt="...">
+            <div class="bg-black text-white card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <a href="#" class="btn btn-outline-light">Go somewhere</a>
+            </div>
+        </div>
+        <div class="bg-black text-white card" style="width: 18rem;">
+            <img src="..." class="card-img-top" alt="...">
+            <div class="bg-black text-white card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <a href="#" class="btn btn-outline-light">Go somewhere</a>
+            </div>
+        </div>
+        <div class="bg-black text-white card" style="width: 18rem;">
+            <img src="..." class="card-img-top" alt="...">
+            <div class="bg-black text-white card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <a href="#" class="btn btn-outline-light">Go somewhere</a>
+            </div>
+        </div>
+        <div class="bg-black text-white card" style="width: 18rem;">
+            <img src="..." class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <a href="#" class="btn btn-outline-light">Go somewhere</a>
+            </div>
+        </div>
+        </div>
     </section>
     <!-- Footer -->
     <footer class="bg-dark" data-bs-theme="dark">
         <h1 class="text-white">Footer de la pagina</h1>
     </footer>
-    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <script src="<?= base_url('public/assets/js/bootstrap.bundle.min.js') ?>"></script>
 </body>
 
 </html>
