@@ -104,7 +104,7 @@
     </section>
     <!-- Contenido -->
     <!-- Seccion de iconos informativos -->
-    <section class="d-flex justify-content-center p-4 align-items-center gap-5 container-fluid bg-black text-center text-white">
+    <section class="d-flex justify-content-center p-5 align-items-center gap-5 container-fluid bg-black text-center text-white">
         <div class="iconos-informativos d-flex flex-column align-items-center">
             <img src="<?= base_url('public/assets/img/entrega.png') ?>" alt="">
             <p class="pt-3 m-0 fw-semibold">Entregas a todo el pais</p>
