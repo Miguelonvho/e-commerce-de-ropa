@@ -31,6 +31,18 @@
                                 <li><a class="text-white dropdown-item" href="#">Femenino</a></li>
                             </ul>
                         </li>
+                        <li class="nav-item dropdown">
+                            <a class="text-white nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                aria-expanded="false">
+                                Tipos
+                            </a>
+                            <ul class="dropdown-menu bg-black">
+                                <li><a class="text-white dropdown-item" href="#">Remeras</a></li>
+                                <li><a class="text-white dropdown-item" href="#">Buzos</a></li>
+                                <li><a class="text-white dropdown-item" href="#">Pantalones</a></li>
+                                <li><a class="text-white dropdown-item" href="#">Zapatillas</a></li>
+                            </ul>
+                        </li>
                         <li class="nav-item">
                             <a class="text-white nav-link" href="#">Niños</a>
                         </li>
