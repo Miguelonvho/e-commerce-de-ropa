@@ -6,7 +6,6 @@ class Home extends BaseController
 {
     public function index()
     {   
-        $data
         echo view('front/plantilla');
     }
 }
