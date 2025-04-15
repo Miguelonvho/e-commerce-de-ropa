@@ -2,6 +2,7 @@
    <html lang="en">
 
    <body>
+        <!-- Barra de navegacion -->
        <section class="container-fluid p-0">
            <nav class="navbar bg-black navbar-expand-lg border-body" data-bs-theme="dark">
                <div class="container-fluid">
