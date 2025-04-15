@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <body>
     <!-- Footer -->
     <footer class="d-flex flex-wrap justify-content-center bg-black m-0 p-5 gap-5" data-bs-theme="dark">
