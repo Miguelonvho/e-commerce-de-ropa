@@ -57,7 +57,7 @@
            </div>
        </nav>
    </section>
-   <!-- Panel lateral del carrito (offcanvas) -->
+   <!-- Panel lateral del carrito -->
    <section class="offcanvas bg-black text-white offcanvas-end" tabindex="-1" id="carritoOffcanvas" aria-labelledby="carritoOffcanvasLabel">
        <div class="offcanvas-header">
            <h5 class="offcanvas-title" id="carritoOffcanvasLabel">Tu carrito</h5>
