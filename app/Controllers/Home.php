@@ -9,7 +9,7 @@ class Home extends BaseController
         $data['titulo'] = 'Principal';
         echo view('front/head_view', $data);
         echo view('front/nav_view');
-        echo view('front/plantilla');
+        echo view('front/plantilla_principal');
         echo view('front/footer_view');
     }
 

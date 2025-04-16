@@ -4,7 +4,7 @@
    <section class="container-fluid p-0">
        <nav class="navbar bg-black navbar-expand-lg border-body" data-bs-theme="dark">
            <div class="container-fluid">
-               <a href="<?= base_url('plantilla') ?>"><img style="width: 100px" src="<?= base_url('public/assets/img/logo.png') ?>" alt="responsive"></a>
+               <a href="<?= base_url('plantilla_principal') ?>"><img style="width: 100px" src="<?= base_url('public/assets/img/logo.png') ?>" alt="responsive"></a>
                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll"
                    aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
                    <span class="navbar-toggler-icon"></span>
