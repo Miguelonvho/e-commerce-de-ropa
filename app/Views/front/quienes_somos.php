@@ -72,6 +72,7 @@
     <!-- Historia -->
     <section class="p-5 text-black">
         <h1 class="fw-light">Nuestra historia</h1>
+        <hr>
         <p>
             Nuestra historia
             Todo comenzó con una idea sencilla pero poderosa: crear ropa que hable por las personas,

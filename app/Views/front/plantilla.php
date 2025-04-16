@@ -82,7 +82,7 @@
                 </div>
             </div>
             <div class="bg-black text-white card" style="width: 18rem;">
-                <img style="object-fit: cover; height: 60%;" src="<?= base_url('public/assets/img/remera-New-Balance.jpg') ?>" class="card-img-top" alt="...">
+                <img style="object-fit: cover; height: 60%;" src="<?= base_url('public/assets/img/remera-lisa-blanca.jpg') ?>" class="card-img-top" alt="...">
                 <div class="d-flex bg-black text-white card-body flex-column justify-content-between">
                     <div class="d-flex flex-column gap-5">
                         <h4>Remera Essentials Stacked</h>
