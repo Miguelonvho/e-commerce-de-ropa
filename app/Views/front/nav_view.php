@@ -37,17 +37,10 @@
                            <a class="text-white nav-link" href="#">Niños</a>
                        </li>
                    </ul>
-                   <div class="d-flex gap-2 justify-content-between" style="height: 40px;">
-                       <ul class="d-flex flex-row navbar-nav">
-                           <li class="nav-item">
-                               <a class="btn" data-bs-toggle="offcanvas" href="#carritoOffcanvas" role="button" aria-controls="carritoOffcanvas">
-                                   <img src="<?= base_url('public/assets/img/carrito-nav.png') ?>" alt="">
-                               </a>
-                           </li>
-                           <li class="nav-item">
-                               <a class="btn" href=""><img style="width: 90%;" src="<?= base_url('public/assets/img/usuario.png') ?>" alt=""></a>
-                           </li>
-                       </ul>
+                   <div class="nav-busqueda d-flex gap-1 m-2 justify-content-end align-items-center">
+                       <a class="btn" data-bs-toggle="offcanvas" href="#carritoOffcanvas" role="button" aria-controls="carritoOffcanvas">
+                           <img src="<?= base_url('public/assets/img/carrito-nav.png') ?>" alt="">
+                       </a>
                        <form class="d-flex" role="search">
                            <input class="bg-white form-control me-2" type="search" aria-label="Search">
                            <button class="btn btn-outline-light" type="submit">Buscar</button>
@@ -66,7 +59,7 @@
        <div class="offcanvas-body">
            <div class="mb-3 border-bottom pb-2">
                <div class="d-flex align-items-center">
-                   <img src="public/assets/img/buzo-Nike.jpg" alt="Producto" class="img-fluid me-2" style="width: 60px;">
+                   <img src="<?= base_url('public/assets/img/buzo-Nike.jpg') ?>" alt="Producto" class="img-fluid me-2" style="width: 60px;">
                    <div>
                        <p class="mb-0">Buzo Nike</p>
                        <small>1 x $50.500</small>
@@ -76,7 +69,7 @@
            </div>
            <div class="d-flex justify-content-between mt-3">
                <strong>Total:</strong>
-               <span>$3.500</span>
+               <span>$50.500</span>
            </div>
            <div class="mt-4 d-grid gap-2">
                <a href="ruta/carrito" class="btn btn-outline-light">Ver carrito</a>

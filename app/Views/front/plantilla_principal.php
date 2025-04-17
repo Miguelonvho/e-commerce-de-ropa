@@ -38,94 +38,101 @@
     </section>
     <!-- Contenido -->
     <!-- Seccion de iconos informativos -->
-    <section class="d-flex justify-content-center p-5 align-items-center gap-5 container-fluid bg-black text-center text-white">
-        <div class="iconos-informativos d-flex flex-column align-items-center">
+    <section class="d-flex align-items-center justify-content-center bg-black text-white flex-wrap text-center gap-5 p-5">
+        <div class="iconos-informativos">
             <img src="<?= base_url('public/assets/img/entrega.png') ?>" alt="">
             <p class="pt-3 m-0 fw-semibold">Entregas a todo el pais</p>
             <a class="text-white" href="">Ver mas</a>
         </div>
-        <div class="iconos-informativos d-flex flex-column align-items-center">
+        <div class="iconos-informativos">
             <img src="<?= base_url('public/assets/img/metodo-de-pago.png') ?>" alt="">
             <p class="pt-3 m-0 fw-semibold">Todos los medios de pago</p>
             <a class="text-white" href="">Ver mas</a>
         </div>
-        <div class="iconos-informativos d-flex flex-column align-items-center">
+        <div class="iconos-informativos">
             <img src="<?= base_url('public/assets/img/cambio-de-ropa.png') ?>" alt="">
             <p class="pt-3 m-0 fw-semibold">Aceptamos cambios</p>
             <a class="text-white" href="">Ver mas</a>
         </div>
-        <div class="iconos-informativos d-flex flex-column align-items-center">
+        <div class="iconos-informativos">
             <img src="<?= base_url('public/assets/img/insignia.png') ?>" alt="">
-            <p class="pt-3 m-0 fw-semibold">Mas de 1000 clientes satisfechos</p>
+            <p class="pt-3 m-0 fw-semibold">1000 clientes satisfechos</p>
             <a class="text-white" href="">Ver mas</a>
         </div>
     </section>
     <!-- Indumentaria destacada -->
-    <section class="container-fluid">
-        <div>
-            <h1 class="text-black text-center pt-5">Destacado</h1>
-        </div>
-        <div class="d-flex flex-wrap p-5 gap-3 text-white justify-content-center">
-            <div class="bg-black text-white  card" style="width: 18rem;">
-                <img style="object-fit: cover; height: 60%;" src="<?= base_url('public/assets/img/remera-New-Balance.jpg') ?>" class="card-img-top" alt="...">
-                <div class="d-flex flex-column bg-black text-white card-body justify-content-between">
-                    <div class="d-flex flex-column gap-5">
+    <section class="container-fluid text-black my-5">
+        <h1 class="fw-light">Destacados</h1>
+        <hr>
+        <div class="d-flex justify-content-center flex-wrap gap-4 p-0 m-0">
+            <div class="card bg-black text-white" style="max-width: 400px">
+                <img class="imagen-ropa card-img-top" src="<?= base_url('public/assets/img/remera-New-Balance.jpg') ?>" alt="...">
+                <div class="card-body d-flex flex-column justify-content-between">
+                    <div class="mb-3">
                         <h4>Remera New Balance</h4>
                     </div>
-                    <div class="d-flex flex-column gap-3 text-center">
+                    <div class="text-center">
                         <h1 class="card-title">$xxxxxx</h1>
-                        <div class="d-flex gap-2 row-2 justify-content-end">
-                            <a href="#" class="btn btn-success">Comprar</a>
-                            <a href="#" class="btn btn-carrito btn-outline-secondary"><img src="<?= base_url('public/assets/img/carrito.png') ?>" alt=""></a>
+                        <div class="d-flex gap-2 justify-content-end">
+                            <a href="#" class="btn btn-success text-center">Comprar</a>
+                            <a href="#" class="btn btn-carrito btn-outline-secondary">
+                                <img src="<?= base_url('public/assets/img/carrito.png') ?>" alt="">
+                            </a>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="bg-black text-white card" style="width: 18rem;">
-                <img style="object-fit: cover; height: 60%;" src="<?= base_url('public/assets/img/remera-lisa-blanca.jpg') ?>" class="card-img-top" alt="...">
-                <div class="d-flex bg-black text-white card-body flex-column justify-content-between">
-                    <div class="d-flex flex-column gap-5">
-                        <h4>Remera Essentials Stacked</h>
+            <div class="card bg-black text-white" style="max-width: 300px">
+                <img class="imagen-ropa card-img-top" src="<?= base_url('public/assets/img/remera-New-Balance.jpg') ?>" alt="...">
+                <div class="card-body d-flex flex-column justify-content-between">
+                    <div class="mb-3">
+                        <h4>Remera New Balance</h4>
                     </div>
-                    <div class="d-flex flex-column gap-3 text-center">
+                    <div class="text-center">
                         <h1 class="card-title">$xxxxxx</h1>
-                        <div class="d-flex gap-2 row-2 justify-content-end">
+                        <div class="d-flex gap-2 justify-content-end">
                             <a href="#" class="btn btn-success">Comprar</a>
-                            <a href="#" class="btn btn-carrito btn-outline-secondary"><img src="<?= base_url('public/assets/img/carrito.png') ?>" alt=""></a>
+                            <a href="#" class="btn btn-carrito btn-outline-secondary">
+                                <img src="<?= base_url('public/assets/img/carrito.png') ?>" alt="">
+                            </a>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="bg-black text-white card" style="width: 18rem;">
-                <img style="object-fit: cover; height: 60%;" src="<?= base_url('public/assets/img/jeans-Levis-hombre.jpg') ?>" class="card-img-top" alt="...">
-                <div class="d-flex bg-black text-white card-body flex-column justify-content-between">
-                    <div class="d-flex flex-column gap-5">
-                        <h4>Jeans Levi's hombre</h4>
+            <div class="card bg-black text-white" style="max-width: 300px">
+                <img class="imagen-ropa card-img-top" src="<?= base_url('public/assets/img/remera-New-Balance.jpg') ?>" alt="...">
+                <div class="card-body d-flex flex-column justify-content-between">
+                    <div class="mb-3">
+                        <h4>Remera New Balance</h4>
                     </div>
-                    <div class="d-flex flex-column gap-3 text-center">
+                    <div class="text-center">
                         <h1 class="card-title">$xxxxxx</h1>
-                        <div class="d-flex gap-2 row-2 justify-content-end">
+                        <div class="d-flex gap-2 justify-content-end">
                             <a href="#" class="btn btn-success">Comprar</a>
-                            <a href="#" class="btn btn-carrito btn-outline-secondary"><img src="<?= base_url('public/assets/img/carrito.png') ?>" alt=""></a>
+                            <a href="#" class="btn btn-carrito btn-outline-secondary">
+                                <img src="<?= base_url('public/assets/img/carrito.png') ?>" alt="">
+                            </a>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="bg-black text-white card" style="width: 18rem;">
-                <img style="object-fit: cover; height: 60%;" src="<?= base_url('public/assets/img/buzo-Nike.jpg') ?>" class="card-img-top" alt="...">
-                <div class="d-flex bg-black text-white card-body flex-column justify-content-between">
-                    <div class="d-flex flex-column gap-5">
-                        <h3>Buzo Nike</h3>
+            <div class="card bg-black text-white" style="max-width: 300px">
+                <img class="imagen-ropa card-img-top" src="<?= base_url('public/assets/img/remera-New-Balance.jpg') ?>" alt="...">
+                <div class="card-body d-flex flex-column justify-content-between">
+                    <div class="mb-3">
+                        <h4>Remera New Balance</h4>
                     </div>
-                    <div class="d-flex flex-column gap-3 text-center">
+                    <div class="text-center">
                         <h1 class="card-title">$xxxxxx</h1>
-                        <div class="d-flex gap-2 row-2 justify-content-end">
+                        <div class="d-flex gap-2 justify-content-end">
                             <a href="#" class="btn btn-success">Comprar</a>
-                            <a href="#" class="btn btn-carrito btn-outline-secondary"><img src="<?= base_url('public/assets/img/carrito.png') ?>" alt=""></a>
+                            <a href="#" class="btn btn-carrito btn-outline-secondary">
+                                <img src="<?= base_url('public/assets/img/carrito.png') ?>" alt="">
+                            </a>
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> 
         </div>
     </section>
 </body>
