@@ -9,6 +9,7 @@ class Home extends BaseController
         $data['titulo'] = 'Principal';
         echo view('front/head_view', $data);
         echo view('front/nav_view');
+        echo view('front/panel-carrito');
         echo view('front/plantilla_principal');
         echo view('front/footer_view');
     }
@@ -17,6 +18,7 @@ class Home extends BaseController
         $data['titulo'] = 'Quienes somos';
         echo view('front/head_view', $data);
         echo view('front/nav_view');
+        echo view('front/panel-carrito');
         echo view('front/quienes_somos');
         echo view('front/footer_view');
     }
@@ -26,6 +28,7 @@ class Home extends BaseController
         $data['genero'] = $genero;
         echo view('front/head_view', $data);
         echo view('front/nav_view');
+        echo view('front/panel-carrito');
         echo view('front/plantilla_generos', $data);
         echo view('front/footer_view');
     }

@@ -4,7 +4,7 @@
 <body>
     <!-- Carrousel -->
     <section class="container-fluid p-0">
-        <div id="carouselExampleCaptions" class="carousel carousel-dark slide" data-bs-ride="carousel" data-bs-interval="2000">
+        <div id="carouselExampleCaptions" class="carousel carousel-dark slide"  data-bs-touch="true" data-bs-ride="carousel" data-bs-interval="2000">
             <div class="carousel-indicators">
                 <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
                     aria-current="true" aria-label="Slide 1"></button>
@@ -64,9 +64,9 @@
     <section class="container-fluid text-black my-5">
         <h1 class="fw-light">Destacados</h1>
         <hr>
-        <div class="d-flex justify-content-center flex-wrap gap-4 p-0 m-0">
+        <div class="d-flex justify-content-center flex-wrap gap-4 pt-5 m-0">
             <div class="card bg-black text-white" style="max-width: 400px">
-                <img class="imagen-ropa card-img-top" src="<?= base_url('public/assets/img/remera-New-Balance.jpg') ?>" alt="...">
+                <img class="imagen-ropa card-img-top" src="<?= base_url('public/assets/img/ropa-hombre-1.jpg') ?>" alt="...">
                 <div class="card-body d-flex flex-column justify-content-between">
                     <div class="mb-3">
                         <h4>Remera New Balance</h4>
@@ -82,11 +82,11 @@
                     </div>
                 </div>
             </div>
-            <div class="card bg-black text-white" style="max-width: 300px">
-                <img class="imagen-ropa card-img-top" src="<?= base_url('public/assets/img/remera-New-Balance.jpg') ?>" alt="...">
+            <div class="card bg-black text-white">
+                <img class="imagen-ropa card-img-top" src="<?= base_url('public/assets/img/ropa-mujer-1.jpg') ?>" alt="...">
                 <div class="card-body d-flex flex-column justify-content-between">
                     <div class="mb-3">
-                        <h4>Remera New Balance</h4>
+                        <h4>Blusa off shoulders</h4>
                     </div>
                     <div class="text-center">
                         <h1 class="card-title">$xxxxxx</h1>
@@ -100,10 +100,10 @@
                 </div>
             </div>
             <div class="card bg-black text-white" style="max-width: 300px">
-                <img class="imagen-ropa card-img-top" src="<?= base_url('public/assets/img/remera-New-Balance.jpg') ?>" alt="...">
+                <img class="imagen-ropa card-img-top" src="<?= base_url('public/assets/img/ropa-hombre-2.jpg') ?>" alt="...">
                 <div class="card-body d-flex flex-column justify-content-between">
                     <div class="mb-3">
-                        <h4>Remera New Balance</h4>
+                        <h4>Remera lisa</h4>
                     </div>
                     <div class="text-center">
                         <h1 class="card-title">$xxxxxx</h1>
@@ -117,10 +117,10 @@
                 </div>
             </div>
             <div class="card bg-black text-white" style="max-width: 300px">
-                <img class="imagen-ropa card-img-top" src="<?= base_url('public/assets/img/remera-New-Balance.jpg') ?>" alt="...">
+                <img class="imagen-ropa card-img-top" src="<?= base_url('public/assets/img/ropa-mujer-2.jpg') ?>" alt="...">
                 <div class="card-body d-flex flex-column justify-content-between">
                     <div class="mb-3">
-                        <h4>Remera New Balance</h4>
+                        <h4>Parca gabardina blanca</h4>
                     </div>
                     <div class="text-center">
                         <h1 class="card-title">$xxxxxx</h1>

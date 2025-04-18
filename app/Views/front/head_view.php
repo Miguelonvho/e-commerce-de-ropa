@@ -6,7 +6,6 @@
     <link rel="icon" type="image/png" href="<?= base_url('public/assets/img/logo.png') ?>">
     <link rel="stylesheet" href="<?= base_url('public/assets/css/bootstrap.min.css') ?>">
     <link rel="stylesheet" href="<?= base_url('public/assets/css/miestilo.css') ?>">
-    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
     <script src="<?= base_url('public/assets/js/bootstrap.bundle.min.js') ?>"></script>
     <title><?= $titulo ?></title>
 </head>

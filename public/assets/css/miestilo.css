@@ -2,12 +2,24 @@
     border-color: rgb(255, 255, 255);
 }
 
+.dropdown-item:hover {
+    background-color: white !important;
+    color: black !important;
+}
+
 .iconos-informativos img {
     width: 50px;
     height: auto;
 }
 
+.offcanvas-body img {
+    object-fit: cover;
+    width: 90px;
+    height: 90px;
+}
+
 .card {
+    width: 280px;
     transition: transform 0.20s ease-out;
 }
 
@@ -24,7 +36,7 @@
 
 .imagen-ropa {
     object-fit: cover; 
-    height: 20rem;
+    height: 25rem;
 }
 
 .empleados-fotos {
@@ -37,6 +49,10 @@
 @media (max-width: 1200px) {
     .vision-y-mision {
         width: 50% !important;
+    }
+
+    .offcanvas-end {
+        width: 60% !important;
     }
 }
 
@@ -54,29 +70,45 @@
     * {
         font-size: small;
     }
+
     .imagen-tienda {
         height: 620px;
     }
+
     .imagen-ropa {
         object-fit: cover;
-        height: 20rem;
+        height: 30rem;
     }
 }
 
 @media (max-width: 767px) {
+    .card {
+        width: 150px;
+    }
+
+    .offcanvas-body img {
+        width: 45px;
+        height: 45px;
+    }
+
+    .imagen-ropa {
+        object-fit: cover;
+        height: 15rem;
+    }
+
     .imagen-tienda {
         height: 300px;
     }
 }
 
 @media (max-width: 600px) {
-
     .card a {
         max-height: 30px !important;
     }
 
     .card a img {
-        max-width: 15px;
+        max-width: 20px;
+        padding-bottom: 10px;
     }
 
     .iconos-informativos {

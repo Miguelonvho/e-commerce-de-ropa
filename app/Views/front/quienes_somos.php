@@ -17,7 +17,7 @@
                     Seleccionamos cuidadosamente cada prenda, apostando por diseños modernos, materiales duraderos
                     y una atención al detalle que nos representa.
                     Ya sea que busques un look casual, elegante o urbano,
-                    en nuestra tienda vas a encontrar lo que necesitás para destacar.
+                    en G&G vas a encontrar lo que necesitás para destacar.
                     Nos apasiona lo que hacemos, y trabajamos día a día para brindarte una experiencia de compra única,
                     cercana y con estilo. ¡Bienvenido/a a nuestra comunidad!
                 </p>
@@ -74,22 +74,15 @@
         <h1 class="fw-light">Nuestra historia</h1>
         <hr>
         <p>
-            Nuestra historia
-            Todo comenzó con una idea sencilla pero poderosa: crear ropa que hable por las personas,
-            que exprese quiénes son sin que digan una sola palabra. La inspiración nació en un pequeño
-            rincón de Corrientes, donde un grupo de amigos apasionados por la moda, el diseño
-            y el arte decidió transformar esa pasión en algo más grande.
-            Con una máquina de coser prestada, algunos retazos de tela y mucha creatividad,
-            lanzamos nuestra primera colección desde el living de una casa. Lo que empezó como
-            un proyecto entre conocidos, pronto se convirtió en una marca que atraía a personas
-            con algo en común: las ganas de vestirse auténticamente, sin seguir moldes impuestos.
-            A lo largo del camino, fuimos aprendiendo, equivocándonos y creciendo. Participamos
-            en ferias locales, colaboramos con artistas independientes, y apostamos por producciones
-            responsables que respetan tanto al planeta como a las personas.
-            Hoy, G&G no es solo una tienda de ropa. Es un espacio donde cada prenda
-            tiene una historia, cada cliente es parte del viaje, y cada diseño está pensado para celebrar
-            la diversidad, la libertad y el estilo propio.
-            Y esto recién empieza.
+            Todo comenzó durante la pandemia, en un lugar de Corrientes.
+            Nicolás Torres, nuestro fundador, con ropas usadas que tenía en su casa, dio el primer paso
+            y comenzó a venderlas en línea. Lo que parecía una idea sencilla,
+            pronto se convirtió en un proyecto con grandes aspiraciones.
+            Nico invitó a algunos amigos a sumarse, y juntos comenzaron a pensar
+            en cómo llevar la tienda a otro nivel, soñando con abrir un espacio en el centro de la ciudad.
+            Hoy, G&G es mucho más que una tienda de ropa. Es un lugar donde cada prenda tiene una historia,
+            cada cliente forma parte de nuestro viaje, y cada diseño está pensado para celebrar la diversidad, la libertad y el estilo propio.
+            Y lo mejor es que esto recién empieza.
         </p>
     </section>
 </body>
