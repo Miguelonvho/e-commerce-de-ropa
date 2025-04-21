@@ -32,5 +32,16 @@ class Home extends BaseController
         echo view('front/plantilla_generos', $data);
         echo view('front/footer_view');
     }
+
+    public function comercializacion() {
+        $data['titulo'] = 'Comercialización';
+        echo view('front/head_view', $data);
+        echo view('front/nav_view');
+        echo view('front/panel-carrito');
+        echo view('front/comercializacion');
+        echo view('front/footer_view');
+    }
 }
+
+
 
