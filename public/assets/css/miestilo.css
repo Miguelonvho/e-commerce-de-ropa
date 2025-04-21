@@ -1,16 +1,10 @@
-@media (max-width: 500px) {
-    .iconos-informativos p {
-        font-size: small;
-        padding-top: 20px;
-    }
-    .iconos-informativos img {
-        width: 10px;
-        height: auto;
-    }
+.navbar-toggler {
+    border-color: rgb(255, 255, 255);
 }
 
-.navbar-toggler {
-    border-color: rgba(255, 255, 255, 0.5);
+.dropdown-item:hover {
+    background-color: white !important;
+    color: black !important;
 }
 
 .iconos-informativos img {
@@ -18,11 +12,132 @@
     height: auto;
 }
 
+.offcanvas-body img {
+    object-fit: cover;
+    width: 90px;
+    height: 90px;
+}
+
 .card {
+    width: 280px;
     transition: transform 0.20s ease-out;
 }
 
 .card:hover {
     transform: scale(1.05);
     cursor: pointer;
+}
+
+.imagen-tienda {
+    object-fit: cover;  
+    width: 100%; 
+    height: 500px;
+}
+
+.imagen-ropa {
+    object-fit: cover; 
+    height: 25rem;
+}
+
+.empleados-fotos {
+    object-fit: cover;
+    border-radius: 100%;
+    width: 170px;
+    height: 170px;
+}
+
+@media (max-width: 1200px) {
+    .vision-y-mision {
+        width: 50% !important;
+    }
+
+    .offcanvas-end {
+        width: 60% !important;
+    }
+}
+
+@media (max-width: 920px) {
+    .nav-busqueda {
+        height: 30px;
+    }
+
+    .nav-busqueda img {
+        width: 90%;
+    }
+}
+
+@media (max-width: 970px) {
+    * {
+        font-size: small;
+    }
+
+    .imagen-tienda {
+        height: 620px;
+    }
+
+    .imagen-ropa {
+        object-fit: cover;
+        height: 30rem;
+    }
+}
+
+@media (max-width: 767px) {
+    .card {
+        width: 150px;
+    }
+
+    .offcanvas-body img {
+        width: 45px;
+        height: 45px;
+    }
+
+    .imagen-ropa {
+        object-fit: cover;
+        height: 15rem;
+    }
+
+    .imagen-tienda {
+        height: 300px;
+    }
+}
+
+@media (max-width: 600px) {
+    .card a {
+        max-height: 30px !important;
+    }
+
+    .card a img {
+        max-width: 20px;
+        padding-bottom: 10px;
+    }
+
+    .iconos-informativos {
+        max-width: 120px;
+        width: 120px;
+        height: auto;
+    }
+
+    .iconos-informativos p {
+        padding-top: 20px;
+    }
+
+    .iconos-informativos img {
+        width: 30px;
+        height: auto;
+    }
+
+    .nosotros-titulo {
+        margin-top: 40px !important;
+        margin-bottom: 0px !important;
+    }
+
+    .perfiles-empleados {
+        padding-top: 10px !important;
+    }
+
+    .empleados-fotos {
+        margin: 0;
+        width: 80px;
+        height: 80px;
+    }
 }
