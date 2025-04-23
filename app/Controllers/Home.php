@@ -51,6 +51,15 @@ class Home extends BaseController
         echo view('front/footer_view');
     }
     
+    public function terminos_y_usos() {
+        $data['titulo'] = 'Términos y Usos';
+        echo view('front/head_view', $data);
+        echo view('front/nav_view');
+        echo view('front/panel-carrito');
+        echo view('front/terminos_y_usos');
+        echo view('front/footer_view');
+    }
+    
 }
 
 
