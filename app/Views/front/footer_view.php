@@ -6,7 +6,7 @@
         <a class="text-white" href="<?= base_url('quienes_somos') ?>">Quienes somos</a>
         <a class="text-white" href="<?= base_url('comercializacion') ?>">Comercialización</a>
         <a class="text-white" href="<?= base_url('contacto') ?>">Contacto</a>
-        <a class="text-white" href="">Terminos y Usos</a>
+        <a class="text-white" href="<?= base_url('terminos_y_usos') ?>">Terminos y Usos</a>
     </footer>
 </body>
 </html>
