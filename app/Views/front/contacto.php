@@ -21,10 +21,10 @@
                 <h4 class="fw-semibold">Información de la Empresa</h4>
                 <p><strong>Titular:</strong> Nicolás Torres</p>
                 <p><strong>Razón Social:</strong> Indumentaria G&G S.R.L.</p>
-                <p><strong>Domicilio Legal:</strong> Calle Ficticia 123, Corrientes, Argentina</p>
+                <p><strong>Domicilio Legal:</strong> Mariano Moreno 500, Corrientes, Argentina</p>
                 <p><strong>Teléfono:</strong> +54 379 400-0000</p>
                 <p><strong>Email:</strong> contacto@indumentariaG&G.com</p>
-                <p><strong>Instagram:</strong> <a href="https://www.instagram.com/G&G" class="text-info">@tuempresa</a></p>
+                <p><strong>Instagram:</strong> <a href="https://www.instagram.com/G&G" class="text-info">@G&G Indumentaria</a></p>
             </div>
 
             <!-- Formulario de contacto -->
