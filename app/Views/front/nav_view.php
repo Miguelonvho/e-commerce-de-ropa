@@ -38,6 +38,11 @@
                        </li>
                    </ul>
                    <div class="nav-busqueda d-flex gap-1 m-2 justify-content-end align-items-center">
+                    <!-- Boton login -->
+                        <a class="btn" href="#">
+                            <img src="<?= base_url('public/assets/img/usuario.png') ?>" alt="Usuario">
+                        </a>
+                        <!-- Boton carrito -->
                        <a class="btn" data-bs-toggle="offcanvas" href="#carritoOffcanvas" role="button" aria-controls="carritoOffcanvas">
                            <img src="<?= base_url('public/assets/img/carrito-nav.png') ?>" alt="">
                        </a>

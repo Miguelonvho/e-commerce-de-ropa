@@ -56,9 +56,4 @@
         </div>
 
     </div>
-
-    <!-- Botón al final -->
-    <div class="text-center mt-5">
-        <a href="<?= base_url() ?>" class="btn text-white boton-negro px-4 py-2">Volver al inicio</a>
-    </div>
 </div>

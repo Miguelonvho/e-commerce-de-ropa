@@ -14,6 +14,9 @@
             <button class="btn btn-transparent"><img src="<?= base_url(relativePath: 'public/assets/img/whatsapp.png') ?>" alt=""></button>
             <button class="btn btn-transparent"><img src="<?= base_url(relativePath: 'public/assets/img/facebook.png') ?>" alt=""></button>
         </div>
+        <div class="text-end text-white pe-5 mt-3">
+            &copy; <?= date('Y') ?> G&G Indumentaria. Todos los derechos reservados.
+        </div>
     </footer>
 </body>
 </html>
