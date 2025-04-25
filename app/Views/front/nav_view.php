@@ -34,16 +34,40 @@
                            </ul>
                        </li>
                        <li class="nav-item dropdown">
-                            <a class="text-white nav-link" href="<?= base_url('quienes_somos') ?>">Quienes somos</a>
+                           <a class="text-white nav-link" href="<?= base_url('quienes_somos') ?>">Quienes somos</a>
                        </li>
                    </ul>
-                   <div class="nav-busqueda d-flex gap-1 m-2 justify-content-end align-items-center">
-                    <!-- Boton login -->
-                        <a class="btn" href="#">
-                            <img src="<?= base_url('public/assets/img/usuario.png') ?>" alt="Usuario">
-                        </a>
-                        <!-- Boton carrito -->
-                       <a class="btn" data-bs-toggle="offcanvas" href="#carritoOffcanvas" role="button" aria-controls="carritoOffcanvas">
+                   <div class="nav-busqueda d-flex gap-3 m-2 justify-content-end align-items-center">
+                       <!-- Boton login -->
+                       <div class="nav-item dropdown">
+                           <a class="btn m-0 p-0" data-bs-toggle="dropdown"
+                               aria-expanded="false" href="#">
+                               <img style="width: 26px !important;" src="<?= base_url('public/assets/img/usuario.png') ?>" alt="Usuario">
+                           </a>
+                           <ul class="dropdown-menu bg-black p-4">
+                               <li class="d-flex justify-content-between align-items-center p-0">
+                                   <h4>Mi cuenta</h4>
+                                   <button type="button" class="btn btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Cerrar"></button>
+                               </li>
+                               <hr>
+                               <li>
+                                   <div class="d-flex gap-4 align-items-center">
+                                       <img style="width: 90px; height: 90px; object-fit: cover; border-radius: 100%;" src="public/assets/img/persona-1.jpg" alt="">
+                                       <div>
+                                           <p class="fw-bolder mb-0">Ivan Guillermo Gauto</p>
+                                           <p class="mb-1">IvanGauto602160@gmail.com</p>
+                                           <a href="<?= base_url('plantilla_perfil') ?>" class="text-white">Ver perfil</a>
+                                       </div>
+                                   </div>
+                               </li>
+                               <li class="mt-5">
+                                   <a style="width: auto;" href="" class="btn boton-blanco">Cerrar sesión</a>
+                               </li>
+                           </ul>
+
+                       </div>
+                       <!-- Boton carrito -->
+                       <a class="btn m-0 p-0" data-bs-toggle="offcanvas" href="#carritoOffcanvas" role="button" aria-controls="carritoOffcanvas">
                            <img src="<?= base_url('public/assets/img/carrito-nav.png') ?>" alt="">
                        </a>
                        <form action="<?= base_url('busqueda/resultados') ?>" class="d-flex" role="search">

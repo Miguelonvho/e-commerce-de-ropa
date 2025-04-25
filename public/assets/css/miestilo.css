@@ -72,8 +72,28 @@
     height: 170px;
 }
 
+.boton-blanco {
+    background-color: white !important;
+    color: black !important;
+    border: 1px solid white !important;
+    transition: background-color 0.2s ease-out, color 0.2s ease-out !important;
+}
+
+.boton-blanco:hover {
+    background-color: black !important;
+    color: white !important;
+}
+
 .boton-negro {
     background-color: black !important;
+    color: white !important;
+    transition: background-color 0.2s ease-out, color 0.2s ease-out !important;
+}
+
+.boton-negro:hover {
+    background-color: white !important;
+    color: black !important;
+    border: 1px solid black !important;
 }
 
 @media (max-width: 1200px) {
