@@ -8,7 +8,7 @@
             <div class="col-md-6 col-12 p-0">
                 <img class="imagen-tienda" src="<?= base_url('public/assets/img/tienda-por-dentro.png') ?>" alt="">
             </div>
-            <div class="col-md-6 col-12 mt-5 p-5">
+            <div style="text-align: justify;" class="col-md-6 col-12 mt-5 p-5">
                 <h1 class="fw-light">Sobre nosotros</h1>
                 <p class="rounded fw-light bg-black text-white mt-4 p-4 shadow-lg">
                     En G&G, creemos que la moda es una forma de expresión.
@@ -48,8 +48,8 @@
     </section>
     <section class="container p-5">
         <div class="row justify-content-center">
-            <div class="col-12 col-md-5 bg-black text-white p-4 m-2 rounded shadow-lg">
-                <h1 class="fw-light">Vision</h1>
+            <div style="text-align: justify;" class="col-12 col-md-5 bg-black text-white p-4 m-2 rounded shadow-lg">
+                <h1 class="fw-light">Visión</h1>
                 <p>
                     Ser una marca referente en el mundo de la moda,
                     reconocida por ofrecer prendas que inspiran confianza, autenticidad y estilo,
@@ -58,8 +58,8 @@
                     y la innovación se encuentren en cada detalle.
                 </p>
             </div>
-            <div class="col-12 col-md-5 bg-black text-white p-4 m-2 rounded shadow-lg">
-                <h1 class="fw-light">Mision</h1>
+            <div style="text-align: justify;" class="col-12 col-md-5 bg-black text-white p-4 m-2 rounded shadow-lg">
+                <h1 class="fw-light">Misión</h1>
                 <p>
                     Nos comprometemos a mantener un trato cercano, escuchar a nuestra comunidad y
                     adaptarnos constantemente a sus gustos y necesidades.
@@ -70,7 +70,7 @@
         </div>
     </section>
     <!-- Historia -->
-    <section class="p-5 text-black">
+    <section style="text-align: justify;" class="p-5 text-black">
         <h1 class="fw-light">Nuestra historia</h1>
         <hr>
         <p>

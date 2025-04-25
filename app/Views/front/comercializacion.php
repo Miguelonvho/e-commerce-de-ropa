@@ -9,7 +9,7 @@
             <div class="col-md-6 col-12 p-0">
                 <img class="imagen-tienda" src="<?= base_url('public/assets/img/foto-repartidor.png') ?>" alt="Entregas G&G">
             </div>
-            <div class="col-md-6 col-12 mt-5 p-5">
+            <div style="text-align: justify;" class="col-md-6 col-12 mt-5 p-5">
                 <h1 class="fw-light">Comercialización</h1>
                 <p class="rounded fw-light bg-black text-white mt-4 p-4 shadow-lg">
                     En G&G queremos que tu experiencia de compra sea cómoda, rápida y segura. Por eso, te ofrecemos múltiples formas de pago, opciones de envío adaptadas a tus necesidades y una política clara de entregas. A continuación, te contamos todo lo que necesitás saber.
@@ -19,7 +19,7 @@
     </section>
 
     <!-- Tipos de entrega -->
-    <section class="container p-5">
+    <section style="text-align: justify;" class="container p-5">
         <div class="row justify-content-center">
             <div class="col-12 col-md-5 bg-black text-white p-4 m-2 rounded shadow-lg">
             <h2 class="fw-light">Formas de pago</h2>
@@ -42,7 +42,7 @@
     </section>
 
     <!-- Información adicional -->
-    <section class="container-fluid p-5 bg-light text-black">
+    <section style="text-align: justify;" class="container-fluid p-5 bg-light text-black">
         <h2 class="fw-light text-center">Información útil</h2>
         <hr>
         <div class="row justify-content-center text-center">
