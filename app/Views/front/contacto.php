@@ -64,7 +64,7 @@
         </div>
     </section>
 
-    <hr class="border-white my-2" style="border-width: 3px;">
+    <hr class="border-white my-2">
     <div class="text-center my-4">
         <a href="<?= base_url('/') ?>" class="boton-blanco btn">Volver al Inicio</a>
     </div>
