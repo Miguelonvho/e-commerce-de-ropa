@@ -74,7 +74,7 @@
                     <div class="text-center">
                         <h1 class="card-title">$xxxxxx</h1>
                         <div class="d-flex gap-2 justify-content-end">
-                            <a href="#" class="btn btn-success text-center">Comprar</a>
+                            <a href="#" class="btn boton-blanco text-center">Comprar</a>
                             <a href="#" class="btn btn-carrito btn-outline-secondary">
                                 <img src="<?= base_url('public/assets/img/carrito.png') ?>" alt="">
                             </a>
@@ -91,7 +91,7 @@
                     <div class="text-center">
                         <h1 class="card-title">$xxxxxx</h1>
                         <div class="d-flex gap-2 justify-content-end">
-                            <a href="#" class="btn btn-success">Comprar</a>
+                            <a href="#" class="btn boton-blanco">Comprar</a>
                             <a href="#" class="btn btn-carrito btn-outline-secondary">
                                 <img src="<?= base_url('public/assets/img/carrito.png') ?>" alt="">
                             </a>
@@ -108,7 +108,7 @@
                     <div class="text-center">
                         <h1 class="card-title">$xxxxxx</h1>
                         <div class="d-flex gap-2 justify-content-end">
-                            <a href="#" class="btn btn-success">Comprar</a>
+                            <a href="#" class="btn boton-blanco">Comprar</a>
                             <a href="#" class="btn btn-carrito btn-outline-secondary">
                                 <img src="<?= base_url('public/assets/img/carrito.png') ?>" alt="">
                             </a>
@@ -125,7 +125,7 @@
                     <div class="text-center">
                         <h1 class="card-title">$xxxxxx</h1>
                         <div class="d-flex gap-2 justify-content-end">
-                            <a href="#" class="btn btn-success">Comprar</a>
+                            <a href="#" class="btn boton-blanco">Comprar</a>
                             <a href="#" class="btn btn-carrito btn-outline-secondary">
                                 <img src="<?= base_url('public/assets/img/carrito.png') ?>" alt="">
                             </a>

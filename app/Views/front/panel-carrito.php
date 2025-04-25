@@ -79,7 +79,7 @@
         <span>$50.500</span>
     </div>
     <div class="mt-4 d-grid gap-2">
-        <a href="ruta/checkout" class="btn btn-success">Finalizar compra</a>
+        <a href="ruta/checkout" class="btn boton-blanco">Finalizar compra</a>
     </div>
     </div>
 </section>
