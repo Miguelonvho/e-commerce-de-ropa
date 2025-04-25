@@ -62,11 +62,6 @@
                 </form>
             </div>
         </div>
-<<<<<<< HEAD
-    </div>
-</section>
-<hr class="border-white my-4">
-=======
     </section>
 
     <hr class="border-white my-2" style="border-width: 3px;">
@@ -74,7 +69,6 @@
         <a href="<?= base_url('/') ?>" class="boton-blanco btn">Volver al Inicio</a>
     </div>
 
->>>>>>> 3b2f8469499c9c61bc6abe7254d4a0196d0c6bf0
 </body>
 
 </html>
