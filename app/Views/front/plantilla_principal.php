@@ -56,7 +56,7 @@
         </div>
         <div class="iconos-informativos">
             <img src="<?= base_url('public/assets/img/insignia.png') ?>" alt="">
-            <p class="pt-3 m-0 fw-semibold">1000 clientes satisfechos</p>
+            <p class="pt-3 m-0 fw-semibold">Calidad garantizada</p>
             <a class="text-white" href="<?= base_url('comercializacion') ?>">Ver mas</a>
         </div>
     </section>
