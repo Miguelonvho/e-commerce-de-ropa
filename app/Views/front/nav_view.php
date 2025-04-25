@@ -17,32 +17,32 @@
                                Géneros
                            </a>
                            <ul class="dropdown-menu bg-black">
-                               <li><a class="text-white dropdown-item" href="<?= base_url('plantilla_generos/Hombre') ?>">Hombre</a></li>
-                               <li><a class="text-white dropdown-item" href="<?= base_url('plantilla_generos/Mujer') ?>">Mujer</a></li>
+                               <li><a class="text-white dropdown-item" href="<?= base_url('plantilla_productos/Hombre') ?>">Hombre</a></li>
+                               <li><a class="text-white dropdown-item" href="<?= base_url('plantilla_productos/Mujer') ?>">Mujer</a></li>
+                               <li><a class="text-white dropdown-item" href="<?= base_url('plantilla_productos/Ninos') ?>">Niños</a></li>
                            </ul>
                        </li>
                        <li class="nav-item dropdown">
                            <a class="text-white nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
                                aria-expanded="false">
-                               Tipos
+                               Productos
                            </a>
                            <ul class="dropdown-menu bg-black">
-                               <li><a class="text-white dropdown-item" href="#">Remeras</a></li>
-                               <li><a class="text-white dropdown-item" href="#">Buzos</a></li>
-                               <li><a class="text-white dropdown-item" href="#">Pantalones</a></li>
-                               <li><a class="text-white dropdown-item" href="#">Zapatillas</a></li>
+                               <li><a class="text-white dropdown-item" href="<?= base_url('plantilla_productos/Remeras') ?>">Remeras</a></li>
+                               <li><a class="text-white dropdown-item" href="<?= base_url('plantilla_productos/Buzos') ?>">Buzos</a></li>
+                               <li><a class="text-white dropdown-item" href="<?= base_url('plantilla_productos/Pantalones') ?>">Pantalones</a></li>
                            </ul>
                        </li>
-                       <li class="nav-item"> 
-                           <a class="text-white nav-link" href="#">Niños</a>
+                       <li class="nav-item dropdown">
+                            <a class="text-white nav-link" href="<?= base_url('quienes_somos') ?>">Quienes somos</a>
                        </li>
                    </ul>
                    <div class="nav-busqueda d-flex gap-1 m-2 justify-content-end align-items-center">
                        <a class="btn" data-bs-toggle="offcanvas" href="#carritoOffcanvas" role="button" aria-controls="carritoOffcanvas">
                            <img src="<?= base_url('public/assets/img/carrito-nav.png') ?>" alt="">
                        </a>
-                       <form class="d-flex" role="search">
-                           <input class="bg-white form-control me-2" type="search" aria-label="Search">
+                       <form action="<?= base_url('busqueda/resultados') ?>" class="d-flex" role="search">
+                           <input class="bg-white form-control me-2" name="q" type="search" aria-label="Search">
                            <button class="btn btn-outline-light" type="submit">Buscar</button>
                        </form>
                    </div>

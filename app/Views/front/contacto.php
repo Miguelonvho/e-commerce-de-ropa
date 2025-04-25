@@ -17,7 +17,7 @@
 
         <div class="row">
             <!-- Información de la empresa -->
-            <div class="col-md-6 mb-4">
+            <div style="text-align: justify;" class="col-md-6 mb-4">
                 <h4 class="fw-semibold">Información de la Empresa</h4>
                 <p><strong>Titular:</strong> Nicolás Torres</p>
                 <p><strong>Razón Social:</strong> Indumentaria G&G S.R.L.</p>

@@ -42,22 +42,22 @@
         <div class="iconos-informativos">
             <img src="<?= base_url('public/assets/img/entrega.png') ?>" alt="">
             <p class="pt-3 m-0 fw-semibold">Entregas a todo el pais</p>
-            <a class="text-white" href="">Ver mas</a>
+            <a class="text-white" href="<?= base_url('comercializacion') ?>">Ver mas</a>
         </div>
         <div class="iconos-informativos">
             <img src="<?= base_url('public/assets/img/metodo-de-pago.png') ?>" alt="">
             <p class="pt-3 m-0 fw-semibold">Todos los medios de pago</p>
-            <a class="text-white" href="">Ver mas</a>
+            <a class="text-white" href="<?= base_url('comercializacion') ?>">Ver mas</a>
         </div>
         <div class="iconos-informativos">
             <img src="<?= base_url('public/assets/img/cambio-de-ropa.png') ?>" alt="">
             <p class="pt-3 m-0 fw-semibold">Aceptamos cambios</p>
-            <a class="text-white" href="">Ver mas</a>
+            <a class="text-white" href="<?= base_url('comercializacion') ?>">Ver mas</a>
         </div>
         <div class="iconos-informativos">
             <img src="<?= base_url('public/assets/img/insignia.png') ?>" alt="">
             <p class="pt-3 m-0 fw-semibold">1000 clientes satisfechos</p>
-            <a class="text-white" href="">Ver mas</a>
+            <a class="text-white" href="<?= base_url('comercializacion') ?>">Ver mas</a>
         </div>
     </section>
     <!-- Indumentaria destacada -->
