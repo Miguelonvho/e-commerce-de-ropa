@@ -8,7 +8,7 @@
 </head>
 
 <body class="bg-black text-white">
-    
+
     <hr class="border-white my-2" style="border-width: 3px;">
 
     <section class="container py-5">
@@ -54,7 +54,10 @@
     </section>
 
     <hr class="border-white my-2" style="border-width: 3px;">
-
+    <div class="text-center my-4">
+        <a href="<?= base_url('/') ?>" class="boton-blanco btn">Volver al Inicio</a>
+    </div>
 
 </body>
+
 </html>

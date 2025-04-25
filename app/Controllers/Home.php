@@ -55,7 +55,6 @@ class Home extends BaseController
         echo view('front/nav_view');
         echo view('front/panel-carrito');
         echo view('front/contacto');
-        echo view('front/boton_inicio');
         echo view('front/footer_view');
     }
     
