@@ -28,6 +28,13 @@
     cursor: pointer;
 }
 
+.img-perfil {
+    width: 200px; 
+    height: 200px; 
+    object-fit: cover; 
+    border-radius: 100%;
+}
+
 .imagen-tienda {
     object-fit: cover;
     width: 100%;
@@ -133,6 +140,11 @@
         height: 15rem;
     }
 
+    .img-perfil {
+        width: 150px; 
+        height: 150px; 
+    }
+
     .imagen-tienda {
         height: 300px;
     }
@@ -146,6 +158,17 @@
     .card a img {
         max-width: 20px;
         padding-bottom: 10px;
+    }
+
+    .img-perfil {
+        width: 100px; 
+        height: 100px; 
+    }
+
+    .container-img-perfil {
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 
     .iconos-informativos {
