@@ -13,5 +13,4 @@ $routes->get('comercializacion', 'Home::comercializacion');
 $routes->get('plantilla_perfil', 'Home::plantilla_perfil');
 $routes->get('contacto', 'Home::contacto');
 $routes->get('terminos_y_usos', 'Home::terminos_y_usos');
-$routes->get('plantilla_busqueda', 'Home::plantilla_busqueda');
 

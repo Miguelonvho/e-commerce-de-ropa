@@ -77,14 +77,4 @@ class Home extends BaseController
         echo view('front/boton_inicio');
         echo view('front/footer_view');
     }
-
-    public function plantilla_busqueda() {
-        $data['titulo'] = 'Resultados de busqueda';
-        echo view('front/head_view', $data);
-        echo view('front/nav_view');
-        echo view('front/panel-carrito');
-        echo view('front/plantilla_busqueda');
-        echo view('front/boton_inicio');
-        echo view('front/footer_view');
-    }
 }
