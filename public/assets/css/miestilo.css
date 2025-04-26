@@ -28,32 +28,6 @@
     cursor: pointer;
 }
 
-.underline-white {
-    display: inline-block;
-    position: relative;
-    color: white;
-    text-decoration: none;
-    font-size: 28px;
-}
-
-.underline-white::after {
-    content: '';
-    position: absolute;
-    width: 100%;
-    height: 2px;
-    background-color: white;
-    left: 0;
-    bottom: 0;
-    transform: scaleX(0);
-    transform-origin: bottom right;
-    transition: transform 0.3s ease;
-}
-
-.underline-white:hover::after {
-    transform: scaleX(1);
-    transform-origin: bottom left;
-}
-
 .imagen-tienda {
     object-fit: cover;
     width: 100%;
@@ -96,6 +70,15 @@
     border: 1px solid black !important;
 }
 
+.nav-img {
+    width: 22px;
+}
+
+.perfil-menu {
+    top: 100%;
+    transform: translatex(48%);
+}
+
 @media (max-width: 1200px) {
     .vision-y-mision {
         width: 50% !important;
@@ -128,6 +111,10 @@
     .imagen-ropa {
         object-fit: cover;
         height: 30rem;
+    }
+
+    .nav-img {
+        width: 20px !important;
     }
 }
 
@@ -189,5 +176,11 @@
         margin: 0;
         width: 80px;
         height: 80px;
+    }
+}
+
+@media (max-width: 350px) {
+    .tamaño-fuente-perfil {
+        font-size: 11px;
     }
 }

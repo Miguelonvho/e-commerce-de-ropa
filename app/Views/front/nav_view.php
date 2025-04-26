@@ -37,14 +37,14 @@
                            <a class="text-white nav-link" href="<?= base_url('quienes_somos') ?>">Quienes somos</a>
                        </li>
                    </ul>
-                   <div class="nav-busqueda d-flex gap-3 m-2 justify-content-end align-items-center">
+                   <div class="nav-busqueda d-flex gap-4 m-2 justify-content-end align-items-center">
                        <!-- Boton login -->
                        <div class="nav-item dropdown">
                            <a class="btn m-0 p-0" data-bs-toggle="dropdown"
                                aria-expanded="false" href="#">
-                               <img style="width: 26px !important;" src="<?= base_url('public/assets/img/usuario.png') ?>" alt="Usuario">
+                               <img class="nav-img" src="<?= base_url('public/assets/img/usuario.png') ?>" alt="Usuario">
                            </a>
-                           <ul class="dropdown-menu bg-black p-4">
+                           <ul class="dropdown-menu bg-black my-2 p-4">
                                <li class="d-flex justify-content-between align-items-center p-0">
                                    <h4>Mi cuenta</h4>
                                    <button type="button" class="btn btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Cerrar"></button>
@@ -53,10 +53,10 @@
                                <li>
                                    <div class="d-flex gap-4 align-items-center">
                                        <img style="width: 90px; height: 90px; object-fit: cover; border-radius: 100%;" src="public/assets/img/persona-1.jpg" alt="">
-                                       <div>
-                                           <p class="fw-bolder mb-0">Ivan Guillermo Gauto</p>
-                                           <p class="mb-1">IvanGauto602160@gmail.com</p>
-                                           <a href="<?= base_url('plantilla_perfil') ?>" class="text-white">Ver perfil</a>
+                                       <div class="d-flex flex-column justify-content-center">
+                                           <p class="fw-bolder mb-0 tamaño-fuente-perfil">Ivan Guillermo Gauto</p>
+                                           <p class="mb-1 tamaño-fuente-perfil">IvanGauto602160@gmail.com</p>
+                                           <a href="<?= base_url('plantilla_perfil') ?>" class="tamaño-fuente-perfil text-white">Ver perfil</a>
                                        </div>
                                    </div>
                                </li>
@@ -64,12 +64,12 @@
                                    <a style="width: auto;" href="" class="btn boton-blanco">Cerrar sesión</a>
                                </li>
                            </ul>
-
                        </div>
                        <!-- Boton carrito -->
                        <a class="btn m-0 p-0" data-bs-toggle="offcanvas" href="#carritoOffcanvas" role="button" aria-controls="carritoOffcanvas">
-                           <img src="<?= base_url('public/assets/img/carrito-nav.png') ?>" alt="">
+                           <img class="nav-img" src="<?= base_url('public/assets/img/carrito-nav.png') ?>" alt="">
                        </a>
+                       <!-- Buscador -->
                        <form action="<?= base_url('busqueda/resultados') ?>" class="d-flex" role="search">
                            <input class="bg-white form-control me-2" name="q" type="search" aria-label="Search">
                            <button class="btn btn-outline-light" type="submit">Buscar</button>
