@@ -1,11 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
 
-<head>
-    <meta charset="UTF-8">
-    <title>Contacto</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
-</head>
 <body class="bg-black text-white">
 <hr class="border-white my-4">
 <section class="container-fluid py-5 bg-black text-white">
@@ -14,14 +9,14 @@
         <hr class="border-light">
 
         <div class="row">
-            <!-- Columna 1: Información de la empresa + Mapa -->
+            <!-- Columna 1: Información de la empresa con el mapa -->
             <div class="col-md-6 mb-4">
                 <div style="text-align: justify;">
                     <h4 class="fw-semibold">Información de la Empresa</h4>
                     <p><strong>Titular:</strong> Nicolás Torres</p>
                     <p><strong>Razón Social:</strong> Indumentaria G&G S.R.L.</p>
                     <p><strong>Domicilio Legal:</strong> Mariano Moreno 500, Corrientes, Argentina</p>
-                    <p><strong>Teléfono:</strong> +54 379 400-0000</p>
+                    <p><strong>Teléfono:</strong> +54 379 230-0000</p>
                     <p><strong>Email:</strong> contacto@indumentariaG&G.com</p>
                     <p><strong>Instagram:</strong> <a href="https://www.instagram.com/G&G" class="text-info">@G&G Indumentaria</a></p>
                 </div>
@@ -38,7 +33,7 @@
                 </div>
             </div>
 
-            <!-- Columna 2: Formulario -->
+            <!-- Columna 2 Formulario -->
             <div class="col-md-6">
                 <h4 class="fw-semibold">Envianos tu consulta</h4>
                 <form>
