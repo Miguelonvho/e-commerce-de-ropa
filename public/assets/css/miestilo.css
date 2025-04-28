@@ -20,7 +20,7 @@
 
 .card {
     width: 280px;
-    transition: transform 0.20s ease-out;
+    transition: transform 0.20s ease-out !important;
 }
 
 .card:hover {
@@ -29,9 +29,9 @@
 }
 
 .img-perfil {
-    width: 200px; 
-    height: 200px; 
-    object-fit: cover; 
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
     border-radius: 100%;
 }
 
@@ -141,8 +141,8 @@
     }
 
     .img-perfil {
-        width: 150px; 
-        height: 150px; 
+        width: 150px;
+        height: 150px;
     }
 
     .imagen-tienda {
@@ -161,8 +161,8 @@
     }
 
     .img-perfil {
-        width: 100px; 
-        height: 100px; 
+        width: 100px;
+        height: 100px;
     }
 
     .container-img-perfil {

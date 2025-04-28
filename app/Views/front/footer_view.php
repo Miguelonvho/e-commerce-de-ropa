@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <body>
     <!-- Footer -->
     <footer class="bg-black pb-5" data-bs-theme="dark">
@@ -19,4 +20,5 @@
         </div>
     </footer>
 </body>
+
 </html>
