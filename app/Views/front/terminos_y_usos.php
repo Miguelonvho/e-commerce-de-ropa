@@ -1,3 +1,6 @@
+<!DOCTYPE html>
+<html lang="es">
+
 <div class="container-fluid px-3 px-md-5 py-5">
     <h1 class="mb-5 text-center">Términos y Usos</h1>
 
@@ -57,3 +60,4 @@
 
     </div>
 </div>
+</html>
