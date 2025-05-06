@@ -1,6 +1,3 @@
-<!DOCTYPE html>
-<html lang="es">
-
 <body>
     <h1 class="m-4 fw-light text-center">Mi informacion</h1>
     <div class="d-flex justify-content-center">
@@ -29,5 +26,3 @@
         </div>
     </div>
 </body>
-
-</html>

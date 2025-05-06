@@ -1,10 +1,7 @@
-<!DOCTYPE html>
-<html lang="es">
-
 <body>
     <!-- Carrousel -->
     <section class="container-fluid p-0">
-        <div id="carouselExampleCaptions" class="carousel carousel-dark slide"  data-bs-touch="true" data-bs-ride="carousel" data-bs-interval="2000">
+        <div id="carouselExampleCaptions" class="carousel carousel-dark slide" data-bs-touch="true" data-bs-ride="carousel" data-bs-interval="2000">
             <div class="carousel-indicators">
                 <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
                     aria-current="true" aria-label="Slide 1"></button>
@@ -132,9 +129,7 @@
                         </div>
                     </div>
                 </div>
-            </div> 
+            </div>
         </div>
     </section>
 </body>
-
-</html>

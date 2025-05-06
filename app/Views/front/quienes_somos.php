@@ -1,6 +1,3 @@
-<!DOCTYPE html>
-<html lang="es">
-
 <body>
     <!-- Trayectoria -->
     <section class="container-fluid">
@@ -86,5 +83,3 @@
         </p>
     </section>
 </body>
-
-</html>
