@@ -50,7 +50,7 @@
                             <hr>
                             <li>
                                 <div class="d-flex gap-4 align-items-center">
-                                    <img style="width: 90px; height: 90px; object-fit: cover; border-radius: 100%;" src="public/assets/img/persona-1.jpg" alt="">
+                                    <img style="width: 90px; height: 90px; object-fit: cover; border-radius: 100%;" src="<?= base_url('public/assets/img/sin-usuario.png') ?>" alt="">
                                     <div class="d-flex flex-column justify-content-center">
                                         <p class="fw-bolder mb-0 tamaño-fuente-perfil">Ivan Guillermo Gauto</p>
                                         <p class="mb-1 tamaño-fuente-perfil">IvanGauto602160@gmail.com</p>
