@@ -18,7 +18,7 @@
                     <img src="<?= base_url('public/assets/img/remeras.png') ?>" class="d-block w-100" alt="...">
                 </div>
                 <div class="carousel-item">
-                    <img src="<?= base_url('public/assets/img/zapatillas.png') ?>" class="d-block w-100" alt="...">
+                    <img src="<?= base_url('public/assets/img/jeans.png') ?>" class="d-block w-100" alt="...">
                 </div>
             </div>
             <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
