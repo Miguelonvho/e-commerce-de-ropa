@@ -1,8 +1,4 @@
-<!DOCTYPE html>
-<html lang="es">
-
 <body>
-    
     <!-- Comercialización -->
     <section class="container-fluid">
         <div class="row">
@@ -17,7 +13,6 @@
             </div>
         </div>
     </section>
-
     <!-- Tipos de entrega -->
     <section style="text-align: justify;" class="container p-5">
         <div class="row justify-content-center">
@@ -40,7 +35,6 @@
             </div>
         </div>
     </section>
-
     <!-- Información adicional -->
     <section style="text-align: justify;" class="container-fluid p-5 bg-light text-black">
         <h2 class="fw-light text-center">Información útil</h2>
@@ -64,5 +58,3 @@
         </div>
     </section>
 </body>
-
-</html>

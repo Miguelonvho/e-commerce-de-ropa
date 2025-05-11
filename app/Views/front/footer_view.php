@@ -1,7 +1,3 @@
-<!DOCTYPE html>
-<html lang="es">
-
-<body>
     <!-- Footer -->
     <footer class="bg-black pb-5" data-bs-theme="dark">
         <div class="d-flex flex-wrap justify-content-center m-0 p-5 gap-5">
@@ -19,6 +15,4 @@
             &copy; <?= date('Y') ?> G&G Indumentaria. Todos los derechos reservados.
         </div>
     </footer>
-</body>
-
 </html>

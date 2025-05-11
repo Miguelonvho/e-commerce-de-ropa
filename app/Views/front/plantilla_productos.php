@@ -1,9 +1,6 @@
-<!DOCTYPE html>
-<html lang="es">
-
 <body>
     <section class="container-fluid text-black my-5">
-        <h1 class="fw-light"><?= $genero ?></h1>
+        <h1 class="fw-light"><?= $titulo ?></h1>
         <hr>
         <div class="d-flex justify-content-center flex-wrap gap-4 p-0 m-0">
             <div class="card bg-black text-white" style="max-width: 400px">
@@ -145,5 +142,3 @@
         </div>
     </section>
 </body>
-
-</html>
