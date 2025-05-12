@@ -12,13 +12,13 @@
             </div>
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img src="<?= base_url('public/assets/img/oferta.png') ?>" class="d-block w-100" alt="...">
+                    <img src="<?= base_url('public/assets/img/Carrusel/oferta.png') ?>" class="d-block w-100" alt="...">
                 </div>
                 <div class="carousel-item">
-                    <img src="<?= base_url('public/assets/img/remeras.png') ?>" class="d-block w-100" alt="...">
+                    <img src="<?= base_url('public/assets/img/Carrusel/remeras.png') ?>" class="d-block w-100" alt="...">
                 </div>
                 <div class="carousel-item">
-                    <img src="<?= base_url('public/assets/img/jeans.png') ?>" class="d-block w-100" alt="...">
+                    <img src="<?= base_url('public/assets/img/Carrusel/jeans.png') ?>" class="d-block w-100" alt="...">
                 </div>
             </div>
             <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
@@ -37,22 +37,22 @@
     <!-- Seccion de iconos informativos -->
     <section class="d-flex align-items-center justify-content-center bg-black text-white flex-wrap text-center gap-5 p-5">
         <div class="iconos-informativos">
-            <img src="<?= base_url('public/assets/img/entrega.png') ?>" alt="">
+            <img src="<?= base_url('public/assets/img/Iconos/entrega.png') ?>" alt="">
             <p class="pt-3 m-0 fw-semibold">Entregas a todo el pais</p>
             <a class="text-white" href="<?= base_url('comercializacion') ?>">Ver mas</a>
         </div>
         <div class="iconos-informativos">
-            <img src="<?= base_url('public/assets/img/metodo-de-pago.png') ?>" alt="">
+            <img src="<?= base_url('public/assets/img/Iconos/metodo-de-pago.png') ?>" alt="">
             <p class="pt-3 m-0 fw-semibold">Todos los medios de pago</p>
             <a class="text-white" href="<?= base_url('comercializacion') ?>">Ver mas</a>
         </div>
         <div class="iconos-informativos">
-            <img src="<?= base_url('public/assets/img/cambio-de-ropa.png') ?>" alt="">
+            <img src="<?= base_url('public/assets/img/Iconos/cambio-de-ropa.png') ?>" alt="">
             <p class="pt-3 m-0 fw-semibold">Aceptamos cambios</p>
             <a class="text-white" href="<?= base_url('comercializacion') ?>">Ver mas</a>
         </div>
         <div class="iconos-informativos">
-            <img src="<?= base_url('public/assets/img/insignia.png') ?>" alt="">
+            <img src="<?= base_url('public/assets/img/Iconos/insignia.png') ?>" alt="">
             <p class="pt-3 m-0 fw-semibold">Calidad garantizada</p>
             <a class="text-white" href="<?= base_url('comercializacion') ?>">Ver mas</a>
         </div>
@@ -73,7 +73,7 @@
                         <div class="d-flex gap-2 justify-content-end">
                             <a href="#" class="btn boton-blanco text-center">Comprar</a>
                             <a href="#" class="btn btn-carrito btn-outline-secondary">
-                                <img src="<?= base_url('public/assets/img/carrito.png') ?>" alt="">
+                                <img src="<?= base_url('public/assets/img/Iconos/carrito.png') ?>" alt="">
                             </a>
                         </div>
                     </div>
@@ -90,7 +90,7 @@
                         <div class="d-flex gap-2 justify-content-end">
                             <a href="#" class="btn boton-blanco">Comprar</a>
                             <a href="#" class="btn btn-carrito btn-outline-secondary">
-                                <img src="<?= base_url('public/assets/img/carrito.png') ?>" alt="">
+                                <img src="<?= base_url('public/assets/img/Iconos/carrito.png') ?>" alt="">
                             </a>
                         </div>
                     </div>
@@ -107,7 +107,7 @@
                         <div class="d-flex gap-2 justify-content-end">
                             <a href="#" class="btn boton-blanco">Comprar</a>
                             <a href="#" class="btn btn-carrito btn-outline-secondary">
-                                <img src="<?= base_url('public/assets/img/carrito.png') ?>" alt="">
+                                <img src="<?= base_url('public/assets/img/Iconos/carrito.png') ?>" alt="">
                             </a>
                         </div>
                     </div>
@@ -124,7 +124,7 @@
                         <div class="d-flex gap-2 justify-content-end">
                             <a href="#" class="btn boton-blanco">Comprar</a>
                             <a href="#" class="btn btn-carrito btn-outline-secondary">
-                                <img src="<?= base_url('public/assets/img/carrito.png') ?>" alt="">
+                                <img src="<?= base_url('public/assets/img/Iconos/carrito.png') ?>" alt="">
                             </a>
                         </div>
                     </div>

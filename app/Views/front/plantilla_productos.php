@@ -14,7 +14,7 @@
                         <div class="d-flex gap-2 justify-content-end">
                             <a href="#" class="btn boton-blanco">Comprar</a>
                             <a href="#" class="btn btn-carrito btn-outline-secondary">
-                                <img src="<?= base_url('public/assets/img/carrito.png') ?>" alt="">
+                                <img src="<?= base_url('public/assets/img/Iconos/carrito.png') ?>" alt="">
                             </a>
                         </div>
                     </div>

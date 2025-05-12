@@ -2,7 +2,7 @@
 <section class="container-fluid p-0">
     <nav class="navbar bg-black navbar-expand-lg border-body" data-bs-theme="dark">
         <div class="container-fluid">
-            <a href="<?= base_url('plantilla_principal') ?>"><img style="width: 100px" src="<?= base_url('public/assets/img/logo.png') ?>" alt="responsive"></a>
+            <a href="<?= base_url('plantilla_principal') ?>"><img style="width: 100px" src="<?= base_url('public/assets/img/Iconos/logo.png') ?>" alt="responsive"></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll"
                 aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -40,7 +40,7 @@
                     <div class="nav-item dropdown">
                         <a class="btn m-0 p-0" data-bs-toggle="dropdown"
                             aria-expanded="false" href="#">
-                            <img class="nav-img" src="<?= base_url('public/assets/img/usuario.png') ?>" alt="Usuario">
+                            <img class="nav-img" src="<?= base_url('public/assets/img/Iconos/usuario.png') ?>" alt="Usuario">
                         </a>
                         <ul class="dropdown-menu bg-black my-2 p-4">
                             <li class="d-flex justify-content-between align-items-center p-0">
@@ -50,7 +50,7 @@
                             <hr>
                             <li>
                                 <div class="d-flex gap-4 align-items-center">
-                                    <img style="width: 90px; height: 90px; object-fit: cover; border-radius: 100%;" src="<?= base_url('public/assets/img/sin-usuario.png') ?>" alt="">
+                                    <img style="width: 90px; height: 90px; object-fit: cover; border-radius: 100%;" src="<?= base_url('public/assets/img/Iconos/sin-usuario.png') ?>" alt="">
                                     <div class="d-flex flex-column justify-content-center">
                                         <p class="fw-bolder mb-0 tamaño-fuente-perfil">Ivan Guillermo Gauto</p>
                                         <p class="mb-1 tamaño-fuente-perfil">IvanGauto602160@gmail.com</p>
@@ -65,7 +65,7 @@
                     </div>
                     <!-- Boton carrito -->
                     <a class="btn m-0 p-0" data-bs-toggle="offcanvas" href="#carritoOffcanvas" role="button" aria-controls="carritoOffcanvas">
-                        <img class="nav-img" src="<?= base_url('public/assets/img/carrito-nav.png') ?>" alt="">
+                        <img class="nav-img" src="<?= base_url('public/assets/img/Iconos/carrito-nav.png') ?>" alt="">
                     </a>
                     <!-- Buscador -->
                     <form action="<?= base_url('busqueda/resultados') ?>" class="d-flex" role="search">

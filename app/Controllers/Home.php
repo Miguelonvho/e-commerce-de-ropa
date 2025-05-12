@@ -34,7 +34,7 @@ class Home extends BaseController
 
         $productosPorCategoria = [
             'Buzos' => [
-                ['nombre' => 'Buzo con estampado mujer', 'precio' => 14500, 'imagen' => 'buzos/Buzo-con-estampado-mujer.jpg'],
+                ['nombre' => 'Buzo con estampado mujer', 'precio' => 14500, 'imagen' => 'buzos/mujeres/Buzo-con-estampado-mujer.jpg'],
                 ['nombre' => 'Buzo Vans mujer', 'precio' => 13900, 'imagen' => 'buzos/Buzo-Vans-mujer.jpg'],
                 ['nombre' => 'Buzo Rusty Bondi Half mujer', 'precio' => 13900, 'imagen' => 'buzos/Buzo-Rusty-Bondi-Half-mujer.jpg'],
                 ['nombre' => 'Buzo Levis mujer', 'precio' => 13900, 'imagen' => "buzos/Buzo-Levi's-mujer.jpg"],
