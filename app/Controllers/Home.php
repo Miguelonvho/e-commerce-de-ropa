@@ -30,7 +30,6 @@ class Home extends BaseController
             $categoria = "Niños";
         }
         $data['titulo'] = $categoria;
-        $data['genero'] = $categoria;
         echo view('front/head_view', $data);
         echo view('front/nav_view');
         echo view('front/panel-carrito');
