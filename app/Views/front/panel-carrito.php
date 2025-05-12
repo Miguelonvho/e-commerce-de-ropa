@@ -1,6 +1,3 @@
-<!DOCTYPE html>
-<html lang="es">
-    
 <!-- Panel lateral del carrito -->
 <section class="offcanvas bg-black text-white offcanvas-end" tabindex="-1" id="carritoOffcanvas" aria-labelledby="carritoOffcanvasLabel">
     <div class="offcanvas-header">
@@ -10,65 +7,65 @@
     <div class="offcanvas-body">
         <div class="mb-3 border-bottom pb-2">
             <div class="d-flex align-items-center mb-3">
-                <img src="<?= base_url('public/assets/img/ropa-hombre-1.jpg') ?>" alt="Producto" class="img-fluid me-2">
+                <img src="<?= base_url('public/assets/img/Buzos/Hombres/Buzo-The-North-Face-hombre.jpg') ?>" alt="Producto" class="img-fluid me-2">
                 <div>
-                    <p class="mb-0">Buzo Nike</p>
+                    <p class="mb-0">Buzo</p>
                     <small>1 x $50.500</small>
                 </div>
                 <button class="btn btn-sm btn-danger ms-auto">Eliminar</button>
             </div>
             <div class="d-flex align-items-center mb-3">
-                <img src="<?= base_url('public/assets/img/ropa-hombre-2.jpg') ?>" alt="Producto" class="img-fluid me-2">
+                <img src="<?= base_url('public/assets/img/Buzos/Hombres/Buzo-The-North-Face-hombre.jpg') ?>" alt="Producto" class="img-fluid me-2">
                 <div>
-                    <p class="mb-0">Jeans Levi's</p>
+                    <p class="mb-0">Buzo</p>
                     <small>1 x $10.000</small>
                 </div>
                 <button class="btn btn-sm btn-danger ms-auto">Eliminar</button>
             </div>
             <div class="d-flex align-items-center mb-3">
-                <img src="<?= base_url('public/assets/img/ropa-hombre-3.jpg') ?>" alt="Producto" class="img-fluid me-2">
+                <img src="<?= base_url('public/assets/img/Buzos/Hombres/Buzo-The-North-Face-hombre.jpg') ?>" alt="Producto" class="img-fluid me-2">
                 <div>
-                    <p class="mb-0">Jeans Levi's</p>
+                    <p class="mb-0">Buzo</p>
                     <small>1 x $10.000</small>
                 </div>
                 <button class="btn btn-sm btn-danger ms-auto">Eliminar</button>
             </div>
             <div class="d-flex align-items-center mb-3">
-                <img src="<?= base_url('public/assets/img/ropa-hombre-4.jpg') ?>" alt="Producto" class="img-fluid me-2">
+                <img src="<?= base_url('public/assets/img/Buzos/Hombres/Buzo-The-North-Face-hombre.jpg') ?>" alt="Producto" class="img-fluid me-2">
                 <div>
-                    <p class="mb-0">Jeans Levi's</p>
+                    <p class="mb-0">Buzo</p>
                     <small>1 x $10.000</small>
                 </div>
                 <button class="btn btn-sm btn-danger ms-auto">Eliminar</button>
             </div>
             <div class="d-flex align-items-center mb-3">
-                <img src="<?= base_url('public/assets/img/ropa-mujer-1.jpg') ?>" alt="Producto" class="img-fluid me-2">
+                <img src="<?= base_url('public/assets/img/Buzos/Hombres/Buzo-The-North-Face-hombre.jpg') ?>" alt="Producto" class="img-fluid me-2">
                 <div>
-                    <p class="mb-0">Jeans Levi's</p>
+                    <p class="mb-0">Buzo</p>
                     <small>1 x $10.000</small>
                 </div>
                 <button class="btn btn-sm btn-danger ms-auto">Eliminar</button>
             </div>
             <div class="d-flex align-items-center mb-3">
-                <img src="<?= base_url('public/assets/img/ropa-mujer-1.jpg') ?>" alt="Producto" class="img-fluid me-2">
+                <img src="<?= base_url('public/assets/img/Buzos/Hombres/Buzo-The-North-Face-hombre.jpg') ?>" alt="Producto" class="img-fluid me-2">
                 <div>
-                    <p class="mb-0">Jeans Levi's</p>
+                    <p class="mb-0">Buzo</p>
                     <small>1 x $10.000</small>
                 </div>
                 <button class="btn btn-sm btn-danger ms-auto">Eliminar</button>
             </div>
             <div class="d-flex align-items-center mb-3">
-                <img src="<?= base_url('public/assets/img/ropa-mujer-3.jpg') ?>" alt="Producto" class="img-fluid me-2">
+                <img src="<?= base_url('public/assets/img/Buzos/Hombres/Buzo-The-North-Face-hombre.jpg') ?>" alt="Producto" class="img-fluid me-2">
                 <div>
-                    <p class="mb-0">Jeans Levi's</p>
+                    <p class="mb-0">Buzo</p>
                     <small>1 x $10.000</small>
                 </div>
                 <button class="btn btn-sm btn-danger ms-auto">Eliminar</button>
             </div>
             <div class="d-flex align-items-center mb-3">
-                <img src="<?= base_url('public/assets/img/ropa-mujer-4.jpg') ?>" alt="Producto" class="img-fluid me-2">
+                <img src="<?= base_url('public/assets/img/Buzos/Hombres/Buzo-The-North-Face-hombre.jpg') ?>" alt="Producto" class="img-fluid me-2">
                 <div>
-                    <p class="mb-0">Jeans Levi's</p>
+                    <p class="mb-0">Buzo</p>
                     <small>1 x $10.000</small>
                 </div>
                 <button class="btn btn-sm btn-danger ms-auto">Eliminar</button>
@@ -83,5 +80,3 @@
     </div>
     </div>
 </section>
-
-</html>

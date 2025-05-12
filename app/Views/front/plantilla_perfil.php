@@ -1,12 +1,9 @@
-<!DOCTYPE html>
-<html lang="es">
-
 <body>
     <h1 class="m-4 fw-light text-center">Mi informacion</h1>
     <div class="d-flex justify-content-center">
         <div class="mx-5 w-75 rounded shadow-lg bg-black text-white p-5">
             <div class="container-img-perfil mb-4">
-                <img class="img-perfil" src="public/assets/img/persona-1.jpg" alt="">
+                <img class="img-perfil" src="public/assets/img/Iconos/sin-usuario.png" alt="">
             </div>
             <hr>
             <p>Nombre completo:
@@ -29,5 +26,3 @@
         </div>
     </div>
 </body>
-
-</html>

@@ -1,13 +1,9 @@
-<!DOCTYPE html>
-<html lang="es">
-
 <body>
-    
     <!-- Comercialización -->
     <section class="container-fluid">
         <div class="row">
             <div class="col-md-6 col-12 p-0">
-                <img class="imagen-tienda" src="<?= base_url('public/assets/img/foto-repartidor.png') ?>" alt="Entregas G&G">
+                <img class="imagen-tienda" src="<?= base_url('public/assets/img/Staff/foto-repartidor.png') ?>" alt="Entregas G&G">
             </div>
             <div style="text-align: justify;" class="col-md-6 col-12 mt-5 p-5">
                 <h1 class="fw-light">Comercialización</h1>
@@ -17,7 +13,6 @@
             </div>
         </div>
     </section>
-
     <!-- Tipos de entrega -->
     <section style="text-align: justify;" class="container p-5">
         <div class="row justify-content-center">
@@ -40,29 +35,26 @@
             </div>
         </div>
     </section>
-
     <!-- Información adicional -->
     <section style="text-align: justify;" class="container-fluid p-5 bg-light text-black">
         <h2 class="fw-light text-center">Información útil</h2>
         <hr>
         <div class="row justify-content-center text-center">
             <div class="col-12 col-md-4 p-3">
-                <img src="<?= base_url('public/assets/img/cambio-de-ropa-negro.png') ?>" alt="Política de cambios" class="mb-3" width="80">
+                <img src="<?= base_url('public/assets/img/Iconos/cambio-de-ropa-negro.png') ?>" alt="Política de cambios" class="mb-3" width="80">
                 <h5>Política de cambios</h5>
                 <p>Tenés hasta 15 días para cambiar tus prendas. Presentá el ticket y asegurate de que estén en perfecto estado.</p>
             </div>
             <div class="col-12 col-md-4 p-3">
-                <img src="<?= base_url('public/assets/img/insignia-negro.png') ?>" alt="Calidad garantizada" class="mb-3" width="80">
+                <img src="<?= base_url('public/assets/img/Iconos/insignia-negro.png') ?>" alt="Calidad garantizada" class="mb-3" width="80">
                 <h5>Calidad garantizada</h5>
                 <p>Todos nuestros productos son revisados cuidadosamente para garantizar que recibas solo lo mejor.</p>
             </div>
             <div class="col-12 col-md-4 p-3">
-                <img src="<?= base_url('public/assets/img/metodo-de-pago-negro.png') ?>" alt="Pagos seguros" class="mb-3" width="80">
+                <img src="<?= base_url('public/assets/img/iconos/metodo-de-pago-negro.png') ?>" alt="Pagos seguros" class="mb-3" width="80">
                 <h5>Pagos seguros</h5>
                 <p>Trabajamos con plataformas confiables para que compres con tranquilidad y sin riesgos.</p>
             </div>
         </div>
     </section>
 </body>
-
-</html>
