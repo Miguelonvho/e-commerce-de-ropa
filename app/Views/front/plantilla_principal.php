@@ -63,7 +63,7 @@
         <hr>
         <div class="d-flex justify-content-center flex-wrap gap-4 pt-5 m-0">
             <div class="card bg-black text-white" style="max-width: 400px">
-                <img class="imagen-ropa card-img-top" src="<?= base_url('public/assets/img/buzos/hombres/Buzo-nike-hombre.jpg') ?>" alt="...">
+                <img class="imagen-ropa card-img-top" src="<?= base_url('public/assets/img/Buzos/hombres/Buzo-nike-hombre.jpg') ?>" alt="...">
                 <div class="card-body d-flex flex-column justify-content-between">
                     <div class="mb-3">
                         <h4>Buzo nike hombre</h4>
@@ -97,7 +97,7 @@
                 </div>
             </div>
             <div class="card bg-black text-white" style="max-width: 300px">
-                <img class="imagen-ropa card-img-top" src="<?= base_url('public/assets/img/buzos/Mujeres/Buzo-con-estampado-mujer-2.jpg') ?>" alt="...">
+                <img class="imagen-ropa card-img-top" src="<?= base_url('public/assets/img/Buzos/Mujeres/Buzo-con-estampado-mujer-2.jpg') ?>" alt="...">
                 <div class="card-body d-flex flex-column justify-content-between">
                     <div class="mb-3">
                         <h4>Buzo con estampado mujer</h4>
@@ -114,7 +114,7 @@
                 </div>
             </div>
             <div class="card bg-black text-white" style="max-width: 300px">
-                <img class="imagen-ropa card-img-top" src="<?= base_url("public/assets/img/buzos/Mujeres/Buzo-Levi's-mujer.jpg") ?>" alt="...">
+                <img class="imagen-ropa card-img-top" src="<?= base_url("public/assets/img/Buzos/Mujeres/Buzo-Levi's-mujer.jpg") ?>" alt="...">
                 <div class="card-body d-flex flex-column justify-content-between">
                     <div class="mb-3">
                         <h4>Buzo Levi's mujer</h4>
