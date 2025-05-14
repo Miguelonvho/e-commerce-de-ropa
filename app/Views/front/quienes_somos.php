@@ -3,7 +3,7 @@
     <section class="container-fluid">
         <div class="row">
             <div class="col-md-6 col-12 p-0">
-                <img class="imagen-tienda" src="<?= base_url('public/assets/img/tienda-por-dentro.png') ?>" alt="">
+                <img class="imagen-tienda" src="<?= base_url('public/assets/img/Staff/tienda-por-dentro.png') ?>" alt="">
             </div>
             <div style="text-align: justify;" class="col-md-6 col-12 mt-5 p-5">
                 <h1 class="fw-light">Sobre nosotros</h1>
@@ -26,17 +26,17 @@
         <div class="perfiles-empleados d-flex justify-content-center gap-5 p-5">
             <div class="d-flex">
                 <div class="m-3 align-items-center">
-                    <img class="empleados-fotos mt-4 shadow-lg" src="<?= base_url('public/assets/img/persona-1.jpg') ?>">
+                    <img class="empleados-fotos mt-4 shadow-lg" src="<?= base_url('public/assets/img/Staff/persona-1.jpg') ?>">
                     <p class="fw-bold mt-4">Nicolás Torres (Fundador y manager)</p>
                     <p class="fst-italic">"Si se ve bien y se siente mejor, es el look perfecto."</p>
                 </div>
                 <div class="m-3 align-items-center">
-                    <img class="empleados-fotos mt-4 shadow-lg" src="<?= base_url('public/assets/img/persona-2.jpg') ?>" alt="">
+                    <img class="empleados-fotos mt-4 shadow-lg" src="<?= base_url('public/assets/img/Staff/persona-2.jpg') ?>" alt="">
                     <p class="fw-bold mt-4">Lucía Fernández (Vendedora)</p>
                     <p class="fst-italic">"Apasionada por las combinaciones vintage."</p>
                 </div>
                 <div class="m-3 align-items-center">
-                    <img class="empleados-fotos mt-4 shadow-lg" src="<?= base_url('public/assets/img/persona-3.jpg') ?>" alt="">
+                    <img class="empleados-fotos mt-4 shadow-lg" src="<?= base_url('public/assets/img/Staff/persona-3.jpg') ?>" alt="">
                     <p class="fw-bold mt-4">Francisco Lopez (Vendedor)</p>
                     <p class="fst-italic">"Fan del estilo urbano con toques clásicos."</p>
                 </div>

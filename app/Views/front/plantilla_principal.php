@@ -12,13 +12,13 @@
             </div>
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img src="<?= base_url('public/assets/img/oferta.png') ?>" class="d-block w-100" alt="...">
+                    <img src="<?= base_url('public/assets/img/Carrusel/oferta.png') ?>" class="d-block w-100" alt="...">
                 </div>
                 <div class="carousel-item">
-                    <img src="<?= base_url('public/assets/img/remeras.png') ?>" class="d-block w-100" alt="...">
+                    <img src="<?= base_url('public/assets/img/Carrusel/remeras.png') ?>" class="d-block w-100" alt="...">
                 </div>
                 <div class="carousel-item">
-                    <img src="<?= base_url('public/assets/img/zapatillas.png') ?>" class="d-block w-100" alt="...">
+                    <img src="<?= base_url('public/assets/img/Carrusel/jeans.png') ?>" class="d-block w-100" alt="...">
                 </div>
             </div>
             <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
@@ -37,22 +37,22 @@
     <!-- Seccion de iconos informativos -->
     <section class="d-flex align-items-center justify-content-center bg-black text-white flex-wrap text-center gap-5 p-5">
         <div class="iconos-informativos">
-            <img src="<?= base_url('public/assets/img/entrega.png') ?>" alt="">
+            <img src="<?= base_url('public/assets/img/Iconos/entrega.png') ?>" alt="">
             <p class="pt-3 m-0 fw-semibold">Entregas a todo el pais</p>
             <a class="text-white" href="<?= base_url('comercializacion') ?>">Ver mas</a>
         </div>
         <div class="iconos-informativos">
-            <img src="<?= base_url('public/assets/img/metodo-de-pago.png') ?>" alt="">
+            <img src="<?= base_url('public/assets/img/Iconos/metodo-de-pago.png') ?>" alt="">
             <p class="pt-3 m-0 fw-semibold">Todos los medios de pago</p>
             <a class="text-white" href="<?= base_url('comercializacion') ?>">Ver mas</a>
         </div>
         <div class="iconos-informativos">
-            <img src="<?= base_url('public/assets/img/cambio-de-ropa.png') ?>" alt="">
+            <img src="<?= base_url('public/assets/img/Iconos/cambio-de-ropa.png') ?>" alt="">
             <p class="pt-3 m-0 fw-semibold">Aceptamos cambios</p>
             <a class="text-white" href="<?= base_url('comercializacion') ?>">Ver mas</a>
         </div>
         <div class="iconos-informativos">
-            <img src="<?= base_url('public/assets/img/insignia.png') ?>" alt="">
+            <img src="<?= base_url('public/assets/img/Iconos/insignia.png') ?>" alt="">
             <p class="pt-3 m-0 fw-semibold">Calidad garantizada</p>
             <a class="text-white" href="<?= base_url('comercializacion') ?>">Ver mas</a>
         </div>
@@ -63,68 +63,68 @@
         <hr>
         <div class="d-flex justify-content-center flex-wrap gap-4 pt-5 m-0">
             <div class="card bg-black text-white" style="max-width: 400px">
-                <img class="imagen-ropa card-img-top" src="<?= base_url('public/assets/img/ropa-hombre-1.jpg') ?>" alt="...">
+                <img class="imagen-ropa card-img-top" src="<?= base_url('public/assets/img/Buzos/hombres/Buzo-nike-hombre.jpg') ?>" alt="...">
                 <div class="card-body d-flex flex-column justify-content-between">
                     <div class="mb-3">
-                        <h4>Remera New Balance</h4>
+                        <h4>Buzo nike hombre</h4>
                     </div>
                     <div class="text-center">
                         <h1 class="card-title">$xxxxxx</h1>
                         <div class="d-flex gap-2 justify-content-end">
                             <a href="#" class="btn boton-blanco text-center">Comprar</a>
                             <a href="#" class="btn btn-carrito btn-outline-secondary">
-                                <img src="<?= base_url('public/assets/img/carrito.png') ?>" alt="">
+                                <img src="<?= base_url('public/assets/img/Iconos/carrito.png') ?>" alt="">
                             </a>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="card bg-black text-white">
-                <img class="imagen-ropa card-img-top" src="<?= base_url('public/assets/img/ropa-mujer-1.jpg') ?>" alt="...">
+                <img class="imagen-ropa card-img-top" src="<?= base_url('public/assets/img/remeras/mujeres/Remera-escote-v-mujer.jpg') ?>" alt="...">
                 <div class="card-body d-flex flex-column justify-content-between">
                     <div class="mb-3">
-                        <h4>Blusa off shoulders</h4>
+                        <h4>Remera con escote V mujer</h4>
                     </div>
                     <div class="text-center">
                         <h1 class="card-title">$xxxxxx</h1>
                         <div class="d-flex gap-2 justify-content-end">
                             <a href="#" class="btn boton-blanco">Comprar</a>
                             <a href="#" class="btn btn-carrito btn-outline-secondary">
-                                <img src="<?= base_url('public/assets/img/carrito.png') ?>" alt="">
+                                <img src="<?= base_url('public/assets/img/Iconos/carrito.png') ?>" alt="">
                             </a>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="card bg-black text-white" style="max-width: 300px">
-                <img class="imagen-ropa card-img-top" src="<?= base_url('public/assets/img/ropa-hombre-2.jpg') ?>" alt="...">
+                <img class="imagen-ropa card-img-top" src="<?= base_url('public/assets/img/Buzos/Mujeres/Buzo-con-estampado-mujer-2.jpg') ?>" alt="...">
                 <div class="card-body d-flex flex-column justify-content-between">
                     <div class="mb-3">
-                        <h4>Remera lisa</h4>
+                        <h4>Buzo con estampado mujer</h4>
                     </div>
                     <div class="text-center">
                         <h1 class="card-title">$xxxxxx</h1>
                         <div class="d-flex gap-2 justify-content-end">
                             <a href="#" class="btn boton-blanco">Comprar</a>
                             <a href="#" class="btn btn-carrito btn-outline-secondary">
-                                <img src="<?= base_url('public/assets/img/carrito.png') ?>" alt="">
+                                <img src="<?= base_url('public/assets/img/Iconos/carrito.png') ?>" alt="">
                             </a>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="card bg-black text-white" style="max-width: 300px">
-                <img class="imagen-ropa card-img-top" src="<?= base_url('public/assets/img/ropa-mujer-2.jpg') ?>" alt="...">
+                <img class="imagen-ropa card-img-top" src="<?= base_url("public/assets/img/Buzos/Mujeres/Buzo-Levi's-mujer.jpg") ?>" alt="...">
                 <div class="card-body d-flex flex-column justify-content-between">
                     <div class="mb-3">
-                        <h4>Parca gabardina blanca</h4>
+                        <h4>Buzo Levi's mujer</h4>
                     </div>
                     <div class="text-center">
                         <h1 class="card-title">$xxxxxx</h1>
                         <div class="d-flex gap-2 justify-content-end">
                             <a href="#" class="btn boton-blanco">Comprar</a>
                             <a href="#" class="btn btn-carrito btn-outline-secondary">
-                                <img src="<?= base_url('public/assets/img/carrito.png') ?>" alt="">
+                                <img src="<?= base_url('public/assets/img/Iconos/carrito.png') ?>" alt="">
                             </a>
                         </div>
                     </div>
