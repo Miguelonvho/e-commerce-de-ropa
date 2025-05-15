@@ -24,7 +24,7 @@
                                     alt="">
                             </div>
                             <div class="d-flex align-items-center">
-                                <a href="<?= base_url('plantilla_detalles_productos') ?>">
+                                <a href="<?= base_url('detalles_producto') ?>">
                                     <img style="width: 10vw;"
                                         src="<?= base_url('public/assets/img/Remeras/Hombres/Remera-rider-hombre.jpg') ?>"
                                         alt="Promo 1">
