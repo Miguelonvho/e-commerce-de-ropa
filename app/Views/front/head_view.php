@@ -7,5 +7,6 @@
     <link rel="stylesheet" href="<?= base_url('public/assets/css/bootstrap.min.css') ?>">
     <link rel="stylesheet" href="<?= base_url('public/assets/css/miestilo.css') ?>">
     <script src="<?= base_url('public/assets/js/bootstrap.bundle.min.js') ?>"></script>
+    <script src="<?= base_url('public/assets/js/script.js') ?>"></script>
     <title><?= $titulo ?></title>
 </head>

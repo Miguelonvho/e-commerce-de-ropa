@@ -18,6 +18,10 @@
     height: 90px;
 }
 
+.notificacion {
+    z-index: 1100;
+}
+
 .card {
     width: 280px;
     transition: transform 0.20s ease-out !important;
