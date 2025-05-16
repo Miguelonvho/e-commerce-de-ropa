@@ -15,6 +15,15 @@ class Home extends BaseController
         echo view('front/footer_view');
     }
 
+    public function detalles_producto() {
+        $data['titulo'] = 'Detalles';
+        echo view('front/head_view', $data);
+        echo view('front/nav_view');
+        echo view('front/detalles_producto');
+        echo view('front/boton_inicio');
+        echo view('front/footer_view');
+    }
+
     public function quienes_somos()
     {
         $data['titulo'] = 'Quienes somos';
