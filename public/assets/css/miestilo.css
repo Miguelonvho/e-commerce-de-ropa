@@ -91,6 +91,10 @@
         width: 50% !important;
     }
 
+    #info-sesion {
+        width: 30vw !important;
+    }
+
     .offcanvas-end {
         width: 60% !important;
     }
@@ -113,6 +117,10 @@
 
     .imagen-tienda {
         height: 620px;
+    }
+
+    #info-sesion {
+        width: 30vw !important;
     }
 
     .imagen-ropa {
@@ -140,6 +148,10 @@
         height: 15rem;
     }
 
+    #info-sesion {
+        width: 40vw !important;
+    }
+
     .img-perfil {
         width: 150px;
         height: 150px;
@@ -163,6 +175,10 @@
     .img-perfil {
         width: 100px;
         height: 100px;
+    }
+
+    #info-sesion {
+        width: 60vw !important;
     }
 
     .container-img-perfil {
@@ -202,8 +218,19 @@
     }
 }
 
-@media (max-width: 350px) {
+@media (max-width: 600px) {
+    #info-sesion {
+        width: 60vw !important;
+    }
+
+}
+
+@media (max-width: 354px) {
     .tamaño-fuente-perfil {
         font-size: 11px;
+    }
+
+    #info-sesion {
+        width: 80vw !important;
     }
 }

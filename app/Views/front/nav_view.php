@@ -67,27 +67,22 @@
                             <img class="nav-img" src="<?= base_url('public/assets/img/Iconos/usuario.png') ?>"
                                 alt="Usuario">
                         </a>
-                        <ul class="dropdown-menu bg-black my-2 p-4">
+                        <ul id="info-sesion" style="width: 25vw;" class="dropdown-menu bg-black my-2 p-4">
                             <li class="d-flex justify-content-between align-items-center p-0">
                                 <h4>Mi cuenta</h4>
                                 <button type="button" class="btn btn-close btn-close-white" data-bs-dismiss="offcanvas"
                                     aria-label="Cerrar"></button>
                             </li>
                             <hr>
-                            <li>
+                            <li class="d-flex justify-content-center">
                                 <div class="d-flex gap-4 align-items-center">
                                     <img style="width: 90px; height: 90px; object-fit: cover; border-radius: 100%;"
                                         src="<?= base_url('public/assets/img/Iconos/sin-usuario.png') ?>" alt="">
-                                    <div class="d-flex flex-column justify-content-center">
-                                        <p class="fw-bolder mb-0 tamaño-fuente-perfil">Ivan Guillermo Gauto</p>
-                                        <p class="mb-1 tamaño-fuente-perfil">IvanGauto602160@gmail.com</p>
-                                        <a href="<?= base_url('plantilla_perfil') ?>"
-                                            class="tamaño-fuente-perfil text-white">Ver perfil</a>
-                                    </div>
                                 </div>
                             </li>
-                            <li class="mt-5">
-                                <a style="width: auto;" href="" class="btn boton-blanco">Cerrar sesión</a>
+                            <li class="d-flex justify-content-center gap-4 mt-3">
+                                <a style="width: auto;" href="<?= base_url('agregarusuario_view') ?>" class="btn d-flex align-items-center boton-blanco">Registrarme</a>
+                                <a style="width: auto;" href="<?= base_url('agregarusuario_view') ?>" class="btn d-flex align-items-center boton-blanco">Iniciar sesion</a>
                             </li>
                         </ul>
                     </div>

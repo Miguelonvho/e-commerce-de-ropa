@@ -1,6 +1,10 @@
-<div class="d-flex justify-content-center align-items-center gap-5">
-    <form style="width:30vw;" class="d-flex mx-5 flex-column gap-2 h-25 bg-black text-white p-3 my-5 rounded shadow-lg"
-        action="<?= site_url('usuario/agregar') ?>" method="POST">
+<div class="d-flex flex-wrap justify-content-center align-items-center gap-5">
+
+    <?php $validation = \Config\Services::validation(); ?>
+    <form style="width:60vw;" class="d-flex mx-5 flex-column gap-2 h-25 bg-black text-white p-3 my-5 rounded shadow-lg"
+        action="<?= site_url('enviar-form') ?>" method="POST">
+        <?php csrf_field(); ?>
+        <?php if(!empty (session()->getFlashData('fail'))):?>
         <h1 class="fw-light mb-3">Registro</h1>
         <div class="form-floating text-secondary">
             <input placeholder="Nombre" type="text" class="form-control" id="nombre" name="nombre"
@@ -75,5 +79,4 @@
             </div>
         <?php endif; ?>
     </form>
-    <img style="height: 80vh; width: auto;" src="<?= base_url('public/assets/img/Iconos/ropa.png') ?>" alt="">
 </div>

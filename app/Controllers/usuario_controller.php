@@ -10,6 +10,7 @@ class usuario_controller extends BaseController
     {
         $data['titulo'] = 'Registro';
         echo view('front/head_view', $data);
+        echo view('front/nav_view',);
         echo view('back/usuarios/agregarusuario_view');
         echo view('front/footer_view');
     }
