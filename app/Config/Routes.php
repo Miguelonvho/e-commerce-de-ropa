@@ -18,7 +18,7 @@ $routes->get('terminos_y_usos', 'Home::terminos_y_usos');
 /**
  * Rutas de usuario
  */
-$routes->get('agregarusuario_view', 'Usuario_controller::create');
+$routes->get('agregarusuario_view', 'Home::registro');
 $routes->post('enviar-form', 'Usuario_controller::formValidation');
 
 /**

@@ -11,15 +11,6 @@ class Usuario_controller extends Controller
         helper(['form','url']);
     }
 
-    public function create()
-    {
-        $data['titulo'] = 'Registro';
-        echo view('front/head_view', $data);
-        echo view('front/nav_view', );
-        echo view('back/usuarios/agregarusuario_view');
-        echo view('front/footer_view');
-    }
-
     public function formValidation()
     {
 
