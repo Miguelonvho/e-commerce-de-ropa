@@ -1,7 +1,8 @@
 <body>
     <!-- Carrousel -->
     <section class="container-fluid p-0">
-        <div id="carouselExampleCaptions" class="carousel carousel-dark slide" data-bs-touch="true" data-bs-ride="carousel" data-bs-interval="2000">
+        <div id="carouselExampleCaptions" class="carousel carousel-dark slide" data-bs-touch="true"
+            data-bs-ride="carousel" data-bs-interval="2000">
             <div class="carousel-indicators">
                 <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
                     aria-current="true" aria-label="Slide 1"></button>
@@ -15,7 +16,8 @@
                     <img src="<?= base_url('public/assets/img/Carrusel/oferta.png') ?>" class="d-block w-100" alt="...">
                 </div>
                 <div class="carousel-item">
-                    <img src="<?= base_url('public/assets/img/Carrusel/remeras.png') ?>" class="d-block w-100" alt="...">
+                    <img src="<?= base_url('public/assets/img/Carrusel/remeras.png') ?>" class="d-block w-100"
+                        alt="...">
                 </div>
                 <div class="carousel-item">
                     <img src="<?= base_url('public/assets/img/Carrusel/jeans.png') ?>" class="d-block w-100" alt="...">
@@ -35,7 +37,8 @@
     </section>
     <!-- Contenido -->
     <!-- Seccion de iconos informativos -->
-    <section class="d-flex align-items-center justify-content-center bg-black text-white flex-wrap text-center gap-5 p-5">
+    <section
+        class="d-flex align-items-center justify-content-center bg-black text-white flex-wrap text-center gap-5 p-5">
         <div class="iconos-informativos">
             <img src="<?= base_url('public/assets/img/Iconos/entrega.png') ?>" alt="">
             <p class="pt-3 m-0 fw-semibold">Entregas a todo el pais</p>
@@ -63,7 +66,8 @@
         <hr>
         <div class="d-flex justify-content-center flex-wrap gap-4 pt-5 m-0">
             <div class="card bg-black text-white" style="max-width: 400px">
-                <img class="imagen-ropa card-img-top" src="<?= base_url('public/assets/img/Buzos/hombres/Buzo-nike-hombre.jpg') ?>" alt="...">
+                <img class="imagen-ropa card-img-top"
+                    src="<?= base_url('public/assets/img/Buzos/hombres/Buzo-nike-hombre.jpg') ?>" alt="...">
                 <div class="card-body d-flex flex-column justify-content-between">
                     <div class="mb-3">
                         <h4>Buzo nike hombre</h4>
@@ -80,7 +84,8 @@
                 </div>
             </div>
             <div class="card bg-black text-white">
-                <img class="imagen-ropa card-img-top" src="<?= base_url('public/assets/img/remeras/mujeres/Remera-escote-v-mujer.jpg') ?>" alt="...">
+                <img class="imagen-ropa card-img-top"
+                    src="<?= base_url('public/assets/img/remeras/mujeres/Remera-escote-v-mujer.jpg') ?>" alt="...">
                 <div class="card-body d-flex flex-column justify-content-between">
                     <div class="mb-3">
                         <h4>Remera con escote V mujer</h4>
@@ -97,7 +102,8 @@
                 </div>
             </div>
             <div class="card bg-black text-white" style="max-width: 300px">
-                <img class="imagen-ropa card-img-top" src="<?= base_url('public/assets/img/Buzos/Mujeres/Buzo-con-estampado-mujer-2.jpg') ?>" alt="...">
+                <img class="imagen-ropa card-img-top"
+                    src="<?= base_url('public/assets/img/Buzos/Mujeres/Buzo-con-estampado-mujer-2.jpg') ?>" alt="...">
                 <div class="card-body d-flex flex-column justify-content-between">
                     <div class="mb-3">
                         <h4>Buzo con estampado mujer</h4>
@@ -114,7 +120,8 @@
                 </div>
             </div>
             <div class="card bg-black text-white" style="max-width: 300px">
-                <img class="imagen-ropa card-img-top" src="<?= base_url("public/assets/img/Buzos/Mujeres/Buzo-Levi's-mujer.jpg") ?>" alt="...">
+                <img class="imagen-ropa card-img-top"
+                    src="<?= base_url("public/assets/img/Buzos/Mujeres/Buzo-Levi's-mujer.jpg") ?>" alt="...">
                 <div class="card-body d-flex flex-column justify-content-between">
                     <div class="mb-3">
                         <h4>Buzo Levi's mujer</h4>
@@ -132,16 +139,16 @@
             </div>
         </div>
     </section>
-    <?php if (session()->getFlashdata('msg')): ?>
-            <div class="position-fixed top-0 start-50 translate-middle-x p-3 w-100"
-                style="max-width: 500px; z-index: 1100;">
-                <div id="liveToast" class="toast show text-black w-100" role="alert" aria-live="assertive"
-                    aria-atomic="true" data-bs-delay="3000">
-                    <div
-                        class="toast-body bg-light border rounded shadow-sm d-flex justify-content-center align-items-center text-center">
-                        <?= session()->getFlashdata('msg') ?>
-                    </div>
+    <?php if (session()->getFlashdata('welcome_message')): ?>
+        <div class="position-fixed top-0 start-50 translate-middle-x p-3 w-100" style="max-width: 500px; z-index: 1100;">
+            <div id="liveToast" class="toast show text-black w-100" role="alert" aria-live="assertive" aria-atomic="true"
+                data-bs-delay="3000">
+                <div
+                    class="toast-body bg-light border rounded shadow-sm d-flex justify-content-center align-items-center text-center">
+                    <?= session()->getFlashdata('welcome_message') ?>
                 </div>
             </div>
-        <?php endif; ?>
+        </div>
+    <?php endif; ?>
+
 </body>

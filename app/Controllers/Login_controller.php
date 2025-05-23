@@ -13,8 +13,6 @@ class Login_controller extends Controller
 
     public function Auth()
     {
-        helper(['form']);
-
         $session = session();
         $model = new Usuarios_model();
 
@@ -40,15 +38,22 @@ class Login_controller extends Controller
                     'logged_in' => true,
                 ];
                 $session->set($ses_data);
-                $session->setFlashdata('msg', '¡Bienvenido!');
+                $session->setFlashdata('welcome_message', '¡Bienvenido!');
                 return redirect()->to('/plantilla_principal');
             } else {
-                $session->setFlashdata('msg', 'Contraseña incorrecta');
+                $session->setFlashdata('error_password', 'Contraseña incorrecta');
                 return redirect()->to('/iniciarsesion_view');
             }
         } else {
-            $session->setFlashdata('msg', 'Correo no registrado');
+            $session->setFlashdata('error_email', 'Correo no registrado');
             return redirect()->to('/iniciarsesion_view');
         }
+    }
+
+    public function logout()
+    {
+        $session = session();
+        $session->destroy();
+        return redirect()->to('/iniciarsesion_view');
     }
 }

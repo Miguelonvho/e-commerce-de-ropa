@@ -67,19 +67,5 @@
             <p class="m-0">¿Ya se encuentra registrado?</p>
             <a href="<?= base_url('iniciarsesion_view') ?>">Iniciar sesión</a>
         </div>
-
-        <!-- Mensajes de éxito o error -->
-        <?php if (session()->getFlashdata('success')): ?>
-            <div class="position-fixed top-0 start-50 translate-middle-x p-3 w-100"
-                style="max-width: 500px; z-index: 1100;">
-                <div id="liveToast" class="toast show text-black w-100" role="alert" aria-live="assertive"
-                    aria-atomic="true" data-bs-delay="3000">
-                    <div
-                        class="toast-body bg-light border rounded shadow-sm d-flex justify-content-center align-items-center text-center">
-                        <?= session()->getFlashdata('success') ?>
-                    </div>
-                </div>
-            </div>
-        <?php endif; ?>
     </form>
 </div>

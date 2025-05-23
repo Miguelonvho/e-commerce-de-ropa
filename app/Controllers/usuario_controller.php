@@ -67,7 +67,7 @@ class Usuario_controller extends Controller
             ]);
 
             session()->setFlashdata('success', 'Se ha registrado con exito :)');
-            return $this->response->redirect(site_url('/agregarusuario_view'));
+            return $this->response->redirect(site_url('/iniciarsesion_view'));
         }
     }
 }

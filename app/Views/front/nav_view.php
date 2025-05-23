@@ -67,6 +67,7 @@
                             <img class="nav-img" src="<?= base_url('public/assets/img/Iconos/usuario.png') ?>"
                                 alt="Usuario">
                         </a>
+
                         <ul id="info-sesion" style="width: 25vw;" class="dropdown-menu bg-black my-2 p-4">
                             <li class="d-flex justify-content-between align-items-center p-0">
                                 <h4>Mi cuenta</h4>
@@ -74,18 +75,45 @@
                                     aria-label="Cerrar"></button>
                             </li>
                             <hr>
-                            <li class="d-flex justify-content-center">
-                                <div class="d-flex gap-4 align-items-center">
-                                    <img style="width: 90px; height: 90px; object-fit: cover; border-radius: 100%;"
-                                        src="<?= base_url('public/assets/img/Iconos/sin-usuario.png') ?>" alt="">
-                                </div>
-                            </li>
-                            <li class="d-flex justify-content-center gap-4 mt-3">
-                                <a style="width: auto;" href="<?= base_url('agregarusuario_view') ?>" class="btn d-flex align-items-center boton-blanco">Registrarme</a>
-                                <a style="width: auto;" href="<?= base_url('iniciarsesion_view') ?>" class="btn d-flex align-items-center boton-blanco">Iniciar sesion</a>
-                            </li>
+
+                            <?php if (session()->get('logged_in')): ?>
+                                <!-- Si el usuario está logueado -->
+                                <li class="d-flex justify-content-center">
+                                    <div class="d-flex gap-4 align-items-center">
+                                        <img style="width: 90px; height: 90px; object-fit: cover; border-radius: 100%;"
+                                            src="<?= base_url('public/assets/img/Iconos/sin-usuario.png') ?>" alt="">
+                                    </div>
+                                </li>
+                                <li class="text-white text-center mt-3">
+                                    <p class="m-0 fw-bold"><?= session()->get('nombre') ?>     <?= session()->get('apellido') ?>
+                                    </p>
+                                    <p class="m-0"><?= session()->get('email') ?></p>
+                                </li>
+                                <li class="d-flex justify-content-center gap-4 mt-3">
+                                    <a href="<?= base_url('plantilla_perfil') ?>"
+                                        class="btn d-flex align-items-center btn-outline-light">Ver perfil</a>
+                                    <a href="<?= base_url('logout') ?>"
+                                        class="btn d-flex align-items-center btn-outline-light">Cerrar sesión</a>
+                                </li>
+
+                            <?php else: ?>
+                                <!-- Si NO está logueado -->
+                                <li class="d-flex justify-content-center">
+                                    <div class="d-flex gap-4 align-items-center">
+                                        <img style="width: 90px; height: 90px; object-fit: cover; border-radius: 100%;"
+                                            src="<?= base_url('public/assets/img/Iconos/sin-usuario.png') ?>" alt="">
+                                    </div>
+                                </li>
+                                <li class="d-flex justify-content-center gap-4 mt-3">
+                                    <a href="<?= base_url('agregarusuario_view') ?>"
+                                        class="btn d-flex align-items-center btn-outline-light">Registrarme</a>
+                                    <a href="<?= base_url('iniciarsesion_view') ?>"
+                                        class="btn d-flex align-items-center btn-outline-light">Iniciar sesión</a>
+                                </li>
+                            <?php endif; ?>
                         </ul>
                     </div>
+
                     <!-- Boton carrito -->
                     <a class="btn m-0 p-0" data-bs-toggle="offcanvas" href="#carritoOffcanvas" role="button"
                         aria-controls="carritoOffcanvas">
