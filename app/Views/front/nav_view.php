@@ -82,7 +82,7 @@
                             </li>
                             <li class="d-flex justify-content-center gap-4 mt-3">
                                 <a style="width: auto;" href="<?= base_url('agregarusuario_view') ?>" class="btn d-flex align-items-center boton-blanco">Registrarme</a>
-                                <a style="width: auto;" href="<?= base_url('agregarusuario_view') ?>" class="btn d-flex align-items-center boton-blanco">Iniciar sesion</a>
+                                <a style="width: auto;" href="<?= base_url('iniciarsesion_view') ?>" class="btn d-flex align-items-center boton-blanco">Iniciar sesion</a>
                             </li>
                         </ul>
                     </div>

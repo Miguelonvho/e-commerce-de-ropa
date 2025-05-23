@@ -174,7 +174,7 @@ class Home extends BaseController
         echo view('front/head_view', $data);
         echo view('front/nav_view');
         echo view('front/panel-carrito');
-        echo view('front/iniciarsesion_view');
+        echo view('back/usuarios/iniciarsesion_view');
         echo view('front/footer_view');
     }
 }
