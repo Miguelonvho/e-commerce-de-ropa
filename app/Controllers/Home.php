@@ -15,7 +15,8 @@ class Home extends BaseController
         echo view('front/footer_view');
     }
 
-    public function detalles_producto() {
+    public function detalles_producto()
+    {
         $data['titulo'] = 'Detalles';
         echo view('front/head_view', $data);
         echo view('front/nav_view');
@@ -155,6 +156,16 @@ class Home extends BaseController
         echo view('front/panel-carrito');
         echo view('front/plantilla_perfil');
         echo view('front/boton_inicio');
+        echo view('front/footer_view');
+    }
+
+    public function login()
+    {
+        $data['titulo'] = 'Ingresar';
+        echo view('front/head_view', $data);
+        echo view('front/nav_view');
+        echo view('front/panel-carrito');
+        echo view('front/iniciarsesion_view');
         echo view('front/footer_view');
     }
 }

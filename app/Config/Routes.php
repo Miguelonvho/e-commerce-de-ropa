@@ -20,3 +20,17 @@ $routes->get('terminos_y_usos', 'Home::terminos_y_usos');
  */
 $routes->get('agregarusuario_view', 'Usuario_controller::create');
 $routes->post('enviar-form', 'Usuario_controller::formValidation');
+
+/**
+ * Rutas de login
+ */
+$routes->get('/iniciarsesion_view', 'Home::login');
+$routes->post('/enviarlogin', 'Login_controller::auth');
+$routes->get('/panel', 'Panel_controller::index', ['filter' => 'auth']);
+$routes->get('/logout', 'Login_controller::logout');
+
+/**
+ * Rutas de filtros
+ */
+$routes->get('/', 'Home::index');
+$routes->get('/dashboard', 'Dashboard::index', ['filter' => 'auth']);
