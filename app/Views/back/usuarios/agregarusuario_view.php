@@ -3,7 +3,7 @@
     <?php $validation = \Config\Services::validation(); ?>
     <?php csrf_field(); ?>
 
-    <form style="width:60vw;" class="d-flex mx-5 flex-column gap-2 h-25 bg-black text-white p-3 my-5 rounded shadow-lg"
+    <form class="d-flex mx-5 formulario flex-column gap-2 h-25 bg-black text-white p-3 my-5 rounded shadow-lg"
         action="<?= site_url('enviar-form') ?>" method="POST">
 
         <h1 class="fw-light mb-3">Registro</h1>
@@ -62,7 +62,9 @@
             </div>
         </div>
 
-        <button type="submit" class="btn btn-outline-light">Registrarme</button>
+        <div class="d-flex justify-content-start">
+            <button type="submit" class="btn btn-outline-light">Registrarme</button>
+        </div>
         <div class="my-3">
             <p class="m-0">¿Ya se encuentra registrado?</p>
             <a href="<?= base_url('iniciarsesion_view') ?>">Iniciar sesión</a>

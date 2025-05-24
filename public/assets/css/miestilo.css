@@ -12,6 +12,10 @@
     height: auto;
 }
 
+.formulario {
+    width: 50vw;
+}
+
 .offcanvas-body img {
     object-fit: cover;
     width: 90px;
@@ -169,6 +173,10 @@
 @media (max-width: 600px) {
     .card a {
         max-height: 30px !important;
+    }
+
+    .formulario {
+        width: 70vw;
     }
 
     .card a img {
