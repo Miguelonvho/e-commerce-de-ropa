@@ -35,11 +35,11 @@
                     <a href="<?= base_url('ruta/checkout') ?>" class="btn boton-blanco">Finalizar compra</a>
                 </div>
             <?php else: ?>
-                <p>Tu carrito está vacío.</p>
+                <p>Tu carrito está vacío</p>
             <?php endif; ?>
         <?php else: ?>
             <div class="d-flex flex-column align-items-center text-center mt-4">
-                <p class="mb-3">Debes iniciar sesión para ver tu carrito.</p>
+                <p class="mb-3">Debes iniciar sesión para ver tu carrito</p>
                 <div class="d-flex gap-2">
                     <a href="<?= base_url('iniciarsesion_view') ?>" class="btn btn-outline-light">Iniciar sesión</a>
                     <a href="<?= base_url('agregarusuario_view') ?>" class="btn btn-outline-light">Registrarse</a>
