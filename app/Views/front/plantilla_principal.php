@@ -75,12 +75,9 @@
                     <div class="text-center">
                         <h1 class="card-title">$xxxxxx</h1>
                         <div class="d-flex gap-2 justify-content-end">
-                            <a href="#" class="btn boton-blanco text-center">Comprar</a>
-                            <a href="#" class="btn btn-carrito btn-outline-secondary">
-                                <img src="<?= base_url('public/assets/img/Iconos/carrito.png') ?>" alt="">
-                            </a>
                         </div>
                     </div>
+                    
                 </div>
             </div>
             <div class="card bg-black text-white">
@@ -93,10 +90,6 @@
                     <div class="text-center">
                         <h1 class="card-title">$xxxxxx</h1>
                         <div class="d-flex gap-2 justify-content-end">
-                            <a href="#" class="btn boton-blanco">Comprar</a>
-                            <a href="#" class="btn btn-carrito btn-outline-secondary">
-                                <img src="<?= base_url('public/assets/img/Iconos/carrito.png') ?>" alt="">
-                            </a>
                         </div>
                     </div>
                 </div>
@@ -111,10 +104,6 @@
                     <div class="text-center">
                         <h1 class="card-title">$xxxxxx</h1>
                         <div class="d-flex gap-2 justify-content-end">
-                            <a href="#" class="btn boton-blanco">Comprar</a>
-                            <a href="#" class="btn btn-carrito btn-outline-secondary">
-                                <img src="<?= base_url('public/assets/img/Iconos/carrito.png') ?>" alt="">
-                            </a>
                         </div>
                     </div>
                 </div>
@@ -129,10 +118,6 @@
                     <div class="text-center">
                         <h1 class="card-title">$xxxxxx</h1>
                         <div class="d-flex gap-2 justify-content-end">
-                            <a href="#" class="btn boton-blanco">Comprar</a>
-                            <a href="#" class="btn btn-carrito btn-outline-secondary">
-                                <img src="<?= base_url('public/assets/img/Iconos/carrito.png') ?>" alt="">
-                            </a>
                         </div>
                     </div>
                 </div>
@@ -143,8 +128,8 @@
         <div class="position-fixed top-0 start-50 translate-middle-x p-3 w-100" style="max-width: 500px; z-index: 1100;">
             <div id="liveToast" class="toast show text-black w-100" role="alert" aria-live="assertive" aria-atomic="true"
                 data-bs-delay="3000">
-                <div
-                    class="toast-body bg-light border rounded shadow-sm d-flex justify-content-center align-items-center text-center">
+                <div class=" toast-body bg-light border rounded shadow-sm d-flex justify-content-center
+                    align-items-center text-center">
                     <?= session()->getFlashdata('welcome_message') ?>
                 </div>
             </div>

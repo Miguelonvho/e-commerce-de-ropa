@@ -39,7 +39,7 @@
             <?php endif; ?>
         <?php else: ?>
             <div class="d-flex flex-column align-items-center text-center mt-4">
-                <p class="mb-3">Debes iniciar sesión para ver tu carrito</p>
+                <p class="mb-3">Debes iniciar sesión o registrarte para ver tu carrito</p>
                 <div class="d-flex gap-2">
                     <a href="<?= base_url('iniciarsesion_view') ?>" class="btn btn-outline-light">Iniciar sesión</a>
                     <a href="<?= base_url('agregarusuario_view') ?>" class="btn btn-outline-light">Registrarse</a>
