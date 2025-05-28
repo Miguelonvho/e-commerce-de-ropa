@@ -11,7 +11,7 @@ class Usuario_controller extends Controller
         helper(['form','url']);
     }
 
-    public function formValidation()
+    public function form_validation()
     {
 
         $input = $this->validate(
