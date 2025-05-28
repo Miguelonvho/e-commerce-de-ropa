@@ -20,6 +20,7 @@ class Home extends BaseController
         $data['titulo'] = 'Detalles';
         echo view('front/head_view', $data);
         echo view('front/nav_view');
+        echo view('front/panel-carrito');
         echo view('front/detalles_producto');
         echo view('front/boton_inicio');
         echo view('front/footer_view');

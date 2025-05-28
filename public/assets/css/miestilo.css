@@ -73,6 +73,30 @@
     color: white !important;
 }
 
+.boton-transparente {
+    background-color: white !important;
+    color: black !important;
+    border: 1px solid black !important;
+    transition: background-color 0.2s ease-out, color 0.2s ease-out !important;
+}
+
+.boton-transparente:hover {
+    background-color: black !important;
+    color: white !important;
+}
+
+.boton-negro img.hover-icon {
+    display: none;
+}
+
+.boton-negro:hover img.default-icon {
+    display: none;
+}
+
+.boton-negro:hover img.hover-icon {
+    display: inline;
+}
+
 .boton-negro {
     background-color: black !important;
     color: white !important;

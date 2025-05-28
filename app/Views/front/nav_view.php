@@ -24,11 +24,19 @@
                                     alt="">
                             </div>
                             <div class="d-flex align-items-center">
-                                <a href="<?= base_url('detalles_producto') ?>">
-                                    <img style="width: 10vw;"
-                                        src="<?= base_url('public/assets/img/Remeras/Hombres/Remera-rider-hombre.jpg') ?>"
-                                        alt="Promo 1">
-                                </a>
+                                <?php if (session()->get('logged_in')): ?>
+                                    <a href="<?= base_url('detalles_producto') ?>">
+                                        <img style="width: 10vw;"
+                                            src="<?= base_url('public/assets/img/Remeras/Hombres/Remera-rider-hombre.jpg') ?>"
+                                            alt="Promo 1">
+                                    </a>
+                                <?php else: ?>
+                                    <a href="<?= base_url('iniciarsesion_view') ?>">
+                                        <img style="width: 10vw;"
+                                            src="<?= base_url('public/assets/img/Remeras/Hombres/Remera-rider-hombre.jpg') ?>"
+                                            alt="Promo 1">
+                                    </a>
+                                <?php endif; ?>
                                 <div class="p-4">
                                     <strong>Descuento del 20%</strong><br>
                                     <small>En Remera rider para hombre</small>

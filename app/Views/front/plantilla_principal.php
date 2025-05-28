@@ -64,8 +64,12 @@
     <section class="container-fluid text-black my-5">
         <h1 class="fw-light">Destacados</h1>
         <hr>
+        <?php
+        $link = session()->get('logged_in') ? 'detalles_producto' : 'iniciarsesion_view';
+        ?>
         <div class="d-flex justify-content-center flex-wrap gap-4 pt-5 m-0">
-            <div class="card bg-black text-white" style="max-width: 400px">
+            <a href="<?= base_url($link) ?>" class="card bg-black text-white text-decoration-none"
+                style="max-width: 400px">
                 <img class="imagen-ropa card-img-top"
                     src="<?= base_url('public/assets/img/Buzos/hombres/Buzo-nike-hombre.jpg') ?>" alt="...">
                 <div class="card-body d-flex flex-column justify-content-between">
@@ -77,10 +81,10 @@
                         <div class="d-flex gap-2 justify-content-end">
                         </div>
                     </div>
-                    
                 </div>
-            </div>
-            <div class="card bg-black text-white">
+            </a>
+            <a href="<?= base_url($link) ?>" class="card bg-black text-white text-decoration-none"
+                style="max-width: 400px">
                 <img class="imagen-ropa card-img-top"
                     src="<?= base_url('public/assets/img/remeras/mujeres/Remera-escote-v-mujer.jpg') ?>" alt="...">
                 <div class="card-body d-flex flex-column justify-content-between">
@@ -93,8 +97,9 @@
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="card bg-black text-white" style="max-width: 300px">
+            </a>
+            <a href="<?= base_url($link) ?>" class="card bg-black text-white text-decoration-none"
+                style="max-width: 400px">
                 <img class="imagen-ropa card-img-top"
                     src="<?= base_url('public/assets/img/Buzos/Mujeres/Buzo-con-estampado-mujer-2.jpg') ?>" alt="...">
                 <div class="card-body d-flex flex-column justify-content-between">
@@ -107,8 +112,9 @@
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="card bg-black text-white" style="max-width: 300px">
+            </a>
+            <a href="<?= base_url($link) ?>" class="card bg-black text-white text-decoration-none"
+                style="max-width: 400px">
                 <img class="imagen-ropa card-img-top"
                     src="<?= base_url("public/assets/img/Buzos/Mujeres/Buzo-Levi's-mujer.jpg") ?>" alt="...">
                 <div class="card-body d-flex flex-column justify-content-between">
@@ -121,7 +127,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </a>
         </div>
     </section>
     <?php if (session()->getFlashdata('welcome_message')): ?>
