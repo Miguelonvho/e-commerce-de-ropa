@@ -12,6 +12,31 @@
     height: auto;
 }
 
+.boton-transparente.hover-activo,
+.boton-transparente:active {
+    background-color: black !important;
+    color: white !important;
+}
+
+.boton-blanco.hover-activo,
+.boton-blanco:active {
+    background-color: black !important;
+    color: white !important;
+}
+
+.boton-negro.hover-activo,
+.boton-negro:active {
+    background-color: white !important;
+    color: black !important;
+    border: 1px solid black !important;
+}
+
+.card.hover-activo,
+.card:active {
+    transform: scale(1.05);
+}
+
+
 .formulario {
     width: 50vw;
 }
