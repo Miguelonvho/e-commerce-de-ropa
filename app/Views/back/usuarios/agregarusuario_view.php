@@ -3,7 +3,7 @@
     <?php $validation = \Config\Services::validation(); ?>
     <?php csrf_field(); ?>
 
-    <form class="d-flex mx-5 formulario flex-column gap-2 bg-black text-white p-3 my-5 rounded shadow-lg"
+    <form class="d-flex formulario flex-column gap-2 bg-black text-white p-3 my-5 rounded shadow-lg"
         action="<?= site_url('enviar-form') ?>" method="POST">
 
         <h1 class="fw-light mb-3">Registro</h1>
