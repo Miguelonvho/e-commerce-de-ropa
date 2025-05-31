@@ -1,14 +1,14 @@
-<section class="container-fluid p-5">
-    <div class="row d-flex flex-column flex-md-row justify-content-center align-items-start gap-4">
+<section class="container-fluid p-0">
+    <div class="d-flex justify-content-center align-items-center detalles-producto">
         <!-- Imagen de producto -->
-        <div class="col-md-6 col-12 text-center">
-            <img style="width: 500px; height: 500px; image-fit: cover;" class="img-fluid"
+        <div class="">
+            <img style="width: 500px; height: 500px; object-fit: cover;" class="img-fluid img-producto"
                 src="<?= base_url('public/assets/img/Remeras/Hombres/Remera-rider-hombre.jpg') ?>"
                 alt="Remera de algodón relaxed fit">
         </div>
 
         <!-- Detalles del producto -->
-        <div class="col-md-5 col-12">
+        <div class="p-3">
             <h1 class="fw-light">Remera Rider Hombre</h1>
             <h2 class="text-success fw-bold mt-3">$105.000</h2>
 
@@ -32,8 +32,8 @@
                     <input type="text" class="form-control text-center" value="1">
                     <button class="btn boton-transparente" type="button">+</button>
                 </div>
-                <button class="btn btn-success px-4 fw-bold">Comprar</button>
-                <button class="btn boton-negro px-4 fw-bold">
+                <button class="btn btn-success boton-comprar px-5 fw-bold">Comprar</button>
+                <button class="btn boton-negro boton-carrito fw-bold">
                     <img src="<?= base_url('public/assets/img/Iconos/carrito.png') ?>" class="default-icon"
                         alt="Carrito">
                     <img src="<?= base_url('public/assets/img/Iconos/carrito-negro.png') ?>" class="hover-icon"

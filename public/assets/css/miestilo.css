@@ -12,8 +12,33 @@
     height: auto;
 }
 
+.boton-transparente.hover-activo,
+.boton-transparente:active {
+    background-color: black !important;
+    color: white !important;
+}
+
+.boton-blanco.hover-activo,
+.boton-blanco:active {
+    background-color: black !important;
+    color: white !important;
+}
+
+.boton-negro.hover-activo,
+.boton-negro:active {
+    background-color: white !important;
+    color: black !important;
+    border: 1px solid black !important;
+}
+
+.card.hover-activo,
+.card:active {
+    transform: scale(1.05);
+}
+
+
 .formulario {
-    width: 50vw;
+    width: 50%;
 }
 
 .offcanvas-body img {
@@ -85,6 +110,12 @@
     color: white !important;
 }
 
+.boton-carrito {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .boton-negro img.hover-icon {
     display: none;
 }
@@ -126,6 +157,7 @@
     #info-sesion {
         width: 30vw !important;
     }
+    
 
     .offcanvas-end {
         width: 60% !important;
@@ -145,6 +177,11 @@
 @media (max-width: 970px) {
     * {
         font-size: small;
+    }
+
+    
+    .boton-carrito img {
+        width: 20px;
     }
 
     .imagen-tienda {
@@ -203,6 +240,11 @@
         width: 70vw;
     }
 
+    .detalles-producto {
+        flex-wrap: wrap;
+        justify-content: center !important;
+    }
+
     .card a img {
         max-width: 20px;
         padding-bottom: 10px;
@@ -252,13 +294,6 @@
         width: 80px;
         height: 80px;
     }
-}
-
-@media (max-width: 600px) {
-    #info-sesion {
-        width: 60vw !important;
-    }
-
 }
 
 @media (max-width: 354px) {

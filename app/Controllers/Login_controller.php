@@ -50,6 +50,27 @@ class Login_controller extends Controller
         }
     }
 
+    public function buscar_usuario()
+    {
+        $session = session();
+        $id_usuario = $session->get('id_usuario');
+        if (!$id_usuario) {
+            return redirect()->to('/iniciarsesion_view');
+        }
+        $usuario_model = new Usuarios_model();
+        $usuario = $usuario_model->find($id_usuario);
+        $data['titulo'] = 'Mi informacion';
+        $data['usuario'] = $usuario;
+
+        echo view('front/head_view', $data);
+        echo view('front/nav_view');
+        echo view('front/panel-carrito');
+        echo view('front/plantilla_perfil', $data);
+        echo view('front/boton_inicio');
+        echo view('front/footer_view');
+    }
+
+
     public function logout()
     {
         $session = session();
