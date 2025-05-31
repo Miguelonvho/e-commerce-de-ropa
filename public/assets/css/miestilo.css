@@ -105,10 +105,12 @@
     transition: background-color 0.2s ease-out, color 0.2s ease-out !important;
 }
 
-.boton-transparente:hover {
+.btn-check:checked + .boton-transparente {
     background-color: black !important;
     color: white !important;
+    border: 1px solid black !important;
 }
+
 
 .boton-carrito {
     display: flex;
