@@ -2,6 +2,10 @@
     border-color: rgb(255, 255, 255);
 }
 
+* {
+    font-size: large;
+}
+
 .dropdown-item:hover {
     background-color: white !important;
     color: black !important;
@@ -157,7 +161,7 @@
     #info-sesion {
         width: 30vw !important;
     }
-    
+
 
     .offcanvas-end {
         width: 60% !important;
@@ -179,7 +183,7 @@
         font-size: small;
     }
 
-    
+
     .boton-carrito img {
         width: 20px;
     }
