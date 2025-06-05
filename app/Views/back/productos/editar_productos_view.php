@@ -60,13 +60,10 @@
             </div>
         </div>
 
-        <div class="form-floating text-secondary">
-            <input type="file" class="form-control p-3" id="imagen" name="imagen" accept="image/*" required>
-            <div style="height:5vh;">
-
-            </div>
+        <div class="mb-4">
+            <label for="imagenProducto" class="form-label">Imagen del producto</label>
+            <input class="form-control" type="file" id="imagenProducto" name="imagen" accept="image/*">
         </div>
-
 
         <div class="d-flex justify-content-start gap-3">
             <button type="submit" class="btn btn-outline-success">Guardar cambios</button>

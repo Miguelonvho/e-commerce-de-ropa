@@ -76,7 +76,7 @@
                                 alt="Usuario">
                         </a>
 
-                        <ul id="info-sesion" style="width: 25vw;" class="dropdown-menu bg-black my-2 p-4">
+                        <ul id="info-sesion" style="width: 30vw;" class="dropdown-menu bg-black my-2 p-4">
                             <li class="d-flex justify-content-between align-items-center p-0">
                                 <h4>Mi cuenta</h4>
                                 <button type="button" class="btn btn-close btn-close-white" data-bs-dismiss="offcanvas"
