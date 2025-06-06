@@ -27,7 +27,7 @@ $routes->get('/iniciarsesion_view', 'Home::login');
 $routes->post('/enviarlogin', 'Login_controller::auth');
 $routes->get('/plantilla_perfil', 'Login_controller::buscar_usuario');
 $routes->get('/panel', 'Panel_controller::index', ['filter' => 'auth']);
-$routes->get('/editar_productos_view', 'Producto_controller::index');
+$routes->get('/editar_productos_view', 'Producto_controller::editar_producto');
 $routes->get('/logout', 'Login_controller::logout');
 
 /**
