@@ -6,6 +6,7 @@
     <link rel="icon" type="image/png" href="<?= base_url(relativePath: 'public/assets/img/Iconos/logo.png') ?>">
     <link rel="stylesheet" href="<?= base_url('public/assets/css/bootstrap.min.css') ?>">
     <link rel="stylesheet" href="<?= base_url('public/assets/css/miestilo.css') ?>">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
     <script src="<?= base_url('public/assets/js/bootstrap.bundle.min.js') ?>"></script>
     <script src="<?= base_url('public/assets/js/script.js') ?>"></script>
     <title><?= $titulo ?></title>

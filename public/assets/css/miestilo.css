@@ -115,7 +115,6 @@
     border: 1px solid black !important;
 }
 
-
 .boton-carrito {
     display: flex;
     justify-content: center;
@@ -240,6 +239,11 @@
 @media (max-width: 600px) {
     .card a {
         max-height: 30px !important;
+    }
+
+    
+    * {
+        font-size: x-small;
     }
 
     .formulario {

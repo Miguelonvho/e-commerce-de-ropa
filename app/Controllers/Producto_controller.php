@@ -2,6 +2,8 @@
 
 namespace App\Controllers;
 
+use App\Models\Producto_Model;
+use App\Models\Usuarios_Model;
 use CodeIgniter\Controller;
 
 class Producto_controller extends Controller
@@ -21,4 +23,15 @@ class Producto_controller extends Controller
         echo view('front/footer_view');
     }
 
+    public function singleProducto($id = null) {
+        $productoModel = new Producto_Model();
+
+        $data['old'] = $productoModel->where('id_producto', $id)->first();
+
+        if(empty($data['old'])) {
+            throw new \CodeIgniter\HTTP\Exceptions\PageNotFoundException('No se pudo encontrar el producto seleccionado');
+        }
+
+        $categoriasM = new categoria_Model();
+    }   
 }
