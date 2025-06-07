@@ -12,7 +12,7 @@
                 <div class="mb-3 border-bottom pb-2">
                     <?php foreach ($productos as $producto): ?>
                         <div class="d-flex align-items-center mb-3">
-                            <img src="<?= base_url($producto['img']) ?>" alt="Producto" class="img-fluid me-2"
+                            <img src="<?= base_url($producto['imagen']) ?>" alt="Producto" class="img-fluid me-2"
                                 style="width: 50px; height: auto;">
                             <div>
                                 <p class="mb-0"><?= esc($producto['nombre']) ?></p>
