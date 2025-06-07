@@ -128,6 +128,17 @@ select option:hover {
     border: 1px solid black !important;
 }
 
+.nav-form {
+    color: white !important;
+    background-color: transparent !important;
+}
+
+.nav-form.active {
+    color: black !important;
+    background-color: white !important;
+    border: none !;
+}
+
 .boton-carrito {
     display: flex;
     justify-content: center;
