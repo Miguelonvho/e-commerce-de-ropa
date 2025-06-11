@@ -19,16 +19,7 @@ class Producto_controller extends Controller
         $session = session();
     }
 
-    public function index()
-    {
-        $dato['titulo'] = 'Editar productos';
-        echo view('front/head_view', $dato);
-        echo view('front/nav_view');
-        echo view('back/productos/editar_productos_view', $data);
-        echo view('front/footer_view');
-    }
-
-    public function editar_producto($id = 1)
+    public function singleProducto($id = 1)
     {
         $productoModel = new Producto_model();
 
@@ -58,28 +49,59 @@ class Producto_controller extends Controller
         $data['edades'] = $edadModel->getedades();
         $data['edadActual'] = $edadModel->where('id_edad', $data['old']['edad_id'])->first();
 
-        $imagen = $this->request->getFile('imagen-producto');
-        $nombreImagen = null;
-
-        if ($imagen && $imagen->isValid() && !$imagen->hasMoved()) {
-            $nombreImagen = $imagen->getRandomName();
-            $imagen->move('public/assets/img/', $nombreImagen);
-        }
-
-        $productoModel->save([
-            'id_producto' => $id,
-            'nombre_prod' => $this->request->getVar('nombre-producto'),
-            'categoria_id' => $this->request->getVar('categorias'),
-            'marca_id' => $this->request->getVar('marcas'),
-            'talle_id' => $this->request->getVar('talles'),
-            'genero_id' => $this->request->getVar('generos'),
-            'edad_id' => $this->request->getVar('edades'),
-            'precio_costo' => $this->request->getVar('precio-costo'),
-            'precio_venta' => $this->request->getVar('precio-venta'),
-            'stock' => $this->request->getVar('stock'),
-            'stock_min' => $this->request->getVar('stock-minimo'),
-        ]);
-
-        return redirect()->to('/editar_productos_view')->with('mensaje', 'Producto actualizado con éxito.');
+        $dato['titulo'] = 'Editar productos';
+        echo view('front/head_view', $dato);
+        echo view('front/nav_view');
+        echo view('back/productos/editar_productos_view', $data);
+        echo view('front/footer_view');
     }
+
+    public function editar_producto($id = 1)
+    {
+    
+        $productoModel = new Producto_Model();
+        $producto = $productoModel->where('id_producto', $id)->first();
+        $img = $this->request->getFile('imagen');
+    
+
+
+        if ($img && $img->isValid()) {
+            $rutaDestino = ROOTPATH . 'public/assets/uploads';
+            $nombre_aleatorio = $img->getRandomName();
+            $img->move($rutaDestino, $nombre_aleatorio);
+            $data = [
+                'nombre_prod' => $this->request->getVar('nombre-producto'),
+                'id_categoria' => $this->request->getVar('categorias'),
+                'id_marca' => $this->request->getVar('marcas'),
+                'id_talle' => $this->request->getVar('talles'),
+                'id_genero' => $this->request->getVar('generos'),
+                'id_edad' => $this->request->getVar('edades'),
+                'precio_costo' => $this->request->getVar('precio-costo'),
+                'precio_venta' => $this->request->getVar('precio-venta'),
+                'stock' => $this->request->getVar('stock'),
+                'stock_min' => $this->request->getVar('stock-minimo'),
+                'imagen' => $nombre_aleatorio,
+                'eliminado' => 'NO',
+            ];
+
+        } else {
+            $data = [
+                'nombre_prod' => $this->request->getVar('nombre-producto'),
+                'id_categoria' => $this->request->getVar('categorias'),
+                'id_marca' => $this->request->getVar('marcas'),
+                'id_talle' => $this->request->getVar('talles'),
+                'id_genero' => $this->request->getVar('generos'),
+                'id_edad' => $this->request->getVar('edades'),
+                'precio_costo' => $this->request->getVar('precio-costo'),
+                'precio_venta' => $this->request->getVar('precio-venta'),
+                'stock' => $this->request->getVar('stock'),
+                'stock_min' => $this->request->getVar('stock-minimo'),
+                'eliminado' => 'NO',
+            ];
+        }
+    
+        $productoModel->update($producto['id_producto'], $data);
+        session()->setFlashdata('success', 'Modificación Exitosa');
+        return redirect()->to(base_url('/editar_productos_view'));
+    } 
 }
