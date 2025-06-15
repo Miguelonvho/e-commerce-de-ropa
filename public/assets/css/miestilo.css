@@ -178,15 +178,26 @@ select option:hover {
     transform: translatex(48%);
 }
 
+@media (max-width: 2560px) {
+    #info-sesion {
+        width: 20vw !important;
+    }
+}
+
+@media (max-width: 1600px) {
+    #info-sesion {
+        width: 30vw !important;
+    }
+}
+
 @media (max-width: 1200px) {
     .vision-y-mision {
         width: 50% !important;
     }
 
     #info-sesion {
-        width: 30vw !important;
+        width: 35vw !important;
     }
-
 
     .offcanvas-end {
         width: 60% !important;
@@ -217,9 +228,7 @@ select option:hover {
         height: 620px;
     }
 
-    #info-sesion {
-        width: 30vw !important;
-    }
+
 
     .imagen-ropa {
         object-fit: cover;
@@ -247,7 +256,7 @@ select option:hover {
     }
 
     #info-sesion {
-        width: 40vw !important;
+        width: 50vw !important;
     }
 
     .img-perfil {
@@ -264,7 +273,6 @@ select option:hover {
     .card a {
         max-height: 30px !important;
     }
-
 
     * {
         font-size: x-small;
@@ -289,10 +297,6 @@ select option:hover {
         height: 100px;
     }
 
-    #info-sesion {
-        width: 60vw !important;
-    }
-
     .container-img-perfil {
         display: flex;
         justify-content: center;
@@ -308,6 +312,7 @@ select option:hover {
     .iconos-informativos p {
         padding-top: 20px;
     }
+
 
     .iconos-informativos img {
         width: 30px;
@@ -330,12 +335,18 @@ select option:hover {
     }
 }
 
+@media (max-width: 400px) {
+        #info-sesion {
+        width: 50vw !important;
+    }
+}
+
 @media (max-width: 354px) {
     .tamaño-fuente-perfil {
         font-size: 11px;
     }
 
     #info-sesion {
-        width: 80vw !important;
+        width: 60vw !important;
     }
 }

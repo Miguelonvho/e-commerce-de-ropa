@@ -76,7 +76,7 @@
                                 alt="Usuario">
                         </a>
 
-                        <ul id="info-sesion" style="width: 30vw;" class="dropdown-menu bg-black my-2 p-4">
+                        <ul id="info-sesion" class="dropdown-menu dropdown-menu-end bg-black my-2 p-4">
                             <li class="d-flex justify-content-between align-items-center p-0">
                                 <h4>Mi cuenta</h4>
                                 <button type="button" class="btn btn-close btn-close-white" data-bs-dismiss="offcanvas"
@@ -86,12 +86,6 @@
 
                             <?php if (session()->get('logged_in')): ?>
                                 <!-- Si el usuario está logueado -->
-                                <li class="d-flex justify-content-center">
-                                    <div class="d-flex gap-4 align-items-center">
-                                        <img style="width: 90px; height: 90px; object-fit: cover; border-radius: 100%;"
-                                            src="<?= base_url('public/assets/img/Iconos/sin-usuario.png') ?>" alt="">
-                                    </div>
-                                </li>
                                 <li class="text-white text-center mt-3">
                                     <p class="m-0 fw-bold"><?= session()->get('nombre') ?>     <?= session()->get('apellido') ?>
                                     </p>
@@ -127,11 +121,6 @@
                         aria-controls="carritoOffcanvas">
                         <img class="nav-img" src="<?= base_url('public/assets/img/Iconos/carrito-nav.png') ?>" alt="">
                     </a>
-                    <!-- Buscador -->
-                    <form action="<?= base_url('busqueda/resultados') ?>" class="d-flex" role="search">
-                        <input class="bg-white form-control me-2" name="q" type="search" aria-label="Search">
-                        <button class="btn btn-outline-light" type="submit">Buscar</button>
-                    </form>
                 </div>
             </div>
         </div>

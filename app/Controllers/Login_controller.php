@@ -29,7 +29,7 @@ class Login_controller extends Controller
 
             if (password_verify($password, $data['pass'])) {
                 $ses_data = [
-                    'id_usuario' => $data['id'],
+                    'id_usuario' => $data['id_usuario'],
                     'nombre' => $data['nombre'],
                     'apellido' => $data['apellido'],
                     'email' => $data['email'],
@@ -53,10 +53,7 @@ class Login_controller extends Controller
     public function buscar_usuario()
     {
         $session = session();
-        $id_usuario = $session->get('id');
-        if (!$id_usuario) {
-            return redirect()->to('/iniciarsesion_view');
-        }
+        $id_usuario = $session->get('id_usuario');
         $usuario_model = new Usuarios_model();
         $usuario = $usuario_model->find($id_usuario);
         $data['titulo'] = 'Mi informacion';

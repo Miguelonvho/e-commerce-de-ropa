@@ -58,12 +58,28 @@ class Producto_controller extends Controller
 
     public function editar_producto($id = 1)
     {
-    
+
         $productoModel = new Producto_Model();
         $producto = $productoModel->where('id_producto', $id)->first();
         $img = $this->request->getFile('imagen');
-    
 
+        $rules = [
+            'nombre-producto' => 'required',
+            'categorias' => 'required',
+            'marcas' => 'required',
+            'talles' => 'required',
+            'generos' => 'required',
+            'edades' => 'required',
+            'precio-costo' => 'required|numeric',
+            'precio-venta' => 'required|numeric',
+            'stock' => 'required|integer',
+            'stock-minimo' => 'required|integer',
+        ];
+
+        if (!$this->validate($rules)) {
+            session()->setFlashdata('fail', 'Por favor, completá todos los campos obligatorios correctamente.');
+            return redirect()->back()->withInput();
+        }
 
         if ($img && $img->isValid()) {
             $rutaDestino = ROOTPATH . 'public/assets/uploads';
@@ -99,9 +115,13 @@ class Producto_controller extends Controller
                 'eliminado' => 'NO',
             ];
         }
-    
+
         $productoModel->update($producto['id_producto'], $data);
-        session()->setFlashdata('success', 'Modificación Exitosa');
+        if ($productoModel->update($producto['id_producto'], $data)) {
+            session()->setFlashdata('success', 'Modificación Exitosa');
+        } else {
+            session()->setFlashdata('fail', 'Error al modificar producto');
+        }
         return redirect()->to(base_url('/editar_productos_view'));
-    } 
+    }
 }
