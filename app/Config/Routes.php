@@ -19,24 +19,13 @@ $routes->get('/terminos_y_usos', 'Home::terminos_y_usos');
  */
 $routes->get('/agregarusuario_view', 'Home::registro');
 $routes->post('/enviar-form', 'Usuario_controller::form_validation');
-
-/**
- * Rutas de login
- */
 $routes->get('/iniciarsesion_view', 'Home::login');
 $routes->post('/enviarlogin', 'Login_controller::auth');
-$routes->get('/plantilla_perfil', 'Login_controller::buscar_usuario');
-$routes->get('/panel', 'Panel_controller::index', ['filter' => 'auth']);
+$routes->get('/plantilla_perfil', 'Login_controller::buscar_usuario', ['filter' => 'auth']);
 $routes->get('/logout', 'Login_controller::logout');
 
 /**
  * Rutas de productos
  */
-
-$routes->get('/editar_productos_view', 'Producto_controller::singleProducto');
+$routes->get('/editar_productos_view', 'Producto_controller::singleProducto', ['filter' => 'auth:admin']);
 $routes->post('/editar-producto', 'Producto_controller::editar_producto');
-
-/**
- * Rutas de filtros
- */
-$routes->get('/dashboard', 'Dashboard::index', ['filter' => 'auth']);
