@@ -19,6 +19,20 @@ class Producto_controller extends Controller
         $session = session();
     }
 
+        // Mostrar productos en lista
+    public function index()
+    {
+        $productoModel = new Producto_Model();
+
+        // Obtener todos los productos no eliminados
+        $data['productos'] = $productoModel->getProductoAll();
+
+        $dato['titulo'] = 'Crud_productos';
+        echo view('front/head_view', $dato);     
+        echo view('front/nav_view');
+        echo view('front/crud_productos_view', $data); 
+        echo view('front/footer_view');
+    }
     public function singleProducto($id = 1)
     {
         $productoModel = new Producto_model();
