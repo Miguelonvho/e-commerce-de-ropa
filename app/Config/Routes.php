@@ -33,3 +33,8 @@ $routes->get('/logout', 'Login_controller::logout');
  * Rutas de filtros
  */
 $routes->get('/dashboard', 'Dashboard::index', ['filter' => 'auth']);
+
+/**
+ * Rutas de admin - HACER EL FILTRO AUTH
+ */
+$routes->get('/crud_productos_view', 'Producto_controller::index'); 
