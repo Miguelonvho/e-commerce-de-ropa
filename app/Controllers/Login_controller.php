@@ -45,7 +45,7 @@ class Login_controller extends Controller
                 return redirect()->to('/iniciarsesion_view');
             }
         } else {
-            $session->setFlashdata('error_email', 'Correo no registrado');
+            $session->setFlashdata('error_email', 'Correo no valido');
             return redirect()->to('/iniciarsesion_view');
         }
     }
@@ -54,9 +54,6 @@ class Login_controller extends Controller
     {
         $session = session();
         $id_usuario = $session->get('id_usuario');
-        if (!$id_usuario) {
-            return redirect()->to('/iniciarsesion_view');
-        }
         $usuario_model = new Usuarios_model();
         $usuario = $usuario_model->find($id_usuario);
         $data['titulo'] = 'Mi informacion';

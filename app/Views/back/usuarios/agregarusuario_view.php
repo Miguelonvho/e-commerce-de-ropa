@@ -1,8 +1,8 @@
+<?php $validation = \Config\Services::validation(); ?>
+<?php csrf_field(); ?>
+
+
 <div class="d-flex flex-wrap justify-content-center align-items-center gap-5">
-
-    <?php $validation = \Config\Services::validation(); ?>
-    <?php csrf_field(); ?>
-
     <form class="d-flex formulario flex-column gap-2 bg-black text-white p-3 my-5 rounded shadow-lg"
         action="<?= site_url('enviar-form') ?>" method="POST">
 
@@ -10,7 +10,7 @@
 
         <div class="form-floating text-secondary">
             <input placeholder="Nombre" type="text" class="form-control" id="nombre" name="nombre"
-                value="<?= old('nombre') ?>" required>
+                value="<?= old('nombre') ?>">
             <label for="nombre">nombre</label>
             <div style="height:5vh;">
                 <?php if ($validation->getError('nombre')) { ?>
@@ -21,7 +21,7 @@
 
         <div class="form-floating text-secondary">
             <input placeholder="Apellido" type="text" class="form-control" id="apellido" name="apellido"
-                value="<?= old('apellido') ?>" required>
+                value="<?= old('apellido') ?>">
             <label for="apellido">apellido</label>
             <div style="height:5vh;">
                 <?php if ($validation->getError('apellido')) { ?>
@@ -32,7 +32,7 @@
 
         <div class="form-floating text-secondary">
             <input placeholder="Correo" type="email" class="form-control" id="email" name="email"
-                value="<?= old('email') ?>" required>
+                value="<?= old('email') ?>">
             <label for="email" class="form-label">Correo electrónico</label>
             <div style="height:5vh;">
                 <?php if ($validation->getError('email')) { ?>
@@ -43,7 +43,7 @@
 
         <div class="form-floating text-secondary">
             <input placeholder="Usuario" type="text" class="form-control" id="usuario" name="usuario"
-                value="<?= old('usuario') ?>" required>
+                value="<?= old('usuario') ?>">
             <label for="usuario" class="form-label">Usuario</label>
             <div style="height:5vh;">
                 <?php if ($validation->getError('usuario')) { ?>
@@ -53,7 +53,7 @@
         </div>
 
         <div class="form-floating text-secondary">
-            <input placeholder="Contraseña" type="password" class="form-control" id="pass" name="pass" required>
+            <input placeholder="Contraseña" type="password" class="form-control" id="pass" name="pass">
             <label for="pass" class="form-label">Contraseña</label>
             <div style="height:5vh;">
                 <?php if ($validation->getError('pass')) { ?>

@@ -10,7 +10,7 @@
 
         <div class="form-floating text-secondary">
             <input placeholder="Correo" type="email" class="form-control" id="email" name="email"
-                value="<?= old('email') ?>" required>
+                value="<?= old('email') ?>">
             <label for="email" class="form-label">Correo electrónico</label>
             <div style="height:5vh;">
                 <?php if (session()->getFlashdata('error_email')) { ?>
@@ -20,7 +20,7 @@
         </div>
 
         <div class="form-floating text-secondary">
-            <input placeholder="Contraseña" type="password" class="form-control" id="pass" name="pass" required>
+            <input placeholder="Contraseña" type="password" class="form-control" id="pass" name="pass">
             <label for="pass" class="form-label">Contraseña</label>
             <div style="height:5vh;">
                 <?php if (session()->getFlashdata('error_password')) { ?>
@@ -36,17 +36,19 @@
             <a href="<?= base_url('agregarusuario_view') ?>">Registrarme</a>
         </div>
 
-        <?php if (session()->getFlashdata('success')): ?>
-            <div class="position-fixed top-0 start-50 translate-middle-x p-3 w-100"
-                style="max-width: 500px; z-index: 1100;">
-                <div id="liveToast" class="toast show text-black w-100" role="alert" aria-live="assertive"
-                    aria-atomic="true" data-bs-delay="3000">
-                    <div
-                        class="toast-body bg-light border rounded shadow-sm d-flex justify-content-center align-items-center text-center">
-                        <?= session()->getFlashdata('success') ?>
+        <div aria-live="polite" aria-atomic="true" class="position-relative">
+            <div class="toast-container position-fixed end-0 bottom-0 m-2" style="z-index: 9999;">
+                <?php if (session()->getFlashdata('success')): ?>
+                    <div class="toast align-items-center text-bg-success border-0" role="alert" aria-live="assertive"
+                        aria-atomic="true" >
+                        <div class="d-flex justify-content-center">
+                            <div class="toast-body">
+                                <?= session()->getFlashdata('success') ?>
+                            </div>
+                        </div>
                     </div>
-                </div>
+                <?php endif; ?>
             </div>
-        <?php endif; ?>
+        </div>
     </form>
 </div>

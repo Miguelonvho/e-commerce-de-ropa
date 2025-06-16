@@ -130,16 +130,19 @@
             </a>
         </div>
     </section>
-    <?php if (session()->getFlashdata('welcome_message')): ?>
-        <div class="position-fixed top-0 start-50 translate-middle-x p-3 w-100" style="max-width: 500px; z-index: 1100;">
-            <div id="liveToast" class="toast show text-black w-100" role="alert" aria-live="assertive" aria-atomic="true"
-                data-bs-delay="3000">
-                <div class=" toast-body bg-light border rounded shadow-sm d-flex justify-content-center
-                    align-items-center text-center">
-                    <?= session()->getFlashdata('welcome_message') ?>
-                </div>
+        <div aria-live="polite" aria-atomic="true" class="position-relative">
+            <div class="toast-container position-fixed end-0 bottom-0 m-2" style="z-index: 9999;">
+                <?php if (session()->getFlashdata('welcome_message')): ?>
+                    <div class="toast align-items-center text-bg-success border-0" role="alert" aria-live="assertive"
+                        aria-atomic="true" >
+                        <div class="d-flex justify-content-center">
+                            <div class="toast-body">
+                                <?= session()->getFlashdata('welcome_message') ?>
+                            </div>
+                        </div>
+                    </div>
+                <?php endif; ?>
             </div>
         </div>
-    <?php endif; ?>
 
 </body>

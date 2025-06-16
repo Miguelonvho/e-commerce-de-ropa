@@ -6,6 +6,19 @@
     font-size: large;
 }
 
+select option {
+    background-color: black;
+    color: white;
+    transition: background-color 0.2s ease-out, color 0.2s ease-out !important;
+}
+
+select option:hover {
+    background-color: white !important;
+    color: black !important;
+    transform: scale(1.05);
+    cursor: pointer;
+}
+
 .dropdown-item:hover {
     background-color: white !important;
     color: black !important;
@@ -115,6 +128,16 @@
     border: 1px solid black !important;
 }
 
+.nav-form {
+    color: white !important;
+    background-color: transparent !important;
+}
+
+.nav-form.active {
+    color: black !important;
+    background-color: white !important;
+    border: none !;
+}
 
 .boton-carrito {
     display: flex;
@@ -132,6 +155,22 @@
 
 .boton-negro:hover img.hover-icon {
     display: inline;
+}
+
+input:focus {
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+.edit-btn {
+    background: transparent;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+
+.edit-btn:hover {
+    color: #ccc;
 }
 
 .boton-negro {
@@ -155,15 +194,26 @@
     transform: translatex(48%);
 }
 
+@media (max-width: 2560px) {
+    #info-sesion {
+        width: 20vw !important;
+    }
+}
+
+@media (max-width: 1600px) {
+    #info-sesion {
+        width: 30vw !important;
+    }
+}
+
 @media (max-width: 1200px) {
     .vision-y-mision {
         width: 50% !important;
     }
 
     #info-sesion {
-        width: 30vw !important;
+        width: 35vw !important;
     }
-
 
     .offcanvas-end {
         width: 60% !important;
@@ -182,9 +232,8 @@
 
 @media (max-width: 970px) {
     * {
-        font-size: small;
+        font-size: 11px;
     }
-
 
     .boton-carrito img {
         width: 20px;
@@ -194,9 +243,7 @@
         height: 620px;
     }
 
-    #info-sesion {
-        width: 30vw !important;
-    }
+
 
     .imagen-ropa {
         object-fit: cover;
@@ -224,7 +271,7 @@
     }
 
     #info-sesion {
-        width: 40vw !important;
+        width: 50vw !important;
     }
 
     .img-perfil {
@@ -240,6 +287,10 @@
 @media (max-width: 600px) {
     .card a {
         max-height: 30px !important;
+    }
+
+    * {
+        font-size: x-small;
     }
 
     .formulario {
@@ -261,10 +312,6 @@
         height: 100px;
     }
 
-    #info-sesion {
-        width: 60vw !important;
-    }
-
     .container-img-perfil {
         display: flex;
         justify-content: center;
@@ -280,6 +327,7 @@
     .iconos-informativos p {
         padding-top: 20px;
     }
+
 
     .iconos-informativos img {
         width: 30px;
@@ -302,13 +350,19 @@
     }
 }
 
+@media (max-width: 400px) {
+    #info-sesion {
+        width: 50vw !important;
+    }
+}
+
 @media (max-width: 354px) {
     .tamaño-fuente-perfil {
         font-size: 11px;
     }
 
     #info-sesion {
-        width: 80vw !important;
+        width: 60vw !important;
     }
 }
 
