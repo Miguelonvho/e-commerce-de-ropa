@@ -1,8 +1,3 @@
-<?php
-$session = session();
-$perfil = $session->get('perfil_id');
-$nombre = $session->get('nombre');
-?>
 <div class="container-fluid">
     <a href="<?= base_url('plantilla_principal') ?>"><img style="width: 100px"
             src="<?= base_url('public/assets/img/Iconos/logo.png') ?>" alt="responsive"></a>

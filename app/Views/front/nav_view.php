@@ -2,7 +2,6 @@
 <?php
 $session = session();
 $perfil = $session->get('perfil_id');
-$nombre = $session->get('nombre');
 ?>
 
 <section class="container-fluid p-0">

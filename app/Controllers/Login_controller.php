@@ -39,7 +39,11 @@ class Login_controller extends Controller
                 ];
                 $session->set($ses_data);
                 $session->setFlashdata('welcome_message', '¡Bienvenido!');
-                return redirect()->to('/plantilla_principal');
+                if ($data['perfil_id'] == 1) {
+                    return redirect()->to('/crud_productos_view');
+                } else {
+                    return redirect()->to('/plantilla_principal');
+                }
             } else {
                 $session->setFlashdata('error_password', 'Contraseña incorrecta');
                 return redirect()->to('/iniciarsesion_view');
