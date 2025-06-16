@@ -10,7 +10,7 @@
 
         <div class="form-floating text-secondary">
             <input placeholder="Correo" type="email" class="form-control" id="email" name="email"
-                value="<?= old('email') ?>" required>
+                value="<?= old('email') ?>">
             <label for="email" class="form-label">Correo electrónico</label>
             <div style="height:5vh;">
                 <?php if (session()->getFlashdata('error_email')) { ?>
@@ -20,7 +20,7 @@
         </div>
 
         <div class="form-floating text-secondary">
-            <input placeholder="Contraseña" type="password" class="form-control" id="pass" name="pass" required>
+            <input placeholder="Contraseña" type="password" class="form-control" id="pass" name="pass">
             <label for="pass" class="form-label">Contraseña</label>
             <div style="height:5vh;">
                 <?php if (session()->getFlashdata('error_password')) { ?>

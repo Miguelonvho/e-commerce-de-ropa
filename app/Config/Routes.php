@@ -28,4 +28,4 @@ $routes->get('/logout', 'Login_controller::logout');
  * Rutas de productos
  */
 $routes->get('/editar_productos_view', 'Producto_controller::singleProducto', ['filter' => 'auth:admin']);
-$routes->post('/editar-producto', 'Producto_controller::editar_producto');
+$routes->post('/editar_producto', 'Producto_controller::editar_producto');

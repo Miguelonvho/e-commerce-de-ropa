@@ -157,6 +157,22 @@ select option:hover {
     display: inline;
 }
 
+input:focus {
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+.edit-btn {
+    background: transparent;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+
+.edit-btn:hover {
+    color: #ccc;
+}
+
 .boton-negro {
     background-color: black !important;
     color: white !important;
@@ -216,9 +232,8 @@ select option:hover {
 
 @media (max-width: 970px) {
     * {
-        font-size: small;
+        font-size: 11px;
     }
-
 
     .boton-carrito img {
         width: 20px;
@@ -336,7 +351,7 @@ select option:hover {
 }
 
 @media (max-width: 400px) {
-        #info-sesion {
+    #info-sesion {
         width: 50vw !important;
     }
 }
