@@ -25,7 +25,7 @@ $routes->get('/plantilla_perfil', 'Login_controller::buscar_usuario', ['filter' 
 $routes->get('/logout', 'Login_controller::logout');
 
 /*
- * Rutas de admin - HACER EL FILTRO AUTH
+ * Rutas de admin
  */
 $routes->get('/crud_productos_view', 'Producto_controller::index', ['filter' => 'auth:admin']); 
 $routes->get('/editar_productos_view', 'Producto_controller::singleProducto', ['filter' => 'auth:admin']);

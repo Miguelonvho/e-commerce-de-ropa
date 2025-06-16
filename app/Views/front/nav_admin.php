@@ -9,14 +9,12 @@ $nombre = $session->get('nombre');
     <div class="collapse navbar-collapse" id="navbarScroll">
         <ul class="navbar-nav nav-underline me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
             <li class="nav-item">
-                <a class="nav-link text-white" href="<?= base_url('') ?>">Principal</a>
+                <a class="nav-link text-white" href="<?= base_url('/crud_productos_view') ?>">CRUD Productos</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link text-white" href="<?= base_url('') ?>">CRUD Usuarios</a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link text-white" href="<?= base_url('/crud_productos_view') ?>">CRUD Productos</a>
-            </li>
+
             <li class="nav-item">
                 <a class="nav-link text-white" href="<?= base_url('') ?>">Ventas</a>
             </li>
