@@ -76,7 +76,7 @@
                                 alt="Usuario">
                         </a>
 
-                        <ul id="info-sesion" style="width: 30vw;" class="dropdown-menu bg-black my-2 p-4">
+                        <ul id="info-sesion" style="width: 25vw;" class="dropdown-menu bg-black my-2 p-4">
                             <li class="d-flex justify-content-between align-items-center p-0">
                                 <h4>Mi cuenta</h4>
                                 <button type="button" class="btn btn-close btn-close-white" data-bs-dismiss="offcanvas"
@@ -113,9 +113,9 @@
                                     </div>
                                 </li>
                                 <li class="d-flex justify-content-center gap-4 mt-3">
-                                    <a href="<?= base_url('agregarusuario_view') ?>"
+                                    <a style="max-height: 35px;" href="<?= base_url('agregarusuario_view') ?>"
                                         class="btn d-flex align-items-center btn-outline-light">Registrarme</a>
-                                    <a href="<?= base_url('iniciarsesion_view') ?>"
+                                    <a style="max-height: 35px;" href="<?= base_url('iniciarsesion_view') ?>"
                                         class="btn d-flex align-items-center btn-outline-light">Iniciar sesión</a>
                                 </li>
                             <?php endif; ?>
