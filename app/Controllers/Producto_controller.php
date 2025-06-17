@@ -32,7 +32,7 @@ class Producto_controller extends Controller
         $dato['titulo'] = 'Crud_productos';
         echo view('front/head_view', $dato);
         echo view('front/nav_view');
-        echo view('front/crud_productos_view', $data);
+        echo view('back/productos/crud_productos_view', $data);
         echo view('front/footer_view');
     }
     public function singleProducto($id = null)
