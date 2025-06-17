@@ -4,7 +4,7 @@
   <!-- Botones -->
   <div class="d-flex justify-content-end mt-4 mx-5">
     <div class="d-flex align-items-end">
-        <a href="<?= base_url('agregar_producto_view') ?>" class="btn btn-success me-2">Agregar</a>
+        <a href="<?= base_url('alta_productos_view') ?>" class="btn btn-success me-2">Agregar</a>
         <a href="<?= base_url('productos_eliminados') ?>" class="btn btn-secondary">Eliminados</a>
     </div>
   </div>
