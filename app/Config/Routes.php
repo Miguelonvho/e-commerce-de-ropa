@@ -22,7 +22,6 @@ $routes->post('/enviar-form', 'Usuario_controller::form_validation');
 $routes->get('/iniciarsesion_view', 'Home::login');
 $routes->post('/enviarlogin', 'Login_controller::auth');
 $routes->get('/plantilla_perfil', 'Login_controller::buscar_usuario', ['filter' => 'auth']);
-$routes->match(['get', 'post'], 'editar_usuario/(:num)', 'Usuario_controller::editar_usuario/$1');
 $routes->get('/logout', 'Login_controller::logout');
 
 /*
@@ -31,6 +30,12 @@ $routes->get('/logout', 'Login_controller::logout');
 $routes->get('/crud_productos_view', 'Producto_controller::index', ['filter' => 'auth:admin']); 
 $routes->get('/editar_productos_view/(:num)', 'Producto_controller::singleProducto/$1', ['filter' => 'auth:admin']);
 $routes->post('/editar_producto/(:num)', 'Producto_controller::editar_producto/$1');
+$routes->get('/crud_usuarios_view', 'Usuario_controller::index', ['filter' => 'auth:admin']);
+$routes->get('/usuarios_eliminados_view', 'Usuario_controller::eliminados', ['filter' => 'auth:admin']);
+$routes->get('/eliminar_usuario/(:num)', 'Usuario_controller::eliminar/$1', ['filter' => 'auth:admin']);
+$routes->get('/activar_usuario/(:num)', 'Usuario_controller::activar_usuario/$1', ['filter' => 'auth:admin']);
+$routes->match(['get', 'post'], 'editar_usuario/(:num)', 'Usuario_controller::editar_usuario/$1', ['filter' => 'auth']);
+$routes->match(['get', 'post'], 'editar_usuario_admin/(:num)', 'Usuario_controller::editar_usuario_admin/$1', ['filter' => 'auth:admin']);
 
 // Alta de productos (alta y guardado)
 $routes->get('/alta_productos_view', 'Producto_controller::crearProducto', ['filter' => 'auth:admin']);

@@ -18,7 +18,7 @@ $validation = $validation ?? \Config\Services::validation();
         <?php endif; ?>
     </div>
 </div>
-<form action="<?= site_url('editar_usuario/' . $usuario['id_usuario']) ?>" enctype="multipart/form-data" method="POST">
+<form action="<?= site_url('editar_usuario_admin/' . $usuario['id']) ?>" enctype="multipart/form-data" method="POST">
     <?= csrf_field() ?>
     <h1 class="m-5 fw-light text-center">Mi información</h1>
     <div class="d-flex mb-5 justify-content-center">
@@ -114,11 +114,6 @@ $validation = $validation ?? \Config\Services::validation();
             <div class="d-flex justify-content-between mt-5">
                 <button type="submit" name="accion" value="guardar" class="btn btn-success" id="guardarBtn"
                     disabled>Guardar cambios</button>
-
-                <button type="submit" name="accion" value="eliminar" class="btn btn-danger"
-                    onclick="return confirm('¿Estás seguro que querés eliminar tu cuenta? Esta acción es irreversible.')">
-                    Eliminar cuenta
-                </button>
             </div>
         </div>
     </div>
