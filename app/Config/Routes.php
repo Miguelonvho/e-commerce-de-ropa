@@ -31,3 +31,7 @@ $routes->get('/logout', 'Login_controller::logout');
 $routes->get('/crud_productos_view', 'Producto_controller::index', ['filter' => 'auth:admin']); 
 $routes->get('/editar_productos_view/(:num)', 'Producto_controller::singleProducto/$1', ['filter' => 'auth:admin']);
 $routes->post('/editar_producto/(:num)', 'Producto_controller::editar_producto/$1');
+
+// Alta de productos (alta y guardado)
+$routes->get('/alta_productos_view', 'Producto_controller::crearProducto', ['filter' => 'auth:admin']);
+$routes->post('/alta_producto', 'Producto_controller::store');

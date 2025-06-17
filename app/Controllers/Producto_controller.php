@@ -71,6 +71,94 @@ class Producto_controller extends Controller
         echo view('front/footer_view');
     }
 
+    public function crearProducto()
+    {
+        $categoriaModel = new Categoria_model();
+        $marcaModel = new Marca_model();
+        $talleModel = new Talle_model();
+        $generoModel = new Genero_model();
+        $edadModel = new Edad_model();
+
+        $data['categorias'] = $categoriaModel->getCategorias();
+        $data['marcas'] = $marcaModel->getMarcas();
+        $data['talles'] = $talleModel->getTalles();
+        $data['generos'] = $generoModel->getGeneros();
+        $data['edades'] = $edadModel->getEdades();
+
+        $dato['titulo'] = 'Alta producto';
+        echo view('front/head_view', $dato);
+        echo view('front/nav_view');
+        echo view('back/productos/alta_productos_view', $data);
+        echo view('front/footer_view');
+    }
+
+    // Guarda el producto en la BD
+    public function store()
+    {
+        $productoModel = new Producto_Model();
+
+        $input = $this->validate([
+            'nombre_prod' => 'required|min_length[3]',
+            'categorias' => 'required|is_not_unique[categorias.id_categoria]',
+            'marcas' => 'required|is_not_unique[marcas.id_marca]',
+            'talles' => 'required|is_not_unique[talles.id_talle]',
+            'generos' => 'required|is_not_unique[generos.id_genero]',
+            'edades' => 'required|is_not_unique[edades.id_edad]',
+            'precio_costo' => 'required|numeric',
+            'precio_venta' => 'required|numeric',
+            'stock' => 'required|numeric',
+            'stock_min' => 'required|numeric',
+            'imagen' => 'uploaded[imagen]|max_size[imagen,2048]|is_image[imagen]'
+        ]);
+
+        if (!$input) {
+            // Si falla la validación volvemos al formulario con los datos cargados.
+            $categoriaModel = new Categoria_model();
+            $marcaModel = new Marca_model();
+            $talleModel = new Talle_model();
+            $generoModel = new Genero_model();
+            $edadModel = new Edad_model();
+
+            $data['categorias'] = $categoriaModel->getCategorias();
+            $data['marcas'] = $marcaModel->getMarcas();
+            $data['talles'] = $talleModel->getTalles();
+            $data['generos'] = $generoModel->getGeneros();
+            $data['edades'] = $edadModel->getEdades();
+            $data['validation'] = $this->validator;
+
+            $dato['titulo'] = 'Alta producto';
+            echo view('front/head_view', $dato);
+            echo view('front/nav_view');
+            echo view('back/productos/alta_productos_view', $data);
+            echo view('front/footer_view');
+        } else {
+            // Si pasa la validación, guardamos
+            $img = $this->request->getFile('imagen');
+            $nombre_aleatorio = $img->getRandomName();
+            $img->move(ROOTPATH . 'public/assets/uploads', $nombre_aleatorio);
+
+            $data = [
+                'nombre_prod' => $this->request->getVar('nombre_prod'),
+                'categoria_id' => $this->request->getVar('categorias'),
+                'marca_id' => $this->request->getVar('marcas'),
+                'talle_id' => $this->request->getVar('talles'),
+                'genero_id' => $this->request->getVar('generos'),
+                'edad_id' => $this->request->getVar('edades'),
+                'precio_costo' => $this->request->getVar('precio_costo'),
+                'precio_venta' => $this->request->getVar('precio_venta'),
+                'stock' => $this->request->getVar('stock'),
+                'stock_min' => $this->request->getVar('stock_min'),
+                'imagen' => $nombre_aleatorio,
+                'eliminado' => 'NO'
+            ];
+
+            $productoModel->insert($data);
+            session()->setFlashdata('success', 'Producto creado correctamente.');
+            return redirect()->to(base_url('/crud_productos_view'));
+        }
+    }
+
+
     public function editar_producto($id = null)
     {
 
