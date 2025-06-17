@@ -31,3 +31,6 @@ $routes->get('/logout', 'Login_controller::logout');
 $routes->get('/crud_productos_view', 'Producto_controller::index', ['filter' => 'auth:admin']); 
 $routes->get('/editar_productos_view/(:num)', 'Producto_controller::singleProducto/$1', ['filter' => 'auth:admin']);
 $routes->post('/editar_producto/(:num)', 'Producto_controller::editar_producto/$1');
+$routes->get('/productos_eliminados', 'Producto_controller::productos_eliminados', ['filter' => 'auth:admin']);
+$routes->get('/restaurar_producto/(:num)', 'Producto_controller::restaurar_producto/$1', ['filter' => 'auth:admin']);
+$routes->get('/eliminar_producto/(:num)', 'Producto_controller::eliminar_producto/$1', ['filter' => 'auth:admin']);

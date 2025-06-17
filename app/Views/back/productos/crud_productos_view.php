@@ -38,7 +38,7 @@
     <?php foreach ($productos as $producto): ?>
 
       <!-- Vista escritorio -->
-      <div class="producto-card d-none d-md-flex align-items-center text-center m-2 p-2 border border-secondary rounded">
+      <div class="producto-card d-none d-md-flex align-items-center text-center m-2 py-5 border border-secondary rounded">
           <div class="col-1">
               <?php if (empty($producto['imagen'])): ?>
                   <img src="<?= base_url('assets/img/Iconos/sin-imagen.png') ?>" alt="Sin imagen" style="width: 100px; height: 90px; object-fit: cover;">
@@ -53,7 +53,7 @@
           <div class="col-1"><?= $producto['stock'] ?></div>
           <div class="col-2">
               <a href="<?= base_url('editar_productos_view/' . $producto['id_producto']) ?>" class="btn btn-primary mb-2">Editar</a><br>
-              <a href="<?= base_url('borrar_producto/' . $producto['id_producto']) ?>" class="btn btn-danger">Borrar</a>
+              <a href="<?= base_url('eliminar_producto/' . $producto['id_producto']) ?>" class="btn btn-danger">Borrar</a>
           </div>
       </div>
 
