@@ -19,7 +19,11 @@ class Login_controller extends Controller
         $email = $this->request->getVar('email');
         $password = $this->request->getVar('pass');
 
-        $data = $model->where('email', $email)->first();
+        $data = $model
+            ->where('email', $email)
+            ->where('baja', 'NO')  // solo usuarios activos
+            ->orderBy('id_usuario', 'DESC')  // toma el más reciente
+            ->first();
 
         if ($data) {
             if ($data['baja'] === 'SI') {
@@ -29,7 +33,7 @@ class Login_controller extends Controller
 
             if (password_verify($password, $data['pass'])) {
                 $ses_data = [
-                    'id_usuario' => $data['id'],
+                    'id_usuario' => $data['id_usuario'],
                     'nombre' => $data['nombre'],
                     'apellido' => $data['apellido'],
                     'email' => $data['email'],
@@ -39,13 +43,17 @@ class Login_controller extends Controller
                 ];
                 $session->set($ses_data);
                 $session->setFlashdata('welcome_message', '¡Bienvenido!');
-                return redirect()->to('/plantilla_principal');
+                if ($data['perfil_id'] == 1) {
+                    return redirect()->to('/crud_productos_view');
+                } else {
+                    return redirect()->to('/plantilla_principal');
+                }
             } else {
                 $session->setFlashdata('error_password', 'Contraseña incorrecta');
                 return redirect()->to('/iniciarsesion_view');
             }
         } else {
-            $session->setFlashdata('error_email', 'Correo no registrado');
+            $session->setFlashdata('error_email', 'Correo no valido');
             return redirect()->to('/iniciarsesion_view');
         }
     }
@@ -53,10 +61,7 @@ class Login_controller extends Controller
     public function buscar_usuario()
     {
         $session = session();
-        $id_usuario = $session->get('id');
-        if (!$id_usuario) {
-            return redirect()->to('/iniciarsesion_view');
-        }
+        $id_usuario = $session->get('id_usuario');
         $usuario_model = new Usuarios_model();
         $usuario = $usuario_model->find($id_usuario);
         $data['titulo'] = 'Mi informacion';

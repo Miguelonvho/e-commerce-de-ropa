@@ -1,5 +1,5 @@
 <body class="bg-black text-white">
-    <hr class="border-white my-4">
+    <hr class="border-white my-2">
     <section class="container-fluid py-5 bg-black text-white">
         <div class="container">
             <h1 class="text-center fw-light mb-4">Contacto</h1>

@@ -11,7 +11,13 @@ class Auth implements FilterInterface
     public function before(RequestInterface $request, $arguments = null)
     {
         if (!session()->get('logged_in')) {
-            return redirect()->to('/login');
+            return redirect()->to('/iniciarsesion_view');
+        }
+
+        if ($arguments && in_array('admin', $arguments)) {
+            if (session()->get('perfil_id') != 1) {
+                return redirect()->to('/iniciarsesion_view');
+            }
         }
     }
 
