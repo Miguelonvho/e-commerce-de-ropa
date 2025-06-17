@@ -22,7 +22,7 @@ class Login_controller extends Controller
         $data = $model
             ->where('email', $email)
             ->where('baja', 'NO')  // solo usuarios activos
-            ->orderBy('id_usuario', 'DESC')  // toma el más reciente
+            ->orderBy('id', 'DESC')  // toma el más reciente
             ->first();
 
         if ($data) {
@@ -33,7 +33,7 @@ class Login_controller extends Controller
 
             if (password_verify($password, $data['pass'])) {
                 $ses_data = [
-                    'id_usuario' => $data['id_usuario'],
+                    'id' => $data['id'],
                     'nombre' => $data['nombre'],
                     'apellido' => $data['apellido'],
                     'email' => $data['email'],
@@ -61,9 +61,9 @@ class Login_controller extends Controller
     public function buscar_usuario()
     {
         $session = session();
-        $id_usuario = $session->get('id_usuario');
+        $id = $session->get('id');
         $usuario_model = new Usuarios_model();
-        $usuario = $usuario_model->find($id_usuario);
+        $usuario = $usuario_model->find($id);
         $data['titulo'] = 'Mi informacion';
         $data['usuario'] = $usuario;
 

@@ -103,7 +103,7 @@ class Usuario_controller extends Controller
         $accion = $this->request->getPost('accion');
 
         $usuarioModel = new Usuarios_Model();
-        $usuario = $usuarioModel->where('id_usuario', $id)->first();
+        $usuario = $usuarioModel->where('id', $id)->first();
 
         if ($accion === 'eliminar') {
             // Cambiar campo 'baja' a 'SI'
@@ -181,7 +181,7 @@ class Usuario_controller extends Controller
                 $data['pass'] = password_hash($pass, PASSWORD_DEFAULT);
             }
 
-            if ($usuarioModel->update($usuario['id_usuario'], $data)) {
+            if ($usuarioModel->update($usuario['id'], $data)) {
                 // Actualizar sesión con los nuevos datos
                 $session = session();
                 $session->set([
