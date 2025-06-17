@@ -13,14 +13,13 @@ class Usuario_controller extends Controller
 
     public function form_validation()
     {
-
         $input = $this->validate(
             [
                 'nombre' => 'required|alpha_space|min_length[3]|max_length[25]',
                 'apellido' => 'required|alpha_space|min_length[3]|max_length[25]',
                 'email' => 'required|valid_email|max_length[50]',
                 'usuario' => 'required|alpha_numeric|min_length[3]|max_length[20]',
-                'pass' => 'min_length[6]|max_length[30]',
+                'pass' => 'required|min_length[6]|max_length[30]',
             ],
             [
                 'nombre' => [
@@ -47,6 +46,7 @@ class Usuario_controller extends Controller
                     'max_length' => 'El usuario no puede tener más de 20 caracteres.',
                 ],
                 'pass' => [
+                    'required' => 'La contraseña es obligatoria.',
                     'min_length' => 'La contraseña debe tener al menos 6 caracteres.',
                     'max_length' => 'La contraseña no puede tener más de 30 caracteres.',
                 ],
@@ -55,28 +55,69 @@ class Usuario_controller extends Controller
 
         $formModel = new Usuarios_model();
 
-        if (!$input) {
+        // Comprobación de duplicados
+        $usuarioExistente = $formModel
+            ->groupStart()
+            ->where('email', $this->request->getVar('email'))
+            ->orWhere('usuario', $this->request->getVar('usuario'))
+            ->groupEnd()
+            ->where('baja', 'NO')
+            ->first();
+            
+        if ($usuarioExistente) {
+            // Agregamos el error a la validación manualmente
+            $validation = \Config\Services::validation();
+            $validation->setError('email', 'El correo o nombre de usuario ya están en uso.');
+        }
+
+        // Si la validación falla (por cualquier motivo)
+        if (!$input || $usuarioExistente) {
             $data['titulo'] = 'Registro';
             echo view('front/head_view', $data);
             echo view('front/nav_view');
-            echo view('back/usuarios/agregarusuario_view', ['validation' => $this->validator]);
-            echo view('front/footer_view');
-        } else {
-            $formModel->save([
-                'nombre' => $this->request->getVar('nombre'),
-                'apellido' => $this->request->getVar('apellido'),
-                'usuario' => $this->request->getVar('usuario'),
-                'email' => $this->request->getVar('email'),
-                'pass' => password_hash($this->request->getVar('pass'), PASSWORD_DEFAULT),
+            echo view('back/usuarios/agregarusuario_view', [
+                'validation' => \Config\Services::validation()
             ]);
-
-            session()->setFlashdata('success', 'Se ha registrado con exito :)');
-            return $this->response->redirect(site_url('/iniciarsesion_view'));
+            echo view('front/footer_view');
+            return;
         }
+
+        // Guardar datos
+        $formModel->save([
+            'nombre' => $this->request->getVar('nombre'),
+            'apellido' => $this->request->getVar('apellido'),
+            'usuario' => $this->request->getVar('usuario'),
+            'email' => $this->request->getVar('email'),
+            'pass' => password_hash($this->request->getVar('pass'), PASSWORD_DEFAULT),
+        ]);
+
+        session()->setFlashdata('success', 'Se ha registrado con éxito :)');
+        return redirect()->to('/iniciarsesion_view');
     }
 
-    public function editar_usuario($id = 25)
+
+
+
+    public function editar_usuario($id = null)
     {
+        $accion = $this->request->getPost('accion');
+
+        $usuarioModel = new Usuarios_Model();
+        $usuario = $usuarioModel->where('id_usuario', $id)->first();
+
+        if ($accion === 'eliminar') {
+            // Cambiar campo 'baja' a 'SI'
+            $usuarioModel->update($id, ['baja' => 'SI']);
+
+            // Destruir sesión para desloguear
+            $session = session();
+            $session->destroy();
+
+            // Redirigir a página de registro o login
+            return redirect()->to(base_url('/agregarusuario_view')); // Ajustá la URL a la que tengas
+        }
+
+        // Validación solo si no se elimina
         $input = $this->validate(
             [
                 'nombre' => 'required|alpha_space|min_length[3]|max_length[25]',
@@ -115,9 +156,6 @@ class Usuario_controller extends Controller
                 ],
             ]
         );
-
-        $usuarioModel = new Usuarios_Model();
-        $usuario = $usuarioModel->where('id_usuario', $id)->first();
 
         if (!$input) {
             $data['validation'] = $this->validator;
@@ -158,5 +196,6 @@ class Usuario_controller extends Controller
             return redirect()->to(base_url('/plantilla_perfil'));
         }
     }
+
 }
 

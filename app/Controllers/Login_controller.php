@@ -19,7 +19,11 @@ class Login_controller extends Controller
         $email = $this->request->getVar('email');
         $password = $this->request->getVar('pass');
 
-        $data = $model->where('email', $email)->first();
+        $data = $model
+            ->where('email', $email)
+            ->where('baja', 'NO')  // solo usuarios activos
+            ->orderBy('id_usuario', 'DESC')  // toma el más reciente
+            ->first();
 
         if ($data) {
             if ($data['baja'] === 'SI') {

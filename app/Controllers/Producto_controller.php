@@ -19,7 +19,7 @@ class Producto_controller extends Controller
         $session = session();
     }
 
-        // Mostrar productos en lista
+    // Mostrar productos en lista
 
     public function index()
     {
@@ -158,6 +158,53 @@ class Producto_controller extends Controller
         }
     }
 
+
+    public function restaurar_producto($id)
+    {
+        $productoModel = new Producto_Model();
+        $productoModel->update($id, ['eliminado' => 'NO']);
+        return redirect()->to(base_url('/productos_eliminados'))->with('success', 'Producto restaurado correctamente.');
+    }
+
+    public function eliminar_producto($id)
+    {
+        $productoModel = new Producto_model();
+        $producto = $productoModel->find($id);
+
+        if (!$producto) {
+            return redirect()->back()->with('error', 'Producto no encontrado');
+        }
+
+        // Soft delete
+        $productoModel->update($id, ['eliminado' => 'SI']);
+
+        return redirect()->to('crud_productos_view')->with('success', 'Producto eliminado correctamente');
+    }
+
+    public function productos_eliminados()
+    {
+        $productoModel = new Producto_Model();
+        $buscar = $this->request->getGet('buscar');
+
+        // Filtrar productos eliminados
+        $productos = $productoModel->where('eliminado', 'SI');
+
+        if (!empty($buscar)) {
+            $productos = $productos->groupStart()
+                ->like('nombre_prod', $buscar)
+                ->orLike('id_producto', $buscar)
+                ->groupEnd();
+        }
+
+        $data['productos'] = $productos->findAll();
+        $data['buscar'] = $buscar;
+
+        $dato['titulo'] = 'Productos eliminados';
+        echo view('front/head_view', $dato);
+        echo view('front/nav_view');
+        echo view('back/productos/productos_eliminados_view', $data); // vista nueva
+        echo view('front/footer_view');
+    }
 
     public function editar_producto($id = null)
     {
