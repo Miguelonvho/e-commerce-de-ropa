@@ -2,7 +2,7 @@
   <hr class="border-white my-2">
 
   <!-- Botones -->
-  <div class="d-flex justify-content-end m-2">
+  <div class="d-flex justify-content-end mt-4 mx-5">
     <div class="d-flex align-items-end">
         <a href="<?= base_url('agregar_producto_view') ?>" class="btn btn-success me-2">Agregar</a>
         <a href="<?= base_url('productos_eliminados') ?>" class="btn btn-secondary">Eliminados</a>
@@ -10,7 +10,7 @@
   </div>
 
   <!-- Barra de búsqueda -->
-  <form method="get" class="d-flex justify-content-end m-2 mb-3">
+  <form method="get" class="d-flex justify-content-end mt-2 mx-5 mb-3">
       <div class="input-group" style="max-width: 250px;">
           <input type="text" name="buscar" class="form-control" placeholder="Buscar producto..." value="<?= esc($buscar ?? '') ?>">
           <button type="submit" class="btn btn-primary">Buscar</button>
