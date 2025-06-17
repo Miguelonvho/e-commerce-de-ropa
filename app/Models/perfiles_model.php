@@ -6,6 +6,6 @@ use CodeIgniter\Model;
 class UsuarioModel extends Model
 {
     protected $table      = 'perfiles';
-    protected $primaryKey = 'id_perfil';
-    protected $allowedFields = ['nombre', 'apellido', 'email', 'usuario', 'pass'];
+    protected $primaryKey = 'id';
+    protected $allowedFields = ['descripcion'];
 }

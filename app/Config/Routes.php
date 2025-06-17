@@ -22,7 +22,7 @@ $routes->post('/enviar-form', 'Usuario_controller::form_validation');
 $routes->get('/iniciarsesion_view', 'Home::login');
 $routes->post('/enviarlogin', 'Login_controller::auth');
 $routes->get('/plantilla_perfil', 'Login_controller::buscar_usuario', ['filter' => 'auth']);
-$routes->post('/editar_usuario', 'Usuario_controller::editar_usuario');
+$routes->match(['get', 'post'], 'editar_usuario/(:num)', 'Usuario_controller::editar_usuario/$1');
 $routes->get('/logout', 'Login_controller::logout');
 
 /*

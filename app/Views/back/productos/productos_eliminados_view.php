@@ -32,7 +32,7 @@
     <div class="scroll-container-crud">
 
         <?php if (empty($productos)): ?>
-            <div class="text-center mt-4">No hay productos eliminados.</div>
+            <div class="text-center mt-4">No se encontraron productos eliminados.</div>
         <?php else: ?>
             <?php foreach ($productos as $producto): ?>
 

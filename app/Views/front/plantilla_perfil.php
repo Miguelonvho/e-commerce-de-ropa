@@ -2,9 +2,24 @@
 $readonly = $readonly ?? true;
 $validation = $validation ?? \Config\Services::validation();
 ?>
-<?= csrf_field() ?>
-
-<form action="<?= site_url('editar_usuario') ?>" enctype="multipart/form-data" method="POST">
+<div aria-live="polite" aria-atomic="true" class="position-relative">
+    <div class="toast-container position-fixed end-0 bottom-0 m-2" style="z-index: 9999;">
+        <?php if (session()->getFlashdata('success')): ?>
+            <div class="toast align-items-center text-bg-success border-0" role="alert" aria-live="assertive"
+                aria-atomic="true" data-bs-delay="2000">
+                <div class="d-flex">
+                    <div class="toast-body">
+                        <?= session()->getFlashdata('success') ?>
+                    </div>
+                    <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"
+                        aria-label="Close"></button>
+                </div>
+            </div>
+        <?php endif; ?>
+    </div>
+</div>
+<form action="<?= site_url('editar_usuario/' . $usuario['id_usuario']) ?>" enctype="multipart/form-data" method="POST">
+    <?= csrf_field() ?>
     <h1 class="m-5 fw-light text-center">Mi información</h1>
     <div class="d-flex mb-5 justify-content-center">
         <div class="mx-5 w-75 rounded shadow-lg bg-black text-white p-5">
@@ -78,7 +93,8 @@ $validation = $validation ?? \Config\Services::validation();
             <hr class="mt-4">
 
             <!-- Contraseña -->
-            <label for="pass" class="form-label">Contraseña <small>(dejar en blanco para no cambiar)</small></label>
+            <label for="pass" class="form-label">Contraseña</label><br>
+            <small class="text-secondary">(dejar en blanco para no cambiar)</small>
             <div class="input-group">
                 <input type="password"
                     class="form-control bg-black text-white border-0 <?= $validation->hasError('pass') ? 'is-invalid' : '' ?>"
@@ -96,10 +112,10 @@ $validation = $validation ?? \Config\Services::validation();
 
             <!-- Botones -->
             <div class="d-flex justify-content-between mt-5">
-                <button type="submit" class="btn btn-success" id="guardarBtn" disabled>Guardar cambios</button>
+                <button type="submit" name="accion" value="guardar" class="btn btn-success" id="guardarBtn"
+                    disabled>Guardar cambios</button>
 
-                <button type="submit" formaction="<?= base_url('perfil/eliminar') ?>" formmethod="post"
-                    class="btn btn-danger"
+                <button type="submit" name="accion" value="eliminar" class="btn btn-danger"
                     onclick="return confirm('¿Estás seguro que querés eliminar tu cuenta? Esta acción es irreversible.')">
                     Eliminar cuenta
                 </button>
