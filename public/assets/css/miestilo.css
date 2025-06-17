@@ -2,6 +2,11 @@
     border-color: rgb(255, 255, 255);
 }
 
+.footer-al-fondo {
+    margin-top: auto;
+}
+
+
 * {
     font-size: large;
 }

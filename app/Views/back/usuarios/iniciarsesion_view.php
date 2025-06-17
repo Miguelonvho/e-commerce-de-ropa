@@ -1,10 +1,10 @@
-<div class="d-flex flex-wrap justify-content-center align-items-center gap-5">
+<div class="d-flex flex-wrap justify-content-center align-items-center gap-5" style="height: 600px">
 
     <?php $validation = \Config\Services::validation(); ?>
     <?php csrf_field(); ?>
 
-    <form class="d-flex formulario mx-5 flex-column gap-2 h-25 bg-black text-white p-3 my-5 rounded shadow-lg"
-        action="<?= site_url('enviarlogin') ?>" method="POST">
+    <form class="d-flex formulario mx-5 flex-column gap-2 bg-black text-white p-3 my-5 rounded shadow-lg"
+        action="<?= site_url('enviarlogin') ?>" style="margin-bottom: 100px" method="POST">
 
         <h1 class="fw-light mb-3">Iniciar sesión</h1>
 

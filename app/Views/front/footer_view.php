@@ -1,5 +1,5 @@
     <!-- Footer -->
-    <footer class="bg-black pb-5" data-bs-theme="dark">
+    <footer class="bg-black pb-5 footer-al-fondo" data-bs-theme="dark">
         <div class="d-flex flex-wrap justify-content-center m-0 p-5 gap-5">
             <a class="text-white" href="<?= base_url('quienes_somos') ?>">Quienes somos</a>
             <a class="text-white" href="<?= base_url('comercializacion') ?>">Comercialización</a>
