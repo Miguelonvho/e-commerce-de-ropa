@@ -40,7 +40,7 @@
       <!-- Vista escritorio -->
       <div class="producto-card d-none d-md-flex align-items-center text-center m-2 p-2 border border-secondary rounded">
           <div class="col-1">
-              <?php if (empty($producto['imagen']) || $producto['imagen'] == null): ?>
+              <?php if (empty($producto['imagen'])): ?>
                   <img src="<?= base_url('assets/img/Iconos/sin-imagen.png') ?>" alt="Sin imagen" style="width: 100px; height: 90px; object-fit: cover;">
               <?php else: ?>
                   <img src="<?= base_url('public/assets/uploads/' . $producto['imagen']) ?>" alt="Producto" style="width: 100px; height: 90px; object-fit: cover;">
@@ -58,10 +58,10 @@
       </div>
 
       <!-- Vista celular -->
-      <div class="card d-md-none mb-3 mx-2">
+      <div class="card d-md-none mb-3 w-100 px-2">
           <div class="card-body">
               <div class="d-flex align-items-center">
-                  <?php if (empty($producto['imagen']) || $producto['imagen'] == null): ?>
+                  <?php if (empty($producto['imagen'])): ?>
                       <img src="<?= base_url('assets/img/Iconos/sin-imagen.png') ?>" class="me-3" style="width: 80px;">
                   <?php else: ?>
                       <img src="<?= base_url('public/assets/uploads/' . $producto['imagen']) ?>" class="me-3" style="width: 80px;">
