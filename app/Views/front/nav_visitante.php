@@ -90,12 +90,6 @@
 
                     <?php else: ?>
                         <!-- Si NO está logueado -->
-                        <li class="d-flex justify-content-center">
-                            <div class="d-flex gap-4 align-items-center">
-                                <img style="width: 90px; height: 90px; object-fit: cover; border-radius: 100%;"
-                                    src="<?= base_url('public/assets/img/Iconos/sin-usuario.png') ?>" alt="">
-                            </div>
-                        </li>
                         <li class="d-flex justify-content-center gap-4 mt-3">
                             <a href="<?= base_url('agregarusuario_view') ?>"
                                 class="btn d-flex align-items-center btn-outline-light">Registrarme</a>
