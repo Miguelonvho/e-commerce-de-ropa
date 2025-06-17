@@ -1,62 +1,101 @@
-<?php $validation = session('validation'); ?>
+<?php
+$readonly = $readonly ?? true;
+$validation = $validation ?? \Config\Services::validation();
+?>
+<?= csrf_field() ?>
 
-<form action="<?= site_url('editar_perfil') ?>" enctype="multipart/form-data" method="POST">
-    <h1 class="m-4 fw-light text-center">Mi información</h1>
-    <div class="d-flex justify-content-center">
+<form action="<?= site_url('editar_usuario') ?>" enctype="multipart/form-data" method="POST">
+    <h1 class="m-5 fw-light text-center">Mi información</h1>
+    <div class="d-flex mb-5 justify-content-center">
         <div class="mx-5 w-75 rounded shadow-lg bg-black text-white p-5">
 
-            <!-- Imagen -->
-            <div class="container-img-perfil mb-4">
-                <img class="img-perfil" src="<?= base_url('public/assets/img/Iconos/sin-usuario.png') ?>" alt="">
-            </div>
-
-            <hr>
-
             <!-- Nombre -->
-            <label for="nombre_prod" class="form-label">Nombre</label>
+            <label for="nombre" class="form-label">Nombre</label>
             <div class="input-group">
                 <input type="text"
-                    class="form-control bg-black text-white border-0 <?= $validation && $validation->hasError('nombre_prod') ? 'is-invalid' : '' ?>"
-                    id="nombre_prod" name="nombre_prod" value="<?= old('nombre_prod', esc($usuario['nombre'])) ?>"
-                    readonly data-original="<?= esc($usuario['nombre']) ?>">
-                <button type="button" class="edit-btn" onclick="habilitarCampo('nombre_prod')">
+                    class="form-control bg-black text-white border-0 <?= $validation->hasError('nombre') ? 'is-invalid' : '' ?>"
+                    id="nombre" name="nombre" value="<?= old('nombre', esc($usuario['nombre'])) ?>" <?= $readonly ? 'readonly' : '' ?> data-original="<?= esc($usuario['nombre']) ?>">
+                <button type="button" class="edit-btn" onclick="habilitarCampo('nombre')">
                     <i class="bi bi-pencil"></i>
                 </button>
             </div>
-            <?php if ($validation && $validation->hasError('nombre_prod')): ?>
-                <div class="text-danger">
-                    <?= $validation->getError('nombre_prod') ?>
-                </div>
-            <?php endif; ?>
+            <div style="height:1vh;">
+                <?php if ($validation->getError('nombre')) { ?>
+                    <p class="text-danger"><?= $validation->getError('nombre') ?></p>
+                <?php } ?>
+            </div>
+            <hr class="mt-4">
 
-            <hr>
+            <!-- Apellido -->
+            <label for="apellido" class="form-label">Apellido</label>
+            <div class="input-group">
+                <input type="text"
+                    class="form-control bg-black text-white border-0 <?= $validation->hasError('apellido') ? 'is-invalid' : '' ?>"
+                    id="apellido" name="apellido" value="<?= old('apellido', esc($usuario['apellido'])) ?>" <?= $readonly ? 'readonly' : '' ?> data-original="<?= esc($usuario['apellido']) ?>">
+                <button type="button" class="edit-btn" onclick="habilitarCampo('apellido')">
+                    <i class="bi bi-pencil"></i>
+                </button>
+            </div>
+            <div style="height:1vh;">
+                <?php if ($validation->getError('apellido')) { ?>
+                    <p class="text-danger"><?= $validation->getError('apellido') ?></p>
+                <?php } ?>
+            </div>
+            <hr class="mt-4">
 
             <!-- Email -->
             <label for="email" class="form-label">Email</label>
             <div class="input-group">
-                <input type="email" class="form-control bg-black text-white border-0" id="email" name="email"
-                    value="<?= esc($usuario['email']) ?>" readonly data-original="<?= esc($usuario['email']) ?>">
+                <input type="email"
+                    class="form-control bg-black text-white border-0 <?= $validation->hasError('email') ? 'is-invalid' : '' ?>"
+                    id="email" name="email" value="<?= old('email', esc($usuario['email'])) ?>" <?= $readonly ? 'readonly' : '' ?> data-original="<?= esc($usuario['email']) ?>">
                 <button type="button" class="edit-btn" onclick="habilitarCampo('email')">
                     <i class="bi bi-pencil"></i>
                 </button>
             </div>
-
-            <hr>
+            <div style="height:1vh;">
+                <?php if ($validation->getError('email')) { ?>
+                    <p class="text-danger"><?= $validation->getError('email') ?></p>
+                <?php } ?>
+            </div>
+            <hr class="mt-4">
 
             <!-- Usuario -->
             <label for="usuario" class="form-label">Usuario</label>
             <div class="input-group">
-                <input type="text" class="form-control bg-black text-white border-0" id="usuario" name="usuario"
-                    value="<?= esc($usuario['usuario']) ?>" readonly data-original="<?= esc($usuario['usuario']) ?>">
+                <input type="text"
+                    class="form-control bg-black text-white border-0 <?= $validation->hasError('usuario') ? 'is-invalid' : '' ?>"
+                    id="usuario" name="usuario" value="<?= old('usuario', esc($usuario['usuario'])) ?>" <?= $readonly ? 'readonly' : '' ?> data-original="<?= esc($usuario['usuario']) ?>">
                 <button type="button" class="edit-btn" onclick="habilitarCampo('usuario')">
                     <i class="bi bi-pencil"></i>
                 </button>
             </div>
+            <div style="height:1vh;">
+                <?php if ($validation->getError('usuario')) { ?>
+                    <p class="text-danger"><?= $validation->getError('usuario') ?></p>
+                <?php } ?>
+            </div>
+            <hr class="mt-4">
 
-            <hr>
+            <!-- Contraseña -->
+            <label for="pass" class="form-label">Contraseña <small>(dejar en blanco para no cambiar)</small></label>
+            <div class="input-group">
+                <input type="password"
+                    class="form-control bg-black text-white border-0 <?= $validation->hasError('pass') ? 'is-invalid' : '' ?>"
+                    id="pass" name="pass" value="" <?= $readonly ? 'readonly' : '' ?> data-original="">
+                <button type="button" class="edit-btn" onclick="habilitarCampo('pass')">
+                    <i class="bi bi-pencil"></i>
+                </button>
+            </div>
+            <div style="height:1vh;">
+                <?php if ($validation->getError('pass')) { ?>
+                    <p class="text-danger"><?= $validation->getError('pass') ?></p>
+                <?php } ?>
+            </div>
+            <hr class="mt-4">
 
             <!-- Botones -->
-            <div class="d-flex justify-content-between">
+            <div class="d-flex justify-content-between mt-5">
                 <button type="submit" class="btn btn-success" id="guardarBtn" disabled>Guardar cambios</button>
 
                 <button type="submit" formaction="<?= base_url('perfil/eliminar') ?>" formmethod="post"

@@ -35,9 +35,7 @@ class Producto_controller extends Controller
         echo view('front/crud_productos_view', $data);
         echo view('front/footer_view');
     }
-
-
-    public function singleProducto($id = 1)
+    public function singleProducto($id = null)
     {
         $productoModel = new Producto_model();
         $data['old'] = $productoModel->where('id_producto', $id)->first();
@@ -73,7 +71,7 @@ class Producto_controller extends Controller
         echo view('front/footer_view');
     }
 
-    public function editar_producto($id = 1)
+    public function editar_producto($id = null)
     {
 
         $productoModel = new Producto_Model();

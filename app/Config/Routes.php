@@ -22,11 +22,12 @@ $routes->post('/enviar-form', 'Usuario_controller::form_validation');
 $routes->get('/iniciarsesion_view', 'Home::login');
 $routes->post('/enviarlogin', 'Login_controller::auth');
 $routes->get('/plantilla_perfil', 'Login_controller::buscar_usuario', ['filter' => 'auth']);
+$routes->post('/editar_usuario', 'Usuario_controller::editar_usuario');
 $routes->get('/logout', 'Login_controller::logout');
 
 /*
  * Rutas de admin
  */
 $routes->get('/crud_productos_view', 'Producto_controller::index', ['filter' => 'auth:admin']); 
-$routes->get('/editar_productos_view', 'Producto_controller::singleProducto', ['filter' => 'auth:admin']);
-$routes->post('/editar_producto', 'Producto_controller::editar_producto');
+$routes->get('/editar_productos_view/(:num)', 'Producto_controller::singleProducto/$1', ['filter' => 'auth:admin']);
+$routes->post('/editar_producto/(:num)', 'Producto_controller::editar_producto/$1');

@@ -39,7 +39,10 @@
                         </div>
                     </li>
                     <li class="text-white text-center mt-3">
-                        <p class="m-0 fw-bold"><?= session()->get('nombre') ?> <?= session()->get('apellido') ?></p>
+                        <p class="m-0 fw-bold">
+                            <?= session()->get('nombre') ?>
+                            <?= session()->get('apellido') ?>
+                        </p>
                         <p class="m-0"><?= session()->get('email') ?></p>
                     </li>
                     <li class="d-flex justify-content-center gap-3 mt-3">

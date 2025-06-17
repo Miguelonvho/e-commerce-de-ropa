@@ -29,12 +29,18 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 });
 
+document.addEventListener('DOMContentLoaded', () => {
+    // Agrega el listener global una sola vez
+    const campos = document.querySelectorAll('input[data-original]');
+    campos.forEach(campo => {
+        campo.addEventListener('input', verificarCambios);
+    });
+});
+
 function habilitarCampo(id) {
     const input = document.getElementById(id);
     input.removeAttribute('readonly');
     input.focus();
-
-    input.addEventListener('input', verificarCambios);
 }
 
 function verificarCambios() {
