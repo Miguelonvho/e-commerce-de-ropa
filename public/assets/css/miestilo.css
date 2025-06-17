@@ -243,13 +243,6 @@ input:focus {
         height: 620px;
     }
 
-<<<<<<< HEAD
-    #info-sesion {
-        width: 35vw !important;
-    }
-=======
-
->>>>>>> d857477d4809e65d2e9da0b8e1499a051d5ecbe6
 
     .imagen-ropa {
         object-fit: cover;
@@ -368,11 +361,7 @@ input:focus {
     }
 
     #info-sesion {
-<<<<<<< HEAD
-        width: 77vw !important;
-=======
         width: 60vw !important;
->>>>>>> d857477d4809e65d2e9da0b8e1499a051d5ecbe6
     }
 }
 
