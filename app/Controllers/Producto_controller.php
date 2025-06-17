@@ -97,19 +97,97 @@ class Producto_controller extends Controller
     {
         $productoModel = new Producto_Model();
 
-        $input = $this->validate([
-            'nombre_prod' => 'required|min_length[3]',
-            'categorias' => 'required|is_not_unique[categorias.id_categoria]',
-            'marcas' => 'required|is_not_unique[marcas.id_marca]',
-            'talles' => 'required|is_not_unique[talles.id_talle]',
-            'generos' => 'required|is_not_unique[generos.id_genero]',
-            'edades' => 'required|is_not_unique[edades.id_edad]',
-            'precio_costo' => 'required|numeric',
-            'precio_venta' => 'required|numeric',
-            'stock' => 'required|numeric',
-            'stock_min' => 'required|numeric',
-            'imagen' => 'uploaded[imagen]|max_size[imagen,2048]|is_image[imagen]'
-        ]);
+       $input = $this->validate([
+        'nombre_prod' => [
+            'rules' => 'required|min_length[3]',
+            'errors' => [
+                'required' => 'El nombre del producto es obligatorio.',
+                'min_length' => 'Debe tener al menos 3 caracteres.'
+            ]
+        ],
+
+        'categorias' => [
+            'rules' => 'required|is_not_unique[categorias.id_categoria]',
+            'errors' => [
+                'required' => 'Debes seleccionar una categoría.',
+                'is_not_unique' => 'La categoría seleccionada no es válida.'
+            ]
+        ],
+
+        'marcas' => [
+            'rules' => 'required|is_not_unique[marcas.id_marca]',
+            'errors' => [
+                'required' => 'Debes seleccionar una marca.',
+                'is_not_unique' => 'La marca seleccionada no es válida.'
+            ]
+        ],
+
+        'talles' => [
+            'rules' => 'required|is_not_unique[talles.id_talle]',
+            'errors' => [
+                'required' => 'Debes seleccionar un talle.',
+                'is_not_unique' => 'El talle seleccionado no es válido.'
+            ]
+        ],
+
+        'generos' => [
+            'rules' => 'required|is_not_unique[generos.id_genero]',
+            'errors' => [
+                'required' => 'Debes seleccionar un género.',
+                'is_not_unique' => 'El género seleccionado no es válido.'
+            ]
+        ],
+
+        'edades' => [
+            'rules' => 'required|is_not_unique[edades.id_edad]',
+            'errors' => [
+                'required' => 'Debes seleccionar una edad.',
+                'is_not_unique' => 'La edad seleccionada no es válida.'
+            ]
+        ],
+
+        'precio_costo' => [
+            'rules' => 'required|numeric',
+            'errors' => [
+                'required' => 'El precio de costo es obligatorio.',
+                'numeric' => 'El precio de costo debe ser un número.'
+            ]
+        ],
+
+        'precio_venta' => [
+            'rules' => 'required|numeric',
+            'errors' => [
+                'required' => 'El precio de venta es obligatorio.',
+                'numeric' => 'El precio de venta debe ser un número.'
+            ]
+        ],
+
+        'stock' => [
+            'rules' => 'required|numeric',
+            'errors' => [
+                'required' => 'El stock es obligatorio.',
+                'numeric' => 'El stock debe ser un número.'
+            ]
+        ],
+
+        'stock_min' => [
+            'rules' => 'required|numeric',
+            'errors' => [
+                'required' => 'El stock mínimo es obligatorio.',
+                'numeric' => 'El stock mínimo debe ser un número.'
+            ]
+        ],
+
+        'imagen' => [
+            'rules' => 'uploaded[imagen]|max_size[imagen,2048]|is_image[imagen]',
+            'errors' => [
+                'uploaded' => 'Debes subir una imagen del producto.',
+                'max_size' => 'La imagen no debe superar los 2MB.',
+                'is_image' => 'El archivo debe ser una imagen válida (JPG, PNG, etc).'
+            ]
+        ]
+    ]);
+
 
         if (!$input) {
             // Si falla la validación volvemos al formulario con los datos cargados.
@@ -144,8 +222,8 @@ class Producto_controller extends Controller
                 'talle_id' => $this->request->getVar('talles'),
                 'genero_id' => $this->request->getVar('generos'),
                 'edad_id' => $this->request->getVar('edades'),
-                'precio_costo' => $this->request->getVar('precio_costo'),
-                'precio_venta' => $this->request->getVar('precio_venta'),
+                'precio_costo' => $this->convertir_a_float($this->request->getVar('precio_costo')),
+                'precio_venta' => $this->convertir_a_float($this->request->getVar('precio_venta')),
                 'stock' => $this->request->getVar('stock'),
                 'stock_min' => $this->request->getVar('stock_min'),
                 'imagen' => $nombre_aleatorio,
@@ -156,6 +234,11 @@ class Producto_controller extends Controller
             session()->setFlashdata('success', 'Producto creado correctamente.');
             return redirect()->to(base_url('/crud_productos_view'));
         }
+    }
+
+    private function convertir_a_float($valor)
+    {
+        return floatval(str_replace(['.', ','], ['', '.'], $valor));
     }
 
 

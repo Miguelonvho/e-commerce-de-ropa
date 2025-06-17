@@ -1,11 +1,28 @@
-<?php $validation = \Config\Services::validation(); ?>
+<?php if (!isset($validation)) {
+    $validation = \Config\Services::validation();
+} ?>
+
 <?= csrf_field() ?>
+
+<?php
+if (!function_exists('formatear_numero')) {
+    function formatear_numero($valor) {
+        return number_format((float)$valor, 2, ',', '.');
+    }
+}
+?>
+
 
 <div class="container d-flex flex-column justify-content-center align-items-center my-5">
     <form id="formulario-alta-productos" class="formulario bg-black text-white p-4 rounded shadow-lg w-100"
         style="max-width: 900px;" action="<?= site_url('alta_producto') ?>" method="POST" enctype="multipart/form-data">
 
         <h1 class="fw-light mb-4 text-center">Alta de Producto</h1>
+        <?php if (isset($validation) && $validation->getErrors()): ?>
+            <div class="alert alert-danger text-center">
+        ⚠️ Por favor completá todos los campos obligatorios.
+            </div>
+        <?php endif; ?>
 
         <ul class="nav nav-tabs mb-4" id="productTab" role="tablist">
             <li class="nav-item" role="presentation">
@@ -31,7 +48,7 @@
                     <div class="col-md-6">
                         <label for="nombre_prod" class="form-label">Nombre</label>
                         <input type="text" class="form-control" id="nombre_prod" name="nombre_prod" value="<?= set_value('nombre_prod') ?>">
-                        <?= $validation->showError('nombre_prod', 'custom_error') ?>
+                        <?= $validation->showError('nombre_prod') ?>
                     </div>
 
                     <div class="col-md-6">
@@ -44,7 +61,7 @@
                                 </option>
                             <?php endforeach; ?>
                         </select>
-                        <?= $validation->showError('categorias', 'custom_error') ?>
+                        <?= $validation->showError('categorias') ?>
                     </div>
 
                     <div class="col-md-6">
@@ -57,7 +74,7 @@
                                 </option>
                             <?php endforeach; ?>
                         </select>
-                        <?= $validation->showError('marcas', 'custom_error') ?>
+                        <?= $validation->showError('marcas') ?>
                     </div>
 
                     <div class="col-md-6">
@@ -70,7 +87,7 @@
                                 </option>
                             <?php endforeach; ?>
                         </select>
-                        <?= $validation->showError('talles', 'custom_error') ?>
+                        <?= $validation->showError('talles') ?>
                     </div>
 
                     <div class="col-md-6">
@@ -83,7 +100,7 @@
                                 </option>
                             <?php endforeach; ?>
                         </select>
-                        <?= $validation->showError('generos', 'custom_error') ?>
+                        <?= $validation->showError('generos') ?>
                     </div>
 
                     <div class="col-md-6">
@@ -96,7 +113,7 @@
                                 </option>
                             <?php endforeach; ?>
                         </select>
-                        <?= $validation->showError('edades', 'custom_error') ?>
+                        <?= $validation->showError('edades') ?>
                     </div>
 
                 </div>
@@ -106,34 +123,36 @@
             <div class="tab-pane fade" id="stock" role="tabpanel">
                 <div class="row g-4">
 
-                    <div class="col-md-6">
-                        <label for="precio_costo" class="form-label">Precio de costo</label>
-                        <div class="input-group">
-                            <span class="input-group-text">$</span>
-                            <input type="number" class="form-control" id="precio_costo" name="precio_costo" value="<?= set_value('precio_costo') ?>">
-                        </div>
-                        <?= $validation->showError('precio_costo', 'custom_error') ?>
-                    </div>
+            <div class="col-md-6">
+                <label for="precio_costo" class="form-label">Precio de costo</label>
+                <div class="input-group">
+                    <span class="input-group-text">$</span>
+                    <input type="text" class="form-control" id="precio_costo" name="precio_costo"
+                        value="<?= old('precio_costo') ? formatear_numero(old('precio_costo')) : '' ?>">
+                </div>
+                <?= $validation->showError('precio_costo') ?>
+            </div>
 
-                    <div class="col-md-6">
-                        <label for="precio_venta" class="form-label">Precio de venta</label>
-                        <div class="input-group">
-                            <span class="input-group-text">$</span>
-                            <input type="number" class="form-control" id="precio_venta" name="precio_venta" value="<?= set_value('precio_venta') ?>">
-                        </div>
-                        <?= $validation->showError('precio_venta', 'custom_error') ?>
-                    </div>
+            <div class="col-md-6">
+                <label for="precio_venta" class="form-label">Precio de venta</label>
+                <div class="input-group">
+                    <span class="input-group-text">$</span>
+                    <input type="text" class="form-control" id="precio_venta" name="precio_venta"
+                        value="<?= old('precio_venta') ? formatear_numero(old('precio_venta')) : '' ?>">
+                </div>
+                <?= $validation->showError('precio_venta') ?>
+            </div>
 
                     <div class="col-md-6">
                         <label for="stock" class="form-label">Stock</label>
                         <input type="number" class="form-control" id="stock" name="stock" value="<?= set_value('stock') ?>">
-                        <?= $validation->showError('stock', 'custom_error') ?>
+                        <?= $validation->showError('stock') ?>
                     </div>
 
                     <div class="col-md-6">
                         <label for="stock_min" class="form-label">Stock mínimo</label>
                         <input type="number" class="form-control" id="stock_min" name="stock_min" value="<?= set_value('stock_min') ?>">
-                        <?= $validation->showError('stock_min', 'custom_error') ?>
+                        <?= $validation->showError('stock_min') ?>
                     </div>
 
                 </div>
@@ -149,7 +168,7 @@
                             alt="Imagen de vista previa" style="width: 180px; height: 230px; object-fit: cover;">
                     </div>
                     <input class="form-control" type="file" id="imagen" name="imagen" accept="image/*">
-                    <?= $validation->showError('imagen', 'custom_error') ?>
+                    <?= $validation->showError('imagen') ?>
                 </div>
             </div>
         </div>
