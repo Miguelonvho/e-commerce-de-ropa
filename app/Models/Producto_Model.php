@@ -15,6 +15,24 @@ class Producto_Model extends Model
         return $this->where('eliminado', 0)->findAll(); // solo productos no eliminados
     }
 
+    public function buscarProductos($buscar = null)
+    {
+        $builder = $this->where('eliminado', 'NO');
+
+        if ($buscar) {
+            $builder = $builder
+                ->groupStart()
+                ->like('nombre_prod', $buscar)
+                ->orLike('precio_costo', $buscar)
+                ->orLike('precio_venta', $buscar)
+                ->orLike('stock', $buscar)
+                ->groupEnd();
+        }
+
+        return $builder->findAll();
+    }
+
+
 }
 
 ?>
