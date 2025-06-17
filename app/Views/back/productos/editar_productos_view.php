@@ -19,7 +19,8 @@
         </div>
     </div>
     <form id="formulario-editar-productos" class="formulario bg-black text-white p-4 rounded shadow-lg w-100"
-        style="max-width: 900px;" action="<?= site_url('editar_producto/'.$old['id_producto']) ?>" method="POST" enctype="multipart/form-data">
+        style="max-width: 900px;" action="<?= site_url('editar_producto/' . $old['id_producto']) ?>" method="POST"
+        enctype="multipart/form-data">
         <h1 class="fw-light mb-4 text-center">Editar producto</h1>
 
         <!-- Panel dinámico con tabs -->
@@ -172,7 +173,8 @@
         <div class="d-flex justify-content-start gap-3 mt-4">
             <button type="submit" class="btn btn-outline-success"><i class="bi bi-save"></i> Guardar
                 cambios</button>
-            <a href="<?= site_url('/crud_productos_view') ?>" class="btn btn-outline-danger"><i class="bi bi-x-circle"></i>
+            <a href="<?= site_url('/crud_productos_view') ?>" class="btn btn-outline-danger"><i
+                    class="bi bi-x-circle"></i>
                 Cancelar</a>
         </div>
     </form>

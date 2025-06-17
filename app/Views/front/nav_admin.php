@@ -11,7 +11,7 @@
                 <a class="nav-link text-white" href="<?= base_url('/crud_productos_view') ?>">CRUD Productos</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link text-white" href="<?= base_url('') ?>">CRUD Usuarios</a>
+                <a class="nav-link text-white" href="<?= base_url('/crud_usuarios_view') ?>">CRUD Usuarios</a>
             </li>
 
             <li class="nav-item">
@@ -23,7 +23,7 @@
         </ul>
 
 
-        <div class="d-flex gap-4 align-items-center">
+        <div class="d-flex gap-4 align-items-center justify-content-end">
             <div class="nav-item dropdown">
                 <a class="btn m-0 p-0" data-bs-toggle="dropdown" aria-expanded="false" href="#">
                     <img class="nav-img" src="<?= base_url('public/assets/img/Iconos/usuario.png') ?>" alt="Usuario">
@@ -36,12 +36,6 @@
                             aria-label="Cerrar"></button>
                     </li>
                     <hr>
-                    <li class="d-flex justify-content-center">
-                        <div class="d-flex gap-4 align-items-center">
-                            <img style="width: 90px; height: 90px; object-fit: cover; border-radius: 100%;"
-                                src="<?= base_url('public/assets/img/Iconos/sin-usuario.png') ?>" alt="">
-                        </div>
-                    </li>
                     <li class="text-white text-center mt-3">
                         <p class="m-0 fw-bold">
                             <?= session()->get('nombre') ?>
@@ -50,9 +44,6 @@
                         <p class="m-0"><?= session()->get('email') ?></p>
                     </li>
                     <li class="d-flex justify-content-center gap-3 mt-3">
-                        <a href="<?= base_url('plantilla_perfil') ?>" class="btn btn-outline-light">
-                            Ver perfil
-                        </a>
                         <a href="<?= base_url('logout') ?>" class="btn btn-outline-light">
                             Cerrar sesión
                         </a>
