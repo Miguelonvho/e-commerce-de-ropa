@@ -1,5 +1,5 @@
 <div class="crud-container bg-black text-white">
-    <hr class="border-white my-2">
+  <hr class="border-white my-2">
 
   <!-- Botones -->
   <div class="d-flex justify-content-end m-2">
@@ -7,6 +7,7 @@
         <a href="<?= base_url('agregar_producto_view') ?>" class="btn btn-success me-2">Agregar</a>
         <a href="<?= base_url('productos_eliminados') ?>" class="btn btn-secondary">Eliminados</a>
     </div>
+  </div>
 
   <!-- Barra de búsqueda -->
   <form method="get" class="d-flex justify-content-end m-2 mb-3">
@@ -27,8 +28,8 @@
       <div class="col-1">Acciones</div>
   </div>
 
-    <!-- Contenedor de scroll -->
-    <div class="scroll-container-crud">
+  <!-- Contenedor de scroll -->
+  <div class="scroll-container-crud">
 
     <?php if (empty($productos)): ?>
         <div class="text-center mt-4">No se encontraron productos.</div>
@@ -83,5 +84,5 @@
     <?php endforeach; ?>
     <?php endif; ?>
 
-    </div>
+  </div>
 </div>
