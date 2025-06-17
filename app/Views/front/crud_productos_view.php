@@ -41,9 +41,9 @@
       <div class="producto-card d-none d-md-flex align-items-center text-center m-2 p-2 border border-secondary rounded">
           <div class="col-1">
               <?php if (empty($producto['imagen']) || $producto['imagen'] == null): ?>
-                  <img src="<?= base_url('assets/img/Iconos/sin-imagen.png') ?>" alt="Sin imagen" style="width: 50px; height: 50px; object-fit: cover;">
+                  <img src="<?= base_url('assets/img/Iconos/sin-imagen.png') ?>" alt="Sin imagen" style="width: 100px; height: 90px; object-fit: cover;">
               <?php else: ?>
-                  <img src="<?= base_url('public/assets/uploads/' . $producto['imagen']) ?>" alt="Producto" style="width: 50px; height: 50px; object-fit: cover;">
+                  <img src="<?= base_url('public/assets/uploads/' . $producto['imagen']) ?>" alt="Producto" style="width: 100px; height: 90px; object-fit: cover;">
               <?php endif; ?>
           </div>
           <div class="col-1"><?= $producto['id_producto'] ?></div>

@@ -116,6 +116,6 @@ class Producto_controller extends Controller
         if ($productoModel->update($producto['id_producto'], $data)) {
             session()->setFlashdata('success', 'Modificación exitosa.');
         }
-        return redirect()->to(base_url('/editar_productos_view'));
+        return redirect()->to(base_url('/editar_productos_view/' . $id));
     }
 }
