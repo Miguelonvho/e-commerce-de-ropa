@@ -44,9 +44,6 @@
                         <p class="m-0"><?= session()->get('email') ?></p>
                     </li>
                     <li class="d-flex justify-content-center gap-3 mt-3">
-                        <a href="<?= base_url('plantilla_perfil') ?>" class="btn btn-outline-light">
-                            Ver perfil
-                        </a>
                         <a href="<?= base_url('logout') ?>" class="btn btn-outline-light">
                             Cerrar sesión
                         </a>
