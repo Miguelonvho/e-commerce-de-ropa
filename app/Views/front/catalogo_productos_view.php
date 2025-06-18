@@ -58,7 +58,8 @@
                         <div class="col-md-4">
                             <div class="card h-100 shadow">
                                 <img src="<?= base_url('public/assets/uploads/' . $producto['imagen']) ?>" class="card-img-top" alt="<?= esc($producto['nombre_prod']) ?>" style="height: 250px; object-fit: cover;">
-                               <div class="card-body d-flex flex-column">
+
+    <div class="card-body d-flex flex-column">
     <h5 class="card-title"><?= esc($producto['nombre_prod']) ?></h5>
     <p class="card-text mb-1 fw-bold">$<?= number_format($producto['precio_venta'], 2, ',', '.') ?></p>
 
@@ -74,8 +75,18 @@
         <?php endif; ?>
     </p>
 
-    <a href="#" class="btn btn-outline-dark mt-auto <?= $producto['stock'] <= 0 ? 'disabled' : '' ?>">Agregar al carrito</a>
+    <?php if ($producto['stock'] > 0): ?>
+        <div class="input-group mb-2">
+            <span class="input-group-text">Cantidad</span>
+            <input type="number" name="cantidad_<?= $producto['id_producto'] ?>" min="1" max="<?= $producto['stock'] ?>" value="1" class="form-control" style="max-width: 100px;">
+        </div>
+    <?php endif; ?>
+
+    <a href="#" class="btn btn-outline-dark mt-auto <?= $producto['stock'] <= 0 ? 'disabled' : '' ?>">
+        Agregar al carrito
+    </a>
 </div>
+
 
                             </div>
                         </div>
