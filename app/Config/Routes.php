@@ -45,6 +45,10 @@ $routes->get('/productos_eliminados', 'Producto_controller::productos_eliminados
 $routes->get('/restaurar_producto/(:num)', 'Producto_controller::restaurar_producto/$1', ['filter' => 'auth:admin']);
 $routes->get('/eliminar_producto/(:num)', 'Producto_controller::eliminar_producto/$1', ['filter' => 'auth:admin']);
 
+// Rutas para consultas
+$routes->get('consultas_view', 'Consultas_controller::listar', ['filter' => 'auth:admin']);
+$routes->post('guardar_consulta', 'Consultas_controller::guardar');
+
 //Catologo
 $routes->get('catalogo_productos_view', 'Producto_controller::catalogo');
 
