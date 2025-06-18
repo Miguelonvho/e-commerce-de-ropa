@@ -336,4 +336,57 @@ class Producto_controller extends Controller
         }
         return redirect()->to(base_url('/editar_productos_view/' . $id));
     }
+
+    public function catalogo($genero = null)
+{
+    $productoModel = new Producto_model();
+    $generoModel = new Genero_model();
+    $edadModel = new Edad_model();
+    $categoriaModel = new Categoria_model();
+    $marcaModel = new Marca_model();
+
+    $filtros = [
+        'genero' => $generoModel->findAll(),
+        'edad' => $edadModel->findAll(),
+        'categoria' => $categoriaModel->findAll(),
+        'marca' => $marcaModel->findAll(),
+    ];
+
+    // Captura de filtros desde la URL (GET)
+    $generoId = $this->request->getGet('genero');
+    $edadId = $this->request->getGet('edad');
+    $categoriaId = $this->request->getGet('categoria');
+    $marcaId = $this->request->getGet('marca');
+
+    $productos = $productoModel
+        ->where('eliminado', 'NO');
+
+    if ($generoId) $productos->where('genero_id', $generoId);
+    if ($edadId) $productos->where('edad_id', $edadId);
+    if ($categoriaId) $productos->where('categoria_id', $categoriaId);
+    if ($marcaId) $productos->where('marca_id', $marcaId);
+
+    $data = [
+    'productos' => $productos->findAll(),
+    'titulo' => 'Catálogo de Productos',
+    'edades' => $filtros['edad'],
+    'categorias' => $filtros['categoria'],
+    'marcas' => $filtros['marca'],
+    'filtroActual' => [
+        'genero' => $generoId,
+        'edad' => $edadId,
+        'categoria' => $categoriaId,
+        'marca' => $marcaId
+    ]
+];
+
+
+    echo view('front/head_view', ['titulo' => $data['titulo']]);
+    echo view('front/nav_view');
+    echo view('front/panel-carrito'); // si lo usás
+    echo view('front/catalogo_productos_view', $data);
+    echo view('front/footer_view');
+}
+
+
 }

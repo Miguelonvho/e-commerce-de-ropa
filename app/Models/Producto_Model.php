@@ -32,6 +32,29 @@ class Producto_Model extends Model
         return $builder->findAll();
     }
 
+    public function filtrarProductos($filtros = [])
+{
+    $builder = $this->select('*')->where('eliminado', 'NO');
+
+    if (!empty($filtros['genero'])) {
+        $builder->where('genero_id', $filtros['genero']);
+    }
+
+    if (!empty($filtros['edad'])) {
+        $builder->where('edad_id', $filtros['edad']);
+    }
+
+    if (!empty($filtros['categoria'])) {
+        $builder->where('categoria_id', $filtros['categoria']);
+    }
+
+    if (!empty($filtros['marca'])) {
+        $builder->where('marca_id', $filtros['marca']);
+    }
+
+    return $builder->findAll();
+}
+
 
 }
 
