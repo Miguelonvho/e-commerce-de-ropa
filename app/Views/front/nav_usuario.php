@@ -19,44 +19,23 @@
                         <img style="width: 5vw;" src="<?= base_url('public/assets/img/Iconos/fuego.gif') ?>" alt="">
                     </div>
                     <div class="d-flex align-items-center">
-                        <?php if (session()->get('logged_in')): ?>
-                            <a href="<?= base_url('detalles_producto') ?>">
                                 <img style="width: 10vw;"
                                     src="<?= base_url('public/assets/img/Remeras/Hombres/Remera-rider-hombre.jpg') ?>"
                                     alt="Promo 1">
-                            </a>
-                        <?php else: ?>
-                            <a href="<?= base_url('iniciarsesion_view') ?>">
-                                <img style="width: 10vw;"
-                                    src="<?= base_url('public/assets/img/Remeras/Hombres/Remera-rider-hombre.jpg') ?>"
-                                    alt="Promo 1">
-                            </a>
-                        <?php endif; ?>
                         <div class="p-4">
                             <strong>Descuento del 20%</strong><br>
                             <small>En Remera rider para hombre</small>
                         </div>
                     </div>
                     <div class="m-0 p-0">
-                        <a href="<?= base_url('plantilla_productos/Ninos') ?>">
+                        <a href="<?= base_url('catalogo_productos_view') ?>">
                             <img style="width: 100%" src="<?= base_url('public/assets/videos/Oferta.gif') ?>" alt="">
                         </a>
                     </div>
                 </div>
             </li>
             <li class="nav-item dropdown">
-                <a class="text-white nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                    aria-expanded="false">
-                    Géneros
-                </a>
-                <ul class="dropdown-menu bg-black">
-                    <li><a class="text-white dropdown-item"
-                            href="<?= base_url('plantilla_productos/Hombre') ?>">Hombre</a></li>
-                    <li><a class="text-white dropdown-item"
-                            href="<?= base_url('plantilla_productos/Mujer') ?>">Mujer</a></li>
-                    <li><a class="text-white dropdown-item"
-                            href="<?= base_url('plantilla_productos/Ninos') ?>">Niños</a></li>
-                </ul>
+                <a class="text-white nav-link" href="<?= base_url('catalogo_productos_view') ?>">Catálogo</a>
             </li>
             <li class="nav-item dropdown">
                 <a class="text-white nav-link" href="<?= base_url('quienes_somos') ?>">Quienes somos</a>
