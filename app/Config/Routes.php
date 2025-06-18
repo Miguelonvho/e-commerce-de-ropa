@@ -49,3 +49,8 @@ $routes->get('/eliminar_producto/(:num)', 'Producto_controller::eliminar_product
 $routes->get('catalogo_productos_view/(:any)', 'Producto_controller::catalogo/$1');
 $routes->get('catalogo_productos_view/', 'Producto_controller::catalogo');
 
+$routes->get('carrito_view', 'Carrito_controller::index');
+$routes->post('carrito_view/agregar', 'Carrito_controller::agregar');
+$routes->post('carrito_view/actualizar', 'Carrito_controller::actualizar');
+$routes->get('carrito_view/eliminar/(:any)', 'Carrito_controller::eliminar/$1');
+$routes->get('carrito_view/vaciar', 'Carrito_controller::vaciar');

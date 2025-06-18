@@ -75,16 +75,21 @@
         <?php endif; ?>
     </p>
 
-    <?php if ($producto['stock'] > 0): ?>
-        <div class="input-group mb-2">
-            <span class="input-group-text">Cantidad</span>
-            <input type="number" name="cantidad_<?= $producto['id_producto'] ?>" min="1" max="<?= $producto['stock'] ?>" value="1" class="form-control" style="max-width: 100px;">
-        </div>
-    <?php endif; ?>
+    <form action="<?= site_url('carrito_view/agregar') ?>" method="post" class="mt-auto">
+    <input type="hidden" name="id" value="<?= $producto['id_producto'] ?>">
+    <input type="hidden" name="nombre_prod" value="<?= $producto['nombre_prod'] ?>">
+    <input type="hidden" name="precio_venta" value="<?= $producto['precio_venta'] ?>">
+    <input type="hidden" name="imagen" value="<?= $producto['imagen'] ?>">
 
-    <a href="#" class="btn btn-outline-dark mt-auto <?= $producto['stock'] <= 0 ? 'disabled' : '' ?>">
+    <div class="input-group mb-2">
+        <span class="input-group-text">Cantidad</span>
+        <input type="number" name="cantidad" min="1" max="<?= $producto['stock'] ?>" value="1" class="form-control" style="max-width: 100px;">
+    </div>
+
+    <button type="submit" class="btn btn-outline-dark w-100" <?= $producto['stock'] <= 0 ? 'disabled' : '' ?>>
         Agregar al carrito
-    </a>
+    </button>
+</form>
 </div>
 
 
