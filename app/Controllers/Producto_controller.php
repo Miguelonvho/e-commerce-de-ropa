@@ -337,7 +337,7 @@ class Producto_controller extends Controller
         return redirect()->to(base_url('/editar_productos_view/' . $id));
     }
 
-    public function catalogo($genero = null)
+public function catalogo()
 {
     $productoModel = new Producto_model();
     $generoModel = new Genero_model();
@@ -358,8 +358,7 @@ class Producto_controller extends Controller
     $categoriaId = $this->request->getGet('categoria');
     $marcaId = $this->request->getGet('marca');
 
-    $productos = $productoModel
-        ->where('eliminado', 'NO');
+    $productos = $productoModel->where('eliminado', 'NO');
 
     if ($generoId) $productos->where('genero_id', $generoId);
     if ($edadId) $productos->where('edad_id', $edadId);
@@ -367,26 +366,23 @@ class Producto_controller extends Controller
     if ($marcaId) $productos->where('marca_id', $marcaId);
 
     $data = [
-    'productos' => $productos->findAll(),
-    'titulo' => 'Catálogo de Productos',
-    'edades' => $filtros['edad'],
-    'categorias' => $filtros['categoria'],
-    'marcas' => $filtros['marca'],
-    'filtroActual' => [
-        'genero' => $generoId,
-        'edad' => $edadId,
-        'categoria' => $categoriaId,
-        'marca' => $marcaId
-    ]
-];
-
+        'productos' => $productos->findAll(),
+        'titulo' => 'Catálogo de Productos',
+        'edades' => $filtros['edad'],
+        'categorias' => $filtros['categoria'],
+        'marcas' => $filtros['marca'],
+        'generos' => $filtros['genero'], // 💡 agregalo si usás el filtro por género
+        'filtroActual' => [
+            'genero' => $generoId,
+            'edad' => $edadId,
+            'categoria' => $categoriaId,
+            'marca' => $marcaId
+        ]
+    ];
 
     echo view('front/head_view', ['titulo' => $data['titulo']]);
     echo view('front/nav_view');
-    echo view('front/panel-carrito'); // si lo usás
+    echo view('front/panel-carrito');
     echo view('front/catalogo_productos_view', $data);
     echo view('front/footer_view');
-}
-
-
-}
+}}

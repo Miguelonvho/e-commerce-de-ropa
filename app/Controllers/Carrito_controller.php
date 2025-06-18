@@ -47,7 +47,7 @@ class Carrito_controller extends Controller
         ]
     ];
 
-    $cart->insert($producto); // ✅ usamos la instancia segura
+    $cart->insert($producto); 
     return redirect()->back()->with('success', 'Producto agregado al carrito');
 }
 

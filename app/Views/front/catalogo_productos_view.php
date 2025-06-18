@@ -4,47 +4,90 @@
     <div class="row">
         <!-- Filtros -->
         <aside class="col-md-3 mb-4">
-             <form method="get" action="<?= site_url('catalogo_productos_view') ?>">
+    <form method="get" action="<?= site_url('catalogo_productos_view') ?>">
 
-                <div class="card mb-3">
-                    <div class="card-header bg-dark text-white">Filtrar por Edad</div>
-                    <div class="card-body">
+        <div class="accordion" id="filtrosAccordion">
+            <!-- Filtro por Edad -->
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingEdad">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseEdad">
+                        Filtrar por Edad
+                    </button>
+                </h2>
+                <div id="collapseEdad" class="accordion-collapse collapse" data-bs-parent="#filtrosAccordion">
+                    <div class="accordion-body">
                         <?php foreach ($edades as $edad): ?>
                             <div class="form-check">
                                 <input class="form-check-input" type="checkbox" name="edad[]" value="<?= $edad['id_edad'] ?>" <?= in_array($edad['id_edad'], $edadSeleccionada ?? []) ? 'checked' : '' ?>>
-                                <label class="form-check-label"> <?= esc($edad['nombre']) ?> </label>
+                                <label class="form-check-label"><?= esc($edad['nombre']) ?></label>
                             </div>
                         <?php endforeach; ?>
                     </div>
                 </div>
+            </div>
 
-                <div class="card mb-3">
-                    <div class="card-header bg-dark text-white">Filtrar por Categoría</div>
-                    <div class="card-body">
+            <!-- Filtro por Categoría -->
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingCategoria">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseCategoria">
+                        Filtrar por Categoría
+                    </button>
+                </h2>
+                <div id="collapseCategoria" class="accordion-collapse collapse" data-bs-parent="#filtrosAccordion">
+                    <div class="accordion-body">
                         <?php foreach ($categorias as $categoria): ?>
                             <div class="form-check">
                                 <input class="form-check-input" type="checkbox" name="categoria[]" value="<?= $categoria['id_categoria'] ?>" <?= in_array($categoria['id_categoria'], $categoriaSeleccionada ?? []) ? 'checked' : '' ?>>
-                                <label class="form-check-label"> <?= esc($categoria['nombre']) ?> </label>
+                                <label class="form-check-label"><?= esc($categoria['nombre']) ?></label>
                             </div>
                         <?php endforeach; ?>
                     </div>
                 </div>
+            </div>
 
-                <div class="card mb-3">
-                    <div class="card-header bg-dark text-white">Filtrar por Marca</div>
-                    <div class="card-body">
+            <!-- Filtro por Marca -->
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingMarca">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseMarca">
+                        Filtrar por Marca
+                    </button>
+                </h2>
+                <div id="collapseMarca" class="accordion-collapse collapse" data-bs-parent="#filtrosAccordion">
+                    <div class="accordion-body">
                         <?php foreach ($marcas as $marca): ?>
                             <div class="form-check">
                                 <input class="form-check-input" type="checkbox" name="marca[]" value="<?= $marca['id_marca'] ?>" <?= in_array($marca['id_marca'], $marcaSeleccionada ?? []) ? 'checked' : '' ?>>
-                                <label class="form-check-label"> <?= esc($marca['nombre']) ?> </label>
+                                <label class="form-check-label"><?= esc($marca['nombre']) ?></label>
                             </div>
                         <?php endforeach; ?>
                     </div>
                 </div>
+            </div>
 
-                <button type="submit" class="btn btn-primary w-100">Aplicar Filtros</button>
-            </form>
-        </aside>
+            <!-- Filtro por Género -->
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingGenero">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseGenero">
+                        Filtrar por Género
+                    </button>
+                </h2>
+                <div id="collapseGenero" class="accordion-collapse collapse" data-bs-parent="#filtrosAccordion">
+                    <div class="accordion-body">
+                        <?php foreach ($generos as $genero): ?>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="genero[]" value="<?= $genero['id_genero'] ?>" <?= in_array($genero['id_genero'], $generoSeleccionado ?? []) ? 'checked' : '' ?>>
+                                <label class="form-check-label"><?= esc($genero['nombre']) ?></label>
+                            </div>
+                        <?php endforeach; ?>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <button type="submit" class="btn btn-primary w-100 mt-3">Aplicar Filtros</button>
+    </form>
+</aside>
+
 
         <!-- Productos -->
         <div class="col-md-9">
