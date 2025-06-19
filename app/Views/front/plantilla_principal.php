@@ -60,89 +60,64 @@
             <a class="text-white" href="<?= base_url('comercializacion') ?>">Ver mas</a>
         </div>
     </section>
-    <!-- Indumentaria destacada -->
     <section class="container-fluid text-black my-5">
         <h1 class="fw-light">Destacados</h1>
         <hr>
-        <?php
-        $link = session()->get('logged_in') ? 'detalles_producto' : 'iniciarsesion_view';
-        ?>
         <div class="d-flex justify-content-center flex-wrap gap-4 pt-5 m-0">
-            <a href="<?= base_url($link) ?>" class="card bg-black text-white text-decoration-none"
-                style="max-width: 400px">
-                <img class="imagen-ropa card-img-top"
-                    src="<?= base_url('public/assets/img/Buzos/hombres/Buzo-nike-hombre.jpg') ?>" alt="...">
-                <div class="card-body d-flex flex-column justify-content-between">
-                    <div class="mb-3">
-                        <h4>Buzo nike hombre</h4>
-                    </div>
-                    <div class="text-center">
-                        <h1 class="card-title">$xxxxxx</h1>
-                        <div class="d-flex gap-2 justify-content-end">
+            <?php foreach ($destacados as $producto): ?>
+                <div class="card bg-black text-white" style="max-width: 300px;">
+                    <img class="card-img-top imagen-ropa"
+                        src="<?= base_url('public/assets/uploads/' . $producto['imagen']) ?>"
+                        alt="<?= esc($producto['nombre_prod']) ?>" style="height: 250px; object-fit: cover;">
+
+                    <div class="card-body d-flex flex-column justify-content-between">
+                        <div class="mb-3">
+                            <h5 class="card-title"><?= esc($producto['nombre_prod']) ?></h5>
+                            <p class="fw-bold mb-2">$<?= number_format($producto['precio_venta'], 2, ',', '.') ?></p>
+                            <p class="card-text">
+                                <small><?= $producto['stock'] ?> unidades disponibles</small><br>
+                                <?php if ($producto['stock'] > 0): ?>
+                                    <span class="badge bg-success">Hay stock</span>
+                                <?php else: ?>
+                                    <span class="badge bg-danger">Sin stock</span>
+                                <?php endif; ?>
+                            </p>
                         </div>
+                        <form action="<?= site_url('carrito_view/agregar') ?>" method="post" class="mt-auto">
+                            <input type="hidden" name="id" value="<?= $producto['id_producto'] ?>">
+                            <input type="hidden" name="nombre_prod" value="<?= $producto['nombre_prod'] ?>">
+                            <input type="hidden" name="precio_venta" value="<?= $producto['precio_venta'] ?>">
+                            <input type="hidden" name="imagen" value="<?= $producto['imagen'] ?>">
+
+                            <div class="input-group mb-2">
+                                <span class="input-group-text">Cantidad</span>
+                                <input type="number" name="cantidad" min="1" max="<?= $producto['stock'] ?>" value="1"
+                                    class="form-control" style="max-width: 100px;">
+                            </div>
+
+                            <button type="submit" class="btn btn-outline-light w-100" <?= $producto['stock'] <= 0 ? 'disabled' : '' ?>>
+                                Agregar al carrito
+                            </button>
+                        </form>
                     </div>
                 </div>
-            </a>
-            <a href="<?= base_url($link) ?>" class="card bg-black text-white text-decoration-none"
-                style="max-width: 400px">
-                <img class="imagen-ropa card-img-top"
-                    src="<?= base_url('public/assets/img/remeras/mujeres/Remera-escote-v-mujer.jpg') ?>" alt="...">
-                <div class="card-body d-flex flex-column justify-content-between">
-                    <div class="mb-3">
-                        <h4>Remera con escote V mujer</h4>
-                    </div>
-                    <div class="text-center">
-                        <h1 class="card-title">$xxxxxx</h1>
-                        <div class="d-flex gap-2 justify-content-end">
-                        </div>
-                    </div>
-                </div>
-            </a>
-            <a href="<?= base_url($link) ?>" class="card bg-black text-white text-decoration-none"
-                style="max-width: 400px">
-                <img class="imagen-ropa card-img-top"
-                    src="<?= base_url('public/assets/img/Buzos/Mujeres/Buzo-con-estampado-mujer-2.jpg') ?>" alt="...">
-                <div class="card-body d-flex flex-column justify-content-between">
-                    <div class="mb-3">
-                        <h4>Buzo con estampado mujer</h4>
-                    </div>
-                    <div class="text-center">
-                        <h1 class="card-title">$xxxxxx</h1>
-                        <div class="d-flex gap-2 justify-content-end">
-                        </div>
-                    </div>
-                </div>
-            </a>
-            <a href="<?= base_url($link) ?>" class="card bg-black text-white text-decoration-none"
-                style="max-width: 400px">
-                <img class="imagen-ropa card-img-top"
-                    src="<?= base_url("public/assets/img/Buzos/Mujeres/Buzo-Levi's-mujer.jpg") ?>" alt="...">
-                <div class="card-body d-flex flex-column justify-content-between">
-                    <div class="mb-3">
-                        <h4>Buzo Levi's mujer</h4>
-                    </div>
-                    <div class="text-center">
-                        <h1 class="card-title">$xxxxxx</h1>
-                        <div class="d-flex gap-2 justify-content-end">
-                        </div>
-                    </div>
-                </div>
-            </a>
+            <?php endforeach; ?>
         </div>
     </section>
-        <div aria-live="polite" aria-atomic="true" class="position-relative">
-            <div class="toast-container position-fixed end-0 bottom-0 m-2" style="z-index: 9999;">
-                <?php if (session()->getFlashdata('welcome_message')): ?>
-                    <div class="toast align-items-center text-bg-success border-0" role="alert" aria-live="assertive"
-                        aria-atomic="true" >
-                        <div class="d-flex justify-content-center">
-                            <div class="toast-body">
-                                <?= session()->getFlashdata('welcome_message') ?>
-                            </div>
+
+    <div aria-live="polite" aria-atomic="true" class="position-relative">
+        <div class="toast-container position-fixed end-0 bottom-0 m-2" style="z-index: 9999;">
+            <?php if (session()->getFlashdata('welcome_message')): ?>
+                <div class="toast align-items-center text-bg-success border-0" role="alert" aria-live="assertive"
+                    aria-atomic="true">
+                    <div class="d-flex justify-content-center">
+                        <div class="toast-body">
+                            <?= session()->getFlashdata('welcome_message') ?>
                         </div>
                     </div>
-                <?php endif; ?>
-            </div>
+                </div>
+            <?php endif; ?>
         </div>
+    </div>
 
 </body>
