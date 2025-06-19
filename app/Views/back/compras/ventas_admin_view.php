@@ -12,11 +12,11 @@
             <table class="table table-bordered table-striped table-hover align-middle">
                 <thead class="table-dark">
                     <tr>
-                        <th>ID Venta</th>
-                        <th>Cliente</th>
-                        <th>Total</th>
-                        <th>Fecha</th>
-                        <th>Opción</th>
+                        <th class="bg-black text-white">ID Venta</th>
+                        <th class="bg-black text-white">Cliente</th>
+                        <th class="bg-black text-white">Total</th>
+                        <th class="bg-black text-white">Fecha</th>
+                        <th class="bg-black text-white">Opción</th>
                     </tr>
                 </thead>
                 <tbody>

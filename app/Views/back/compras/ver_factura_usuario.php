@@ -9,11 +9,11 @@
         <table class="table table-bordered table-striped table-hover">
             <thead class="table-dark text-center">
                 <tr>
-                    <th>Producto</th>
-                    <th>Imagen</th>
-                    <th>Cantidad</th>
-                    <th>Precio Unitario</th>
-                    <th>Subtotal</th>
+                    <th class="bg-black text-white">Producto</th>
+                    <th class="bg-black text-white">Imagen</th>
+                    <th class="bg-black text-white">Cantidad</th>
+                    <th class="bg-black text-white">Precio Unitario</th>
+                    <th class="bg-black text-white">Subtotal</th>
                 </tr>
             </thead>
             <tbody class="text-center">

@@ -167,7 +167,7 @@ if (!function_exists('formatear_numero')) {
                         <label for="stock" class="form-label">Stock</label>
                         <input type="number"
                             class="form-control <?= $validation->hasError('stock') ? 'is-invalid' : '' ?>" id="stock"
-                            name="stock" min="<?= set_value('stock_min') !== '' ? set_value('stock_min') : 0 ?>"
+                            name="stock" min="0"
                             value="<?= set_value('stock') ?>">
                         <div class="invalid-feedback">
                             <?= $validation->showError('stock') ?>

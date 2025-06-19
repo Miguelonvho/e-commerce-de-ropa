@@ -126,13 +126,13 @@
 
                     <div class="col-md-6">
                         <label for="stock" class="form-label">Stock</label>
-                        <input type="number" class="form-control" id="stock" name="stock"
+                        <input type="number" min="<?= esc($old['stock_min']) ?>" class="form-control" id="stock" name="stock"
                             value="<?= esc($old['stock']) ?>">
                     </div>
 
                     <div class="col-md-6">
                         <label for="stock_min" class="form-label">Stock mínimo</label>
-                        <input type="number" class="form-control" id="stock_min" name="stock_min"
+                        <input type="number" min="0" class="form-control" id="stock_min" name="stock_min"
                             value="<?= esc($old['stock_min']) ?>">
                     </div>
                 </div>
@@ -165,3 +165,4 @@
         </div>
     </form>
 </div>
+
