@@ -1,3 +1,4 @@
+<hr class="m-0">
 <div class="crud-container bg-black text-white d-flex flex-column" style="height: 550px;">
 
     <!-- Botones -->

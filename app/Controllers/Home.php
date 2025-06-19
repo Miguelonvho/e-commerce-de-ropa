@@ -14,14 +14,24 @@ class Home extends BaseController
     public function index()
     {
         $data['titulo'] = 'Principal';
-        $data['cart'] = $this->cart;   // PASO carrito a la vista
+
+        $productoModel = new \App\Models\Producto_Model(); // Asegurate de tener este modelo creado
+
+        // Trae 4 productos al azar o destacados
+        $data['destacados'] = $productoModel
+            ->where('eliminado', 'NO')
+            ->orderBy('RAND()') // si querés que sean aleatorios
+            ->limit(4)
+            ->findAll();
+
         echo view('front/head_view', $data);
-        echo view('front/nav_view', $data);
-        echo view('front/panel-carrito', $data);
+        echo view('front/nav_view');
+        echo view('front/panel-carrito', ['cart' => \Config\Services::cart()]);
         echo view('front/plantilla_principal', $data);
-        echo view('front/boton_inicio', $data);
-        echo view('front/footer_view', $data);
+        echo view('front/boton_inicio');
+        echo view('front/footer_view');
     }
+
 
     public function detalles_producto()
     {

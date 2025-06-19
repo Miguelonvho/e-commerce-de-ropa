@@ -94,19 +94,18 @@
                 </ul>
             </div>
 
-                <!-- Boton carrito -->
-                <a class="btn m-0 p-0 position-relative" data-bs-toggle="offcanvas" href="#carritoOffcanvas"
-                    role="button" aria-controls="carritoOffcanvas">
-                    <img class="nav-img" src="<?= base_url('public/assets/img/Iconos/carrito-nav.png') ?>" alt="">
-                    <?php if ($cart->totalItems() > 0): ?>
-                        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
-                            <?= $cart->totalItems() ?>
-                            <span class="visually-hidden">productos en el carrito</span>
-                        </span>
-                    <?php endif; ?>
-                </a>
-            </div>
-
+            <!-- Boton carrito -->
+            <a class="btn m-0 p-0 position-relative" data-bs-toggle="offcanvas" href="#carritoOffcanvas" role="button"
+                aria-controls="carritoOffcanvas">
+                <img class="nav-img" src="<?= base_url('public/assets/img/Iconos/carrito-nav.png') ?>" alt="">
+                <?php if (!empty($cart->contents())): ?>
+                    <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                        <?= count($cart->contents()) ?>
+                        <span class="visually-hidden">productos en el carrito</span>
+                    </span>
+                <?php endif; ?>
+            </a>
         </div>
     </div>
+</div>
 </div>

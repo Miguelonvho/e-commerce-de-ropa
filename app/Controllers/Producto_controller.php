@@ -289,53 +289,84 @@ class Producto_controller extends Controller
         echo view('front/footer_view');
     }
 
-    public function editar_producto($id = null)
-    {
+public function editar_producto($id = null)
+{
+    $productoModel = new Producto_Model();
+    $producto = $productoModel->where('id_producto', $id)->first();
 
-        $productoModel = new Producto_Model();
-        $producto = $productoModel->where('id_producto', $id)->first();
-        $img = $this->request->getFile('imagen');
+    // Validar campos obligatorios simples (podés agregar más reglas o usar validación CI)
+    $campos = [
+        'nombre_prod',
+        'categorias',
+        'marcas',
+        'talles',
+        'generos',
+        'edades',
+        'precio_costo',
+        'precio_venta',
+        'stock',
+        'stock_min',
+    ];
 
-        if ($img && $img->isValid()) {
-            $rutaDestino = ROOTPATH . 'public/assets/uploads';
-            $nombre_aleatorio = $img->getRandomName();
-            $img->move($rutaDestino, $nombre_aleatorio);
-            $data = [
-                'nombre_prod' => $this->request->getVar('nombre_prod'),
-                'id_categoria' => $this->request->getVar('categorias'),
-                'id_marca' => $this->request->getVar('marcas'),
-                'id_talle' => $this->request->getVar('talles'),
-                'id_genero' => $this->request->getVar('generos'),
-                'id_edad' => $this->request->getVar('edades'),
-                'precio_costo' => $this->request->getVar('precio_costo'),
-                'precio_venta' => $this->request->getVar('precio_venta'),
-                'stock' => $this->request->getVar('stock'),
-                'stock_min' => $this->request->getVar('stock_min'),
-                'imagen' => $nombre_aleatorio,
-                'eliminado' => 'NO',
-            ];
-
-        } else {
-            $data = [
-                'nombre_prod' => $this->request->getVar('nombre_prod'),
-                'id_categoria' => $this->request->getVar('categorias'),
-                'id_marca' => $this->request->getVar('marcas'),
-                'id_talle' => $this->request->getVar('talles'),
-                'id_genero' => $this->request->getVar('generos'),
-                'id_edad' => $this->request->getVar('edades'),
-                'precio_costo' => $this->request->getVar('precio_costo'),
-                'precio_venta' => $this->request->getVar('precio_venta'),
-                'stock' => $this->request->getVar('stock'),
-                'stock_min' => $this->request->getVar('stock_min'),
-                'eliminado' => 'NO',
-            ];
+    $campos_vacios = [];
+    foreach ($campos as $campo) {
+        $valor = $this->request->getVar($campo);
+        if ($valor === null || trim($valor) === '') {
+            $campos_vacios[] = $campo;
         }
-
-        if ($productoModel->update($producto['id_producto'], $data)) {
-            session()->setFlashdata('success', 'Modificación exitosa.');
-        }
-        return redirect()->to(base_url('/editar_productos_view/' . $id));
     }
+
+    if (count($campos_vacios) > 0) {
+        session()->setFlashdata('error', 'Por favor, completa todos los campos obligatorios.');
+        // Mantener los datos enviados y la validación en la sesión para mostrar errores en la vista si tenés validación
+        return redirect()->back()->withInput();
+    }
+
+    $img = $this->request->getFile('imagen');
+
+    if ($img && $img->isValid()) {
+        $rutaDestino = ROOTPATH . 'public/assets/uploads';
+        $nombre_aleatorio = $img->getRandomName();
+        $img->move($rutaDestino, $nombre_aleatorio);
+        $data = [
+            'nombre_prod' => $this->request->getVar('nombre_prod'),
+            'id_categoria' => $this->request->getVar('categorias'),
+            'id_marca' => $this->request->getVar('marcas'),
+            'id_talle' => $this->request->getVar('talles'),
+            'id_genero' => $this->request->getVar('generos'),
+            'id_edad' => $this->request->getVar('edades'),
+            'precio_costo' => $this->request->getVar('precio_costo'),
+            'precio_venta' => $this->request->getVar('precio_venta'),
+            'stock' => $this->request->getVar('stock'),
+            'stock_min' => $this->request->getVar('stock_min'),
+            'imagen' => $nombre_aleatorio,
+            'eliminado' => 'NO',
+        ];
+    } else {
+        $data = [
+            'nombre_prod' => $this->request->getVar('nombre_prod'),
+            'id_categoria' => $this->request->getVar('categorias'),
+            'id_marca' => $this->request->getVar('marcas'),
+            'id_talle' => $this->request->getVar('talles'),
+            'id_genero' => $this->request->getVar('generos'),
+            'id_edad' => $this->request->getVar('edades'),
+            'precio_costo' => $this->request->getVar('precio_costo'),
+            'precio_venta' => $this->request->getVar('precio_venta'),
+            'stock' => $this->request->getVar('stock'),
+            'stock_min' => $this->request->getVar('stock_min'),
+            'eliminado' => 'NO',
+        ];
+    }
+
+    if ($productoModel->update($producto['id_producto'], $data)) {
+        session()->setFlashdata('success', 'Modificación exitosa.');
+    } else {
+        session()->setFlashdata('error', 'No se pudo actualizar el producto.');
+    }
+    
+    return redirect()->to(base_url('/editar_productos_view/' . $id));
+}
+
 
 public function catalogo()
 {

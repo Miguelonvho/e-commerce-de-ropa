@@ -6,8 +6,9 @@
 
 <?php
 if (!function_exists('formatear_numero')) {
-    function formatear_numero($valor) {
-        return number_format((float)$valor, 2, ',', '.');
+    function formatear_numero($valor)
+    {
+        return number_format((float) $valor, 2, ',', '.');
     }
 }
 ?>
@@ -19,8 +20,15 @@ if (!function_exists('formatear_numero')) {
 
         <h1 class="fw-light mb-4 text-center">Alta de Producto</h1>
         <?php if (isset($validation) && $validation->getErrors()): ?>
-            <div class="alert alert-danger text-center">
-        ⚠️ Por favor completá todos los campos obligatorios.
+            <div class="toast-container position-fixed bottom-0 end-0 p-3" style="z-index: 1080;">
+                <div id="toastError" class="toast align-items-center text-bg-danger border-0" role="alert"
+                    aria-live="assertive" aria-atomic="true">
+                    <div class="d-flex">
+                        <div class="toast-body">
+                            Debe completar todos los campos
+                        </div>
+                    </div>
+                </div>
             </div>
         <?php endif; ?>
 
@@ -39,15 +47,17 @@ if (!function_exists('formatear_numero')) {
             </li>
         </ul>
 
-        <div class="tab-content d-flex justify-content-center align-items-center border p-5" id="productTabContent" style="height: 400px;">
-            
+        <div class="tab-content d-flex justify-content-center align-items-center border p-5" id="productTabContent"
+            style="height: 400px;">
+
             <!-- TAB 1: Datos -->
             <div class="tab-pane fade show active" id="datos" role="tabpanel">
                 <div class="row g-4">
 
                     <div class="col-md-6">
                         <label for="nombre_prod" class="form-label">Nombre</label>
-                        <input type="text" class="form-control" id="nombre_prod" name="nombre_prod" value="<?= set_value('nombre_prod') ?>">
+                        <input type="text" class="form-control" id="nombre_prod" name="nombre_prod"
+                            value="<?= set_value('nombre_prod') ?>">
                         <?= $validation->showError('nombre_prod') ?>
                     </div>
 
@@ -123,36 +133,45 @@ if (!function_exists('formatear_numero')) {
             <div class="tab-pane fade" id="stock" role="tabpanel">
                 <div class="row g-4">
 
-            <div class="col-md-6">
-                <label for="precio_costo" class="form-label">Precio de costo</label>
-                <div class="input-group">
-                    <span class="input-group-text">$</span>
-                    <input type="text" class="form-control" id="precio_costo" name="precio_costo"
-                        value="<?= old('precio_costo') ? formatear_numero(old('precio_costo')) : '' ?>">
-                </div>
-                <?= $validation->showError('precio_costo') ?>
-            </div>
-
-            <div class="col-md-6">
-                <label for="precio_venta" class="form-label">Precio de venta</label>
-                <div class="input-group">
-                    <span class="input-group-text">$</span>
-                    <input type="text" class="form-control" id="precio_venta" name="precio_venta"
-                        value="<?= old('precio_venta') ? formatear_numero(old('precio_venta')) : '' ?>">
-                </div>
-                <?= $validation->showError('precio_venta') ?>
-            </div>
+                    <div class="col-md-6">
+                        <label for="precio_costo" class="form-label">Precio de costo</label>
+                        <div class="input-group">
+                            <span class="input-group-text">$</span>
+                            <input type="text" class="form-control" id="precio_costo" name="precio_costo"
+                                value="<?= old('precio_costo') ? formatear_numero(old('precio_costo')) : '' ?>">
+                        </div>
+                        <?= $validation->showError('precio_costo') ?>
+                    </div>
 
                     <div class="col-md-6">
-                        <label for="stock" class="form-label">Stock</label>
-                        <input type="number" class="form-control" id="stock" name="stock" value="<?= set_value('stock') ?>">
-                        <?= $validation->showError('stock') ?>
+                        <label for="precio_venta" class="form-label">Precio de venta</label>
+                        <div class="input-group">
+                            <span class="input-group-text">$</span>
+                            <input type="text" class="form-control" id="precio_venta" name="precio_venta"
+                                value="<?= old('precio_venta') ? formatear_numero(old('precio_venta')) : '' ?>">
+                        </div>
+                        <?= $validation->showError('precio_venta') ?>
                     </div>
 
                     <div class="col-md-6">
                         <label for="stock_min" class="form-label">Stock mínimo</label>
-                        <input type="number" class="form-control" id="stock_min" name="stock_min" value="<?= set_value('stock_min') ?>">
-                        <?= $validation->showError('stock_min') ?>
+                        <input type="number"
+                            class="form-control <?= $validation->hasError('stock_min') ? 'is-invalid' : '' ?>"
+                            id="stock_min" name="stock_min" min="0" value="<?= set_value('stock_min') ?>">
+                        <div class="invalid-feedback">
+                            <?= $validation->showError('stock_min') ?>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <label for="stock" class="form-label">Stock</label>
+                        <input type="number"
+                            class="form-control <?= $validation->hasError('stock') ? 'is-invalid' : '' ?>" id="stock"
+                            name="stock" min="<?= set_value('stock_min') !== '' ? set_value('stock_min') : 0 ?>"
+                            value="<?= set_value('stock') ?>">
+                        <div class="invalid-feedback">
+                            <?= $validation->showError('stock') ?>
+                        </div>
                     </div>
 
                 </div>
@@ -175,7 +194,8 @@ if (!function_exists('formatear_numero')) {
 
         <div class="d-flex justify-content-start gap-3 mt-4">
             <button type="submit" class="btn btn-outline-success"><i class="bi bi-save"></i> Guardar producto</button>
-            <a href="<?= site_url('/crud_productos_view') ?>" class="btn btn-outline-danger"><i class="bi bi-x-circle"></i> Cancelar</a>
+            <a href="<?= site_url('/crud_productos_view') ?>" class="btn btn-outline-danger"><i
+                    class="bi bi-x-circle"></i> Cancelar</a>
         </div>
     </form>
 </div>
