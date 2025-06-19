@@ -14,9 +14,25 @@ class Usuario_controller extends Controller
     public function index()
     {
         $usuarioModel = new Usuarios_model();
+        $buscar = $this->request->getGet('buscar');
 
-        $data['usuarios'] = $usuarioModel->where('baja', 'NO')->findAll(); // Solo activos
+        if ($buscar !== null && $buscar !== '') {
+            $data['usuarios'] = $usuarioModel
+                ->groupStart()
+                ->like('id', $buscar)
+                ->orLike('nombre', $buscar)
+                ->orLike('apellido', $buscar)
+                ->orLike('usuario', $buscar)
+                ->orLike('email', $buscar)
+                ->groupEnd()
+                ->where('baja', 'NO')
+                ->findAll();
+        } else {
+            $data['usuarios'] = $usuarioModel->where('baja', 'NO')->findAll();
+        }
+
         $data['titulo'] = 'CRUD de Usuarios';
+        $data['buscar'] = $buscar;
 
         echo view('front/head_view', $data);
         echo view('front/nav_view');
@@ -24,18 +40,36 @@ class Usuario_controller extends Controller
         echo view('front/footer_view');
     }
 
+
     public function eliminados()
     {
         $usuarioModel = new Usuarios_model();
+        $buscar = $this->request->getGet('buscar');
+
+        if ($buscar !== null && $buscar !== '') {
+            $data['usuarios'] = $usuarioModel
+                ->groupStart()
+                ->like('id', $buscar)
+                ->orLike('nombre', $buscar)
+                ->orLike('apellido', $buscar)
+                ->orLike('usuario', $buscar)
+                ->orLike('email', $buscar)
+                ->groupEnd()
+                ->where('baja', 'SI')
+                ->findAll();
+        } else {
+            $data['usuarios'] = $usuarioModel->where('baja', 'SI')->findAll();
+        }
 
         $data['titulo'] = 'Usuarios eliminados';
-        $data['usuarios'] = $usuarioModel->where('baja', 'SI')->findAll();
+        $data['buscar'] = $buscar;
 
         echo view('front/head_view', $data);
         echo view('front/nav_view');
         echo view('back/usuarios/usuarios_eliminados_view', $data);
         echo view('front/footer_view');
     }
+
 
     public function eliminar($id)
     {
