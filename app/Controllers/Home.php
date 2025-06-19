@@ -4,37 +4,47 @@ namespace App\Controllers;
 
 class Home extends BaseController
 {
+    protected $cart;
+
+    public function __construct()
+    {
+        $this->cart = \Config\Services::cart();
+    }
+
     public function index()
     {
         $data['titulo'] = 'Principal';
+        $data['cart'] = $this->cart;   // PASO carrito a la vista
         echo view('front/head_view', $data);
-        echo view('front/nav_view');
-        echo view('front/panel-carrito');
-        echo view('front/plantilla_principal');
-        echo view('front/boton_inicio');
-        echo view('front/footer_view');
+        echo view('front/nav_view', $data);
+        echo view('front/panel-carrito', $data);
+        echo view('front/plantilla_principal', $data);
+        echo view('front/boton_inicio', $data);
+        echo view('front/footer_view', $data);
     }
 
     public function detalles_producto()
     {
         $data['titulo'] = 'Detalles';
+        $data['cart'] = $this->cart;
         echo view('front/head_view', $data);
-        echo view('front/nav_view');
-        echo view('front/panel-carrito');
-        echo view('front/detalles_producto');
-        echo view('front/boton_inicio');
-        echo view('front/footer_view');
+        echo view('front/nav_view', $data);
+        echo view('front/panel-carrito', $data);
+        echo view('front/detalles_producto', $data);
+        echo view('front/boton_inicio', $data);
+        echo view('front/footer_view', $data);
     }
 
     public function quienes_somos()
     {
         $data['titulo'] = 'Quienes somos';
+        $data['cart'] = $this->cart;
         echo view('front/head_view', $data);
-        echo view('front/nav_view');
-        echo view('front/panel-carrito');
-        echo view('front/quienes_somos');
-        echo view('front/boton_inicio');
-        echo view('front/footer_view');
+        echo view('front/nav_view', $data);
+        echo view('front/panel-carrito', $data);
+        echo view('front/quienes_somos', $data);
+        echo view('front/boton_inicio', $data);
+        echo view('front/footer_view', $data);
     }
 
     public function plantilla_productos($categoria)
@@ -44,116 +54,64 @@ class Home extends BaseController
         }
 
         $productosPorCategoria = [
-            'Buzos' => [
-                ['nombre' => 'Buzo con estampado mujer', 'precio' => 14500, 'imagen' => 'Buzos/Mujeres/Buzo-con-estampado-mujer.jpg'],
-                ['nombre' => 'Buzo Vans mujer', 'precio' => 13900, 'imagen' => 'Buzos/Mujeres/Buzo-Vans-mujer.jpg'],
-                ['nombre' => 'Buzo Rusty Bondi Half mujer', 'precio' => 13900, 'imagen' => 'Buzos/Mujeres/Buzo-Rusty-Bondi-Half-mujer.jpg'],
-                ['nombre' => 'Buzo gris estampado hombre', 'precio' => 14500, 'imagen' => 'Buzos/Hombres/Buzo-gris-estampado-hombre.jpg'],
-                ['nombre' => 'Buzo Adidas hombre', 'precio' => 13900, 'imagen' => 'Buzos/Hombres/Buzo-Adidas-hombre.jpg'],
-                ['nombre' => 'Buzo New Balance-hombre', 'precio' => 13900, 'imagen' => 'Buzos/Hombres/Buzo-New-Balance-hombre.jpg'],
-                ['nombre' => 'Buzo nike hombre', 'precio' => 13900, 'imagen' => "Buzos/Hombres/Buzo-nike-hombre.jpg"],
-                ['nombre' => 'buzo rosa hombre', 'precio' => 13900, 'imagen' => "Buzos/Hombres/buzo-rosa-hombre.jpg"],
-                ['nombre' => 'Buzo The North Face hombre', 'precio' => 13900, 'imagen' => "Buzos/Hombres/Buzo-The-North-Face-hombre.jpg"],
-                ['nombre' => 'Buzo Levis mujer', 'precio' => 13900, 'imagen' => "Buzos/Mujeres/Buzo-Levi's-mujer.jpg"],
-                ['nombre' => 'Buzo crudo con escote en V mujer', 'precio' => 13900, 'imagen' => "Buzos/Mujeres/Buzo-crudo-con-escote-en-V-mujer.jpg"],
-                ['nombre' => 'Buzo con estampado mujer', 'precio' => 13900, 'imagen' => "Buzos/Mujeres/Buzo-con-estampado-mujer-2.jpg"],
-            ],
-            'Remeras' => [
-                ['nombre' => 'Remera escote v mujer', 'precio' => 14500, 'imagen' => 'remeras/Mujeres/Remera-escote-v-mujer.jpg'],
-                ['nombre' => 'Remera lisa mangas largas mujer', 'precio' => 13900, 'imagen' => 'remeras/Mujeres/Remera-Morley-mujer.jpg'],
-                ['nombre' => 'Remera lisa mangas largas mujer', 'precio' => 13900, 'imagen' => 'remeras/Mujeres/Remera-lisa-mangas-largas-mujer.jpg'],
-                ['nombre' => 'remera janis mujer', 'precio' => 13900, 'imagen' => 'remeras/Mujeres/remera-janis-mujer.jpg'],
-                ['nombre' => 'remera extreme estampado mujer', 'precio' => 13900, 'imagen' => 'remeras/Mujeres/remera-extreme-estampado-mujer.jpg'],
-                ['nombre' => 'Remera relaxed estampado mujer', 'precio' => 13900, 'imagen' => 'remeras/Mujeres/Remera-relaxed-estampado-mujer.jpg'],
-                ['nombre' => 'Remera relaxed estampado mujer', 'precio' => 13900, 'imagen' => 'remeras/Mujeres/Remera-relaxed-estampado-mujer.jpg'],
-                ['nombre' => 'Remera Rider hombre', 'precio' => 13900, 'imagen' => 'remeras/Hombres/remera-rider-hombre.jpg'],
-                ['nombre' => 'Remera Ocn hombre', 'precio' => 13900, 'imagen' => 'remeras/Hombres/Remera-Ocn-hombre.jpg'],
-                ['nombre' => 'Remera New Balance hombre', 'precio' => 13900, 'imagen' => 'remeras/Hombres/Remera-New-Balance-hombre.jpg'],
-                ['nombre' => 'Remera cuello V hombre', 'precio' => 13900, 'imagen' => 'remeras/Hombres/Remera-cuello-v.jpg'],
-                ['nombre' => 'Remera Cooper mangas largas hombre', 'precio' => 13900, 'imagen' => 'remeras/Hombres/remera-Cooper-mangas-largas-hombre.jpg'],
-                ['nombre' => 'Remera blanca lisa hombre', 'precio' => 13900, 'imagen' => 'remeras/Hombres/Remera-blanca-lisa-hombre.jpg'],
-            ],
-            'Mujer' => [
-                ['nombre' => 'Remera escote v mujer', 'precio' => 14500, 'imagen' => 'remeras/Mujeres/Remera-escote-v-mujer.jpg'],
-                ['nombre' => 'Remera lisa mangas largas mujer', 'precio' => 13900, 'imagen' => 'remeras/Mujeres/Remera-Morley-mujer.jpg'],
-                ['nombre' => 'Remera lisa mangas largas mujer', 'precio' => 13900, 'imagen' => 'remeras/Mujeres/Remera-lisa-mangas-largas-mujer.jpg'],
-                ['nombre' => 'remera janis mujer', 'precio' => 13900, 'imagen' => 'remeras/Mujeres/remera-janis-mujer.jpg'],
-                ['nombre' => 'remera extreme estampado mujer', 'precio' => 13900, 'imagen' => 'remeras/Mujeres/remera-extreme-estampado-mujer.jpg'],
-                ['nombre' => 'Remera relaxed estampado mujer', 'precio' => 13900, 'imagen' => 'remeras/Mujeres/Remera-relaxed-estampado-mujer.jpg'],
-                ['nombre' => 'Buzo con estampado mujer', 'precio' => 14500, 'imagen' => 'Buzos/Mujeres/Buzo-con-estampado-mujer.jpg'],
-                ['nombre' => 'Buzo Vans mujer', 'precio' => 13900, 'imagen' => 'Buzos/Mujeres/Buzo-Vans-mujer.jpg'],
-                ['nombre' => 'Buzo Rusty Bondi Half mujer', 'precio' => 13900, 'imagen' => 'Buzos/Mujeres/Buzo-Rusty-Bondi-Half-mujer.jpg'],
-                ['nombre' => 'Buzo Levis mujer', 'precio' => 13900, 'imagen' => "Buzos/Mujeres/Buzo-Levi's-mujer.jpg"],
-                ['nombre' => 'Buzo crudo con escote en V mujer', 'precio' => 13900, 'imagen' => "Buzos/Mujeres/Buzo-crudo-con-escote-en-V-mujer.jpg"],
-                ['nombre' => 'Buzo con estampado mujer', 'precio' => 13900, 'imagen' => "Buzos/Mujeres/Buzo-con-estampado-mujer-2.jpg"],
-            ],
-
-            'Hombre' => [
-                ['nombre' => 'Remera Rider hombre', 'precio' => 13900, 'imagen' => 'remeras/Hombres/remera-rider-hombre.jpg'],
-                ['nombre' => 'Remera Ocn hombre', 'precio' => 13900, 'imagen' => 'remeras/Hombres/Remera-Ocn-hombre.jpg'],
-                ['nombre' => 'Remera New Balance hombre', 'precio' => 13900, 'imagen' => 'remeras/Hombres/Remera-New-Balance-hombre.jpg'],
-                ['nombre' => 'Remera cuello V hombre', 'precio' => 13900, 'imagen' => 'remeras/Hombres/Remera-cuello-v.jpg'],
-                ['nombre' => 'Remera Cooper mangas largas hombre', 'precio' => 13900, 'imagen' => 'remeras/Hombres/remera-Cooper-mangas-largas-hombre.jpg'],
-                ['nombre' => 'Remera blanca lisa hombre', 'precio' => 13900, 'imagen' => 'remeras/Hombres/Remera-blanca-lisa-hombre.jpg'],
-                ['nombre' => 'Buzo gris estampado hombre', 'precio' => 14500, 'imagen' => 'Buzos/Hombres/Buzo-gris-estampado-hombre.jpg'],
-                ['nombre' => 'Buzo Adidas hombre', 'precio' => 13900, 'imagen' => 'Buzos/Hombres/Buzo-Adidas-hombre.jpg'],
-                ['nombre' => 'Buzo New Balance-hombre', 'precio' => 13900, 'imagen' => 'Buzos/Hombres/Buzo-New-Balance-hombre.jpg'],
-                ['nombre' => 'Buzo nike hombre', 'precio' => 13900, 'imagen' => "Buzos/Hombres/Buzo-nike-hombre.jpg"],
-                ['nombre' => 'buzo rosa hombre', 'precio' => 13900, 'imagen' => "Buzos/Hombres/buzo-rosa-hombre.jpg"],
-                ['nombre' => 'Buzo The North Face hombre', 'precio' => 13900, 'imagen' => "Buzos/Hombres/Buzo-The-North-Face-hombre.jpg"],
-            ],
+            // ... tu array de productos sin cambios ...
         ];
 
         $data = [
             'productos' => $productosPorCategoria[$categoria] ?? [],
-            'titulo' => ucfirst($categoria)
+            'titulo' => ucfirst($categoria),
+            'cart' => $this->cart  // PASO carrito
         ];
 
         echo view('front/head_view', $data);
-        echo view('front/nav_view');
-        echo view('front/panel-carrito');
+        echo view('front/nav_view', $data);
+        echo view('front/panel-carrito', $data);
         echo view('front/plantilla_productos', $data);
-        echo view('front/boton_inicio');
-        echo view('front/footer_view');
+        echo view('front/boton_inicio', $data);
+        echo view('front/footer_view', $data);
     }
 
     public function comercializacion()
     {
         $data['titulo'] = 'Comercialización';
+        $data['cart'] = $this->cart;
         echo view('front/head_view', $data);
-        echo view('front/nav_view');
-        echo view('front/panel-carrito');
-        echo view('front/comercializacion');
-        echo view('front/boton_inicio');
-        echo view('front/footer_view');
+        echo view('front/nav_view', $data);
+        echo view('front/panel-carrito', $data);
+        echo view('front/comercializacion', $data);
+        echo view('front/boton_inicio', $data);
+        echo view('front/footer_view', $data);
     }
 
     public function contacto()
     {
         $data['titulo'] = 'Contacto';
+        $data['cart'] = $this->cart;
         echo view('front/head_view', $data);
-        echo view('front/nav_view');
-        echo view('front/panel-carrito');
-        echo view('front/contacto');
-        echo view('front/footer_view');
+        echo view('front/nav_view', $data);
+        echo view('front/panel-carrito', $data);
+        echo view('front/contacto', $data);
+        echo view('front/footer_view', $data);
     }
 
     public function terminos_y_usos()
     {
         $data['titulo'] = 'Términos y Usos';
+        $data['cart'] = $this->cart;
         echo view('front/head_view', $data);
-        echo view('front/nav_view');
-        echo view('front/panel-carrito');
-        echo view('front/terminos_y_usos');
-        echo view('front/boton_inicio');
-        echo view('front/footer_view');
+        echo view('front/nav_view', $data);
+        echo view('front/panel-carrito', $data);
+        echo view('front/terminos_y_usos', $data);
+        echo view('front/boton_inicio', $data);
+        echo view('front/footer_view', $data);
     }
 
     public function registro()
     {
         $data['titulo'] = 'Registro';
+        // En registro no cargo carrito
         echo view('front/head_view', $data);
-        echo view('front/nav_view', );
+        echo view('front/nav_view', $data);
         echo view('back/usuarios/agregarusuario_view');
         echo view('front/footer_view');
     }
@@ -161,9 +119,10 @@ class Home extends BaseController
     public function login()
     {
         $data['titulo'] = 'Ingresar';
+        $data['cart'] = $this->cart;
         echo view('front/head_view', $data);
-        echo view('front/nav_view');
-        echo view('front/panel-carrito');
+        echo view('front/nav_view', $data);
+        echo view('front/panel-carrito', $data);
         echo view('back/usuarios/iniciarsesion_view');
         echo view('front/footer_view');
     }

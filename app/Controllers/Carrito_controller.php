@@ -20,19 +20,6 @@ class Carrito_controller extends Controller
     $this->session = session();                
 }
 
-
-    public function index()
-    {
-        $data['titulo'] = 'Carrito de Compras';
-        $data['cart'] = $this->cart;
-
-        echo view('front/head_view', $data);
-        echo view('front/nav_view');
-        echo view('front/panel-carrito');
-        echo view('front/carrito_view', $data);
-        echo view('front/footer_view');
-    }
-
     public function agregar()
 {
     $request = \Config\Services::request();

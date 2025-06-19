@@ -52,9 +52,7 @@ $routes->post('guardar_consulta', 'Consultas_controller::guardar');
 //Catologo
 $routes->get('catalogo_productos_view', 'Producto_controller::catalogo');
 
-
-$routes->get('carrito_view', 'Carrito_controller::index');
-$routes->post('carrito_view/agregar', 'Carrito_controller::agregar');
-$routes->post('carrito_view/actualizar', 'Carrito_controller::actualizar');
-$routes->get('carrito_view/eliminar/(:any)', 'Carrito_controller::eliminar/$1');
-$routes->get('carrito_view/vaciar', 'Carrito_controller::vaciar');
+$routes->post('carrito_view/agregar', 'Carrito_controller::agregar',['filter' => 'auth']);
+$routes->post('carrito_view/actualizar', 'Carrito_controller::actualizar', ['filter' => 'auth']);
+$routes->get('carrito_view/eliminar/(:any)', 'Carrito_controller::eliminar/$1',['filter' => 'auth']);
+$routes->get('carrito_view/vaciar', 'Carrito_controller::vaciar', ['filter' => 'auth']);

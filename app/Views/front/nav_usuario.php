@@ -1,3 +1,4 @@
+<?php $cart = \Config\Services::cart(); ?>
 <div class="container-fluid">
     <a href="<?= base_url('plantilla_principal') ?>"><img style="width: 100px"
             src="<?= base_url('public/assets/img/Iconos/logo.png') ?>" alt="responsive"></a>
@@ -19,9 +20,9 @@
                         <img style="width: 5vw;" src="<?= base_url('public/assets/img/Iconos/fuego.gif') ?>" alt="">
                     </div>
                     <div class="d-flex align-items-center">
-                                <img style="width: 10vw;"
-                                    src="<?= base_url('public/assets/img/Remeras/Hombres/Remera-rider-hombre.jpg') ?>"
-                                    alt="Promo 1">
+                        <img style="width: 10vw;"
+                            src="<?= base_url('public/assets/img/Remeras/Hombres/Remera-rider-hombre.jpg') ?>"
+                            alt="Promo 1">
                         <div class="p-4">
                             <strong>Descuento del 20%</strong><br>
                             <small>En Remera rider para hombre</small>
@@ -84,11 +85,19 @@
                 </ul>
             </div>
 
-            <!-- Boton carrito -->
-            <a class="btn m-0 p-0" data-bs-toggle="offcanvas" href="#carritoOffcanvas" role="button"
-                aria-controls="carritoOffcanvas">
-                <img class="nav-img" src="<?= base_url('public/assets/img/Iconos/carrito-nav.png') ?>" alt="">
-            </a>
+                <!-- Boton carrito -->
+                <a class="btn m-0 p-0 position-relative" data-bs-toggle="offcanvas" href="#carritoOffcanvas"
+                    role="button" aria-controls="carritoOffcanvas">
+                    <img class="nav-img" src="<?= base_url('public/assets/img/Iconos/carrito-nav.png') ?>" alt="">
+                    <?php if ($cart->totalItems() > 0): ?>
+                        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                            <?= $cart->totalItems() ?>
+                            <span class="visually-hidden">productos en el carrito</span>
+                        </span>
+                    <?php endif; ?>
+                </a>
+            </div>
+
         </div>
     </div>
 </div>
