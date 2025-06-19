@@ -2,22 +2,6 @@
 $readonly = $readonly ?? true;
 $validation = $validation ?? \Config\Services::validation();
 ?>
-<div aria-live="polite" aria-atomic="true" class="position-relative">
-    <div class="toast-container position-fixed end-0 bottom-0 m-2" style="z-index: 9999;">
-        <?php if (session()->getFlashdata('success')): ?>
-            <div class="toast align-items-center text-bg-success border-0" role="alert" aria-live="assertive"
-                aria-atomic="true" data-bs-delay="2000">
-                <div class="d-flex">
-                    <div class="toast-body">
-                        <?= session()->getFlashdata('success') ?>
-                    </div>
-                    <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"
-                        aria-label="Close"></button>
-                </div>
-            </div>
-        <?php endif; ?>
-    </div>
-</div>
 <form action="<?= site_url('editar_usuario_admin/' . $usuario['id']) ?>" enctype="multipart/form-data" method="POST">
     <?= csrf_field() ?>
     <h1 class="m-5 fw-light text-center">Mi información</h1>
