@@ -1,7 +1,7 @@
 <?php $session = session(); ?>
 
-<div class="container py-5">
-    <h1 class="text-center mb-4">Mis Compras</h1>
+<div class="container py-5" style="min-height: 400px;">
+    <h1 class="text-center mb-4 fw-light">Mis Compras</h1>
 
     <?php if (session()->getFlashdata('mensaje')): ?>
         <div class="alert alert-warning alert-dismissible fade show" role="alert">
@@ -19,34 +19,34 @@
     <?php else: ?>
         <div class="table-responsive">
             <table class="table table-bordered table-striped text-center align-middle">
-                <thead class="table-dark">
+                <thead>
                     <tr>
-                        <th>N° Orden</th>
-                        <th>Fecha</th>
-                        <th>Total</th>
-                        <th>Ver Detalle</th>
-                  <thead>
-    <tr class="text-center">
-        <th>#</th>
-        <th>Fecha</th>
-        <th>Total</th>
-        <th>Acciones</th>
-    </tr>
-</thead>
-<tbody>
-    <?php foreach ($ventas as $venta): ?>
-        <tr class="text-center align-middle">
-            <td><?= $venta['id'] ?></td>
-            <td><?= $venta['fecha'] ?></td>
-            <td>$<?= number_format($venta['total_venta'], 2, ',', '.') ?></td>
-            <td>
-                <a href="<?= site_url('ver_factura/' . $venta['id']) ?>" class="btn btn-sm btn-outline-primary">
-                    Ver factura
-                </a>
-            </td>
-        </tr>
-    <?php endforeach; ?>
-</tbody>
+                        <th class="bg-black text-white">N° Orden</th>
+                        <th class="bg-black text-white">Fecha</th>
+                        <th class="bg-black text-white">Total</th>
+                        <th class="bg-black text-white  ">Ver Detalle</th>
+                        <thead>
+                            <tr class="text-center">
+                                <th>#</th>
+                                <th>Fecha</th>
+                                <th>Total</th>
+                                <th>Acciones</th>
+                            </tr>
+                        </thead>
+                <tbody>
+                    <?php foreach ($ventas as $venta): ?>
+                        <tr class="text-center align-middle">
+                            <td><?= $venta['id'] ?></td>
+                            <td><?= $venta['fecha'] ?></td>
+                            <td>$<?= number_format($venta['total_venta'], 2, ',', '.') ?></td>
+                            <td>
+                                <a href="<?= site_url('ver_factura/' . $venta['id']) ?>" class="btn btn-sm btn-outline-primary">
+                                    Ver factura
+                                </a>
+                            </td>
+                        </tr>
+                    <?php endforeach; ?>
+                </tbody>
             </table>
         </div>
 
