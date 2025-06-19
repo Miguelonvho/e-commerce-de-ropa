@@ -6,7 +6,7 @@ use CodeIgniter\Filters\FilterInterface;
 use CodeIgniter\HTTP\RequestInterface;
 use CodeIgniter\HTTP\ResponseInterface;
 
-class Auth implements FilterInterface
+class Auth implements FilterInterface 
 {
     public function before(RequestInterface $request, $arguments = null)
     {
@@ -14,15 +14,23 @@ class Auth implements FilterInterface
             return redirect()->to('/iniciarsesion_view');
         }
 
-        if ($arguments && in_array('admin', $arguments)) {
-            if (session()->get('perfil_id') != 1) {
-                return redirect()->to('/iniciarsesion_view');
+        if ($arguments) {
+            if (in_array('admin', $arguments)) {
+                if (session()->get('perfil_id') != 1) {
+                    return redirect()->to('/iniciarsesion_view');
+                }
+            }
+
+            if (in_array('cliente', $arguments)) {
+                if (session()->get('perfil_id') != 2) {
+                    return redirect()->to('/iniciarsesion_view');
+                }
             }
         }
     }
 
     public function after(RequestInterface $request, ResponseInterface $response, $arguments = null)
     {
-        
+        // No se modifica
     }
 }

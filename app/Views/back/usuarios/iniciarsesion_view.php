@@ -35,20 +35,5 @@
             <p class="m-0">¿No tenés cuenta?</p>
             <a href="<?= base_url('agregarusuario_view') ?>">Registrarme</a>
         </div>
-
-        <div aria-live="polite" aria-atomic="true" class="position-relative">
-            <div class="toast-container position-fixed end-0 bottom-0 m-2" style="z-index: 9999;">
-                <?php if (session()->getFlashdata('success')): ?>
-                    <div class="toast align-items-center text-bg-success border-0" role="alert" aria-live="assertive"
-                        aria-atomic="true" >
-                        <div class="d-flex justify-content-center">
-                            <div class="toast-body">
-                                <?= session()->getFlashdata('success') ?>
-                            </div>
-                        </div>
-                    </div>
-                <?php endif; ?>
-            </div>
-        </div>
     </form>
 </div>

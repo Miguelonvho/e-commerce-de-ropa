@@ -1,4 +1,4 @@
-<section class="container-fluid bg-white text-dark py-4">
+<section class="container-fluid bg-white text-dark py-4" style="min-height: 600px;">
     <h1 class="text-center mb-4 fw-light">Catálogo de Productos</h1>
     <hr>
 

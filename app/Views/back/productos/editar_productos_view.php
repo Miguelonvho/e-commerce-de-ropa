@@ -1,23 +1,7 @@
-<?php $validation = \Config\Services::validation(); ?>
+<? ?>
 <?= csrf_field() ?>
 
 <div class="container d-flex flex-column justify-content-center align-items-center my-5">
-    <div aria-live="polite" aria-atomic="true" class="position-relative">
-        <div class="toast-container position-fixed end-0 bottom-0 m-2" style="z-index: 9999;">
-            <?php if (session()->getFlashdata('success')): ?>
-                <div class="toast align-items-center text-bg-success border-0" role="alert" aria-live="assertive"
-                    aria-atomic="true" data-bs-delay="2000">
-                    <div class="d-flex">
-                        <div class="toast-body">
-                            <?= session()->getFlashdata('success') ?>
-                        </div>
-                        <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"
-                            aria-label="Close"></button>
-                    </div>
-                </div>
-            <?php endif; ?>
-        </div>
-    </div>
     <form id="formulario-editar-productos" class="formulario bg-black text-white p-4 rounded shadow-lg w-100"
         style="max-width: 900px;" action="<?= site_url('editar_producto/' . $old['id_producto']) ?>" method="POST"
         enctype="multipart/form-data">
@@ -122,20 +106,22 @@
                 <div class="row g-4">
                     <div class="col-md-6">
                         <label for="precio_costo" class="form-label">Precio de costo</label>
-                        <div class="d-flex gap-1 align-items-center justify-content-center">
-                            <h5 class="m-0">$</h5>
-                            <input type="number" class="form-control" id="precio_costo" name="precio_costo"
-                                value="<?= esc($old['precio_costo']) ?>">
+                        <div class="input-group">
+                            <span class="input-group-text">$</span>
+                            <input type="text" class="form-control" id="precio_costo" name="precio_costo"
+                                value="<?= old('precio_costo') ? formatear_numero(old('precio_costo')) : '' ?>">
                         </div>
+                        
                     </div>
 
                     <div class="col-md-6">
                         <label for="precio_venta" class="form-label">Precio de venta</label>
-                        <div class="d-flex gap-1 align-items-center justify-content-center">
-                            <h5 class="m-0">$</h5>
-                            <input type="number" class="form-control" id="precio_venta" name="precio_venta"
-                                value="<?= esc($old['precio_venta']) ?>">
+                        <div class="input-group">
+                            <span class="input-group-text">$</span>
+                            <input type="text" class="form-control" id="precio_venta" name="precio_venta"
+                                value="<?= old('precio_venta') ? formatear_numero(old('precio_venta')) : '' ?>">
                         </div>
+                        
                     </div>
 
                     <div class="col-md-6">

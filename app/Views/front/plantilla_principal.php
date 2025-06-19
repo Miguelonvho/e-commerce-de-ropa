@@ -65,7 +65,7 @@
         <hr>
         <div class="d-flex justify-content-center flex-wrap gap-4 pt-5 m-0">
             <?php foreach ($destacados as $producto): ?>
-                <div class="card bg-black text-white" style="max-width: 300px;">
+                <div class="card bg-black text-white" style="max-width: 300px; cursor: default !important;">
                     <img class="card-img-top imagen-ropa"
                         src="<?= base_url('public/assets/uploads/' . $producto['imagen']) ?>"
                         alt="<?= esc($producto['nombre_prod']) ?>" style="height: 250px; object-fit: cover;">
