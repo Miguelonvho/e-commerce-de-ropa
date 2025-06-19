@@ -56,3 +56,17 @@ $routes->post('carrito_view/agregar', 'Carrito_controller::agregar',['filter' =>
 $routes->post('carrito_view/actualizar', 'Carrito_controller::actualizar', ['filter' => 'auth']);
 $routes->get('carrito_view/eliminar/(:any)', 'Carrito_controller::eliminar/$1',['filter' => 'auth']);
 $routes->get('carrito_view/vaciar', 'Carrito_controller::vaciar', ['filter' => 'auth']);
+$routes->get('checkout', 'Ventas_controller::registrar_venta', ['filter' => 'auth']);
+
+
+// Historial de compras del usuario
+$routes->get('mis_compras', 'Ventas_controller::misCompras', ['filter' => 'auth']);
+
+// Detalle de una compra específica (factura del usuario)
+$routes->get('ver_factura/(:num)', 'Ventas_controller::ver_Factura/$1', ['filter' => 'auth']);
+
+// Historial general de ventas (vista del admin)
+$routes->get('ventas_admin', 'Ventas_controller::todasLasVentas', ['filter' => 'auth:admin']);
+
+// Detalle de una venta (el admin también puede acceder al detalle)
+$routes->get('ver_factura_admin/(:num)', 'Ventas_controller::verFactura/$1', ['filter' => 'auth:admin']);

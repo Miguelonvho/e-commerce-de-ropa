@@ -15,7 +15,7 @@
             </li>
 
             <li class="nav-item">
-                <a class="nav-link text-white" href="<?= base_url('') ?>">Ventas</a>
+                <a class="nav-link text-white" href="<?= base_url('ventas_admin') ?>">Ventas</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link text-white" href="<?= base_url('/consultas_view') ?>">Consultas</a>

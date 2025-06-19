@@ -35,12 +35,19 @@
                     </div>
                 </div>
             </li>
-            <li class="nav-item dropdown">
-                <a class="text-white nav-link" href="<?= base_url('catalogo_productos_view') ?>">Catálogo</a>
-            </li>
-            <li class="nav-item dropdown">
-                <a class="text-white nav-link" href="<?= base_url('quienes_somos') ?>">Quienes somos</a>
-            </li>
+           <li class="nav-item dropdown">
+    <a class="text-white nav-link" href="<?= base_url('catalogo_productos_view') ?>">Catálogo</a>
+</li>
+
+<?php if (session()->get('perfil_id') == 2): ?>
+    <li class="nav-item dropdown">
+        <a class="text-white nav-link" href="<?= base_url('mis_compras') ?>">Mis compras</a>
+    </li>
+<?php endif; ?>
+
+<li class="nav-item dropdown">
+    <a class="text-white nav-link" href="<?= base_url('quienes_somos') ?>">Quienes somos</a>
+</li>
         </ul>
         <div class="nav-busqueda d-flex gap-4 m-2 justify-content-end align-items-center">
             <!-- Boton login -->
@@ -66,6 +73,8 @@
                             </p>
                             <p class="m-0"><?= session()->get('email') ?></p>
                         </li>
+
+                        
                         <li class="d-flex justify-content-center gap-4 mt-3">
                             <a href="<?= base_url('plantilla_perfil') ?>"
                                 class="btn d-flex align-items-center btn-outline-light">Ver perfil</a>
