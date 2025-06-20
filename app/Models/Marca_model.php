@@ -10,7 +10,11 @@ class Marca_model extends Model
     protected $primaryKey = 'id_marca';
     protected $allowedFields = ['nombre'];
 
-    public function getMarcas(){
+    /**
+     * Devuelve todos los registros de la tabla 'Marcas'.
+     */
+    public function getMarcas()
+    {
         return $this->findAll();
     }
 }

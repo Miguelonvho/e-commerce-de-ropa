@@ -1,4 +1,5 @@
 <?php if (empty($ventas)): ?>
+    <!-- Vista si no hay ventas registradas -->
     <div class="container mt-5" style="min-height: 400px;">
         <div class="alert alert-dark text-center" role="alert">
             <h4 class="alert-heading">No se registraron ventas todavía</h4>
@@ -6,6 +7,7 @@
         </div>
     </div>
 <?php else: ?>
+    <!-- Vista con el historial de ventas -->
     <div class="container my-5" style="min-height: 400px;">
         <div class="table-responsive-sm text-center">
             <h2 class="mb-4">Historial de Ventas</h2>
@@ -20,6 +22,7 @@
                     </tr>
                 </thead>
                 <tbody>
+                    <!-- Itera sobre las ventas y muestra cada una en una fila -->
                     <?php foreach ($ventas as $venta): ?>
                         <tr>
                             <td><?= esc($venta['id']) ?></td>
@@ -27,6 +30,7 @@
                             <td>$<?= number_format($venta['total_venta'], 2, ',', '.') ?></td>
                             <td><?= esc($venta['fecha']) ?></td>
                             <td>
+                                <!-- Enlace para ver el detalle de la factura -->
                                 <a href="<?= base_url('ver_factura/' . $venta['id']) ?>" class="btn btn-sm btn-outline-primary">
                                     Ver Detalle
                                 </a>
