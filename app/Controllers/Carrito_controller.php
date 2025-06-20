@@ -36,7 +36,6 @@ class Carrito_controller extends Controller
             return redirect()->back()->with('error', 'Producto no encontrado');
         }
 
-        // Aseguramos que el producto sea un array
         $producto = (array) $producto;
 
         // Calcular cuántas unidades ya hay en el carrito

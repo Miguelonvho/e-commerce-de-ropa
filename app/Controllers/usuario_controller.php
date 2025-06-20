@@ -11,6 +11,7 @@ class Usuario_controller extends Controller
         helper(['form', 'url']);
     }
 
+    // Muestra todos los usuarios activos
     public function index()
     {
         $usuarioModel = new Usuarios_model();
@@ -31,6 +32,7 @@ class Usuario_controller extends Controller
             $data['usuarios'] = $usuarioModel->where('baja', 'NO')->findAll();
         }
 
+    
         $data['titulo'] = 'CRUD de Usuarios';
         $data['buscar'] = $buscar;
 
@@ -40,12 +42,13 @@ class Usuario_controller extends Controller
         echo view('front/footer_view');
     }
 
-
+    // Muestra los usuarios eliminados
     public function eliminados()
     {
         $usuarioModel = new Usuarios_model();
         $buscar = $this->request->getGet('buscar');
 
+        // Filtra los usuarios eliminados con la opción de búsqueda
         if ($buscar !== null && $buscar !== '') {
             $data['usuarios'] = $usuarioModel
                 ->groupStart()
@@ -61,6 +64,7 @@ class Usuario_controller extends Controller
             $data['usuarios'] = $usuarioModel->where('baja', 'SI')->findAll();
         }
 
+        
         $data['titulo'] = 'Usuarios eliminados';
         $data['buscar'] = $buscar;
 
@@ -70,24 +74,25 @@ class Usuario_controller extends Controller
         echo view('front/footer_view');
     }
 
-
+    // Elimina un usuario (marca como baja)
     public function eliminar($id)
     {
         $usuarioModel = new Usuarios_model();
 
-        // Verificamos si el usuario existe
+        // Verifica si el usuario existe
         $usuario = $usuarioModel->find($id);
         if (!$usuario) {
             throw \CodeIgniter\Exceptions\PageNotFoundException::forPageNotFound("Usuario no encontrado");
         }
 
-        // Marcamos como dado de baja
+        // Marca el usuario como eliminado
         $usuarioModel->update($id, ['baja' => 'SI']);
 
         session()->setFlashdata('success', 'Usuario eliminado correctamente.');
         return redirect()->to('/crud_usuarios_view');
     }
 
+    // Realiza la validación de los datos del formulario para el registro de un usuario
     public function form_validation()
     {
         $input = $this->validate(
@@ -99,40 +104,13 @@ class Usuario_controller extends Controller
                 'pass' => 'required|min_length[6]|max_length[30]',
             ],
             [
-                'nombre' => [
-                    'required' => 'El nombre es obligatorio.',
-                    'alpha_space' => 'El nombre solo puede contener letras y espacios.',
-                    'min_length' => 'El nombre debe tener al menos 3 caracteres.',
-                    'max_length' => 'El nombre no puede tener más de 25 caracteres.',
-                ],
-                'apellido' => [
-                    'required' => 'El apellido es obligatorio.',
-                    'alpha_space' => 'El apellido solo puede contener letras y espacios.',
-                    'min_length' => 'El apellido debe tener al menos 3 caracteres.',
-                    'max_length' => 'El apellido no puede tener más de 25 caracteres.',
-                ],
-                'email' => [
-                    'required' => 'El email es obligatorio.',
-                    'valid_email' => 'Debes ingresar un email válido.',
-                    'max_length' => 'El email no puede tener más de 50 caracteres.',
-                ],
-                'usuario' => [
-                    'required' => 'El usuario es obligatorio.',
-                    'alpha_numeric' => 'El usuario solo puede contener letras y números.',
-                    'min_length' => 'El usuario debe tener al menos 3 caracteres.',
-                    'max_length' => 'El usuario no puede tener más de 20 caracteres.',
-                ],
-                'pass' => [
-                    'required' => 'La contraseña es obligatoria.',
-                    'min_length' => 'La contraseña debe tener al menos 6 caracteres.',
-                    'max_length' => 'La contraseña no puede tener más de 30 caracteres.',
-                ],
+            
             ]
         );
 
         $formModel = new Usuarios_model();
 
-        // Comprobación de duplicados
+        // Comprobación de si el email o usuario ya están en uso
         $usuarioExistente = $formModel
             ->groupStart()
             ->where('email', $this->request->getVar('email'))
@@ -142,12 +120,12 @@ class Usuario_controller extends Controller
             ->first();
 
         if ($usuarioExistente) {
-            // Agregamos el error a la validación manualmente
+            // Si existe un usuario con el mismo email o usuario, se muestra un error
             $validation = \Config\Services::validation();
             $validation->setError('email', 'El correo o nombre de usuario ya están en uso.');
         }
 
-        // Si la validación falla (por cualquier motivo)
+        // Si la validación falla
         if (!$input || $usuarioExistente) {
             $data['titulo'] = 'Registro';
             echo view('front/head_view', $data);
@@ -159,7 +137,7 @@ class Usuario_controller extends Controller
             return;
         }
 
-        // Guardar datos
+        // Guarda los datos si la validación es exitosa
         $formModel->save([
             'nombre' => $this->request->getVar('nombre'),
             'apellido' => $this->request->getVar('apellido'),
@@ -172,30 +150,32 @@ class Usuario_controller extends Controller
         return redirect()->to('/iniciarsesion_view');
     }
 
+    // Reactiva un usuario que estaba dado de baja
     public function activar_usuario($id)
     {
         $model = new Usuarios_model();
 
-        // Obtener usuario por ID
+        // Verifica si el usuario existe
         $usuario = $model->find($id);
 
         if (!$usuario) {
             return redirect()->back()->with('error', 'Usuario no encontrado.');
         }
 
-        // Actualizar campo 'baja' a 'NO'
+        // Actualiza el campo 'baja' a 'NO' para activar el usuario
         $model->update($id, ['baja' => 'NO']);
 
         return redirect()->to(base_url('usuarios_eliminados_view'))->with('success', 'Usuario activado correctamente.');
     }
 
+    // Permite editar los datos de un usuario desde el panel de administración
     public function editar_usuario_admin($id = null)
     {
         $usuarioModel = new Usuarios_Model();
         $usuario = $usuarioModel->where('id', $id)->first();
 
         if (!$this->request->is('post')) {
-            // Mostrar formulario
+            // Muestra el formulario de edición
             $data['usuario'] = $usuario;
             $dato['titulo'] = "Editar perfil";
             echo view('front/head_view', $dato);
@@ -205,7 +185,7 @@ class Usuario_controller extends Controller
             return;
         }
 
-        // Validar formulario
+        // Valida los campos del formulario
         $rules = [
             'nombre' => 'required|alpha_space|min_length[3]|max_length[25]',
             'apellido' => 'required|alpha_space|min_length[3]|max_length[25]',
@@ -215,33 +195,7 @@ class Usuario_controller extends Controller
         ];
 
         $messages = [
-            'nombre' => [
-                'required' => 'El nombre es obligatorio.',
-                'alpha_space' => 'El nombre solo puede contener letras y espacios.',
-                'min_length' => 'El nombre debe tener al menos 3 caracteres.',
-                'max_length' => 'El nombre no puede tener más de 25 caracteres.',
-            ],
-            'apellido' => [
-                'required' => 'El apellido es obligatorio.',
-                'alpha_space' => 'El apellido solo puede contener letras y espacios.',
-                'min_length' => 'El apellido debe tener al menos 3 caracteres.',
-                'max_length' => 'El apellido no puede tener más de 25 caracteres.',
-            ],
-            'email' => [
-                'required' => 'El email es obligatorio.',
-                'valid_email' => 'Debes ingresar un email válido.',
-                'max_length' => 'El email no puede tener más de 50 caracteres.',
-            ],
-            'usuario' => [
-                'required' => 'El usuario es obligatorio.',
-                'alpha_numeric' => 'El usuario solo puede contener letras y números.',
-                'min_length' => 'El usuario debe tener al menos 3 caracteres.',
-                'max_length' => 'El usuario no puede tener más de 20 caracteres.',
-            ],
-            'pass' => [
-                'min_length' => 'La contraseña debe tener al menos 6 caracteres.',
-                'max_length' => 'La contraseña no puede tener más de 30 caracteres.',
-            ],
+            
         ];
 
         if (!$this->validate($rules, $messages)) {
@@ -256,7 +210,7 @@ class Usuario_controller extends Controller
             return;
         }
 
-        // Preparar datos para actualizar
+        // Actualiza los datos del usuario
         $updateData = [
             'nombre' => $this->request->getPost('nombre'),
             'apellido' => $this->request->getPost('apellido'),
@@ -269,19 +223,21 @@ class Usuario_controller extends Controller
             $updateData['pass'] = password_hash($pass, PASSWORD_DEFAULT);
         }
 
+        // Actualiza los datos en la base de datos
         $usuarioModel->update($usuario['id'], $updateData);
 
         session()->setFlashdata('success', 'Usuario actualizado correctamente.');
         return redirect()->to(base_url('editar_usuario_admin/' . $usuario['id']));
     }
 
-
+    // Permite que el usuario edite su propio perfil
     public function editar_usuario($id = null)
     {
         $session = session();
         $usuarioLogueadoId = $session->get('id');
         $perfil = $session->get('perfil_id');
 
+        // Verifica si el usuario tiene permiso para editar este perfil
         if ($perfil != 1 && $usuarioLogueadoId != $id) {
             return redirect()->to('/plantilla_principal')->with('error', 'No tenés permiso para editar este usuario.');
         }
@@ -343,6 +299,7 @@ class Usuario_controller extends Controller
             return;
         }
 
+        // Actualiza el perfil con los nuevos datos
         $updateData = [
             'nombre' => $this->request->getVar('nombre'),
             'apellido' => $this->request->getVar('apellido'),
@@ -367,7 +324,4 @@ class Usuario_controller extends Controller
 
         return redirect()->to(base_url('/plantilla_perfil'));
     }
-
-
 }
-

@@ -6,11 +6,13 @@ use App\Models\Usuarios_model;
 
 class Login_controller extends Controller
 {
+    // Muestra la vista principal de login
     public function index()
     {
         helper(['form', 'url']);
     }
 
+    // Autentica al usuario: valida usuario y contraseña
     public function Auth()
     {
         $session = session();
@@ -19,6 +21,7 @@ class Login_controller extends Controller
         $usuario = $this->request->getVar('usuario');
         $password = $this->request->getVar('pass');
 
+        // Busca el usuario en la base de datos
         $data = $model
             ->where('usuario', $usuario)
             ->where('baja', 'NO')  // solo usuarios activos
@@ -43,6 +46,8 @@ class Login_controller extends Controller
                 ];
                 $session->set($ses_data);
                 $session->setFlashdata('welcome_message', '¡Bienvenido!');
+
+                // Redirige según el perfil del usuario
                 if ($data['perfil_id'] == 1) {
                     return redirect()->to('/crud_productos_view');
                 } else {
@@ -58,6 +63,7 @@ class Login_controller extends Controller
         }
     }
 
+    // Muestra la información del perfil del usuario
     public function buscar_usuario()
     {
         $session = session();
@@ -75,7 +81,7 @@ class Login_controller extends Controller
         echo view('front/footer_view');
     }
 
-
+    // Cierra la sesión del usuario
     public function logout()
     {
         $session = session();
