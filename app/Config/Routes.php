@@ -37,36 +37,37 @@ $routes->get('/activar_usuario/(:num)', 'Usuario_controller::activar_usuario/$1'
 $routes->match(['get', 'post'], 'editar_usuario/(:num)', 'Usuario_controller::editar_usuario/$1', ['filter' => 'auth']);
 $routes->match(['get', 'post'], 'editar_usuario_admin/(:num)', 'Usuario_controller::editar_usuario_admin/$1', ['filter' => 'auth:admin']);
 
-// Alta de productos (alta y guardado)
+/**
+ * Rutas de producto
+ */
 $routes->get('/alta_productos_view', 'Producto_controller::crearProducto', ['filter' => 'auth:admin']);
 $routes->post('/alta_producto', 'Producto_controller::store');
-
 $routes->get('/productos_eliminados', 'Producto_controller::productos_eliminados', ['filter' => 'auth:admin']);
 $routes->get('/restaurar_producto/(:num)', 'Producto_controller::restaurar_producto/$1', ['filter' => 'auth:admin']);
 $routes->get('/eliminar_producto/(:num)', 'Producto_controller::eliminar_producto/$1', ['filter' => 'auth:admin']);
 
-// Rutas para consultas
+/**
+ * Rutas de consulta
+ */
 $routes->get('consultas_view', 'Consultas_controller::listar', ['filter' => 'auth:admin']);
 $routes->post('guardar_consulta', 'Consultas_controller::guardar');
 
-//Catologo
+/**
+ * Ruta de catalogo
+ */
 $routes->get('catalogo_productos_view', 'Producto_controller::catalogo');
 
-
-
-
-
-// Historial de compras del usuario
+/**
+ * Rutas de compras
+ */
 $routes->get('mis_compras', 'Ventas_controller::misCompras', ['filter' => 'auth']);
-
-// Detalle de una compra específica (factura del usuario)
 $routes->get('ver_factura/(:num)', 'Ventas_controller::ver_Factura/$1', ['filter' => 'auth']);
-
-// Historial general de ventas (vista del admin)
 $routes->get('ventas_admin', 'Ventas_controller::todasLasVentas', ['filter' => 'auth:admin']);
-
-// Detalle de una venta (el admin también puede acceder al detalle)
 $routes->get('ver_factura_admin/(:num)', 'Ventas_controller::verFactura/$1', ['filter' => 'auth:admin']);
+
+/**
+ * Rutas de carrito
+ */
 $routes->post('carrito_view/agregar', 'Carrito_controller::agregar',['filter' => 'auth:cliente']);
 $routes->post('carrito_view/actualizar', 'Carrito_controller::actualizar', ['filter' => 'auth:cliente']);
 $routes->get('carrito_view/eliminar/(:any)', 'Carrito_controller::eliminar/$1',['filter' => 'auth:cliente']);

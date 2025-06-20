@@ -6,10 +6,8 @@ class Consultas_Model extends Model
 {
     protected $table = 'consultas';
     protected $primaryKey = 'id';
-
     protected $allowedFields = ['nombre', 'correo', 'telefono', 'mensaje', 'fecha'];
-
     protected $useTimestamps = true;
     protected $createdField  = 'fecha';
-    protected $updatedField  = ''; // Omitido si no usás updated_at
+    protected $updatedField  = '';
 }

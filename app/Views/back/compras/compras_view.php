@@ -3,6 +3,7 @@
 <div class="container py-5" style="min-height: 400px;">
     <h1 class="text-center mb-4 fw-light">Mis Compras</h1>
 
+    <!-- Muestra un mensaje flash si existe -->
     <?php if (session()->getFlashdata('mensaje')): ?>
         <div class="alert alert-warning alert-dismissible fade show" role="alert">
             <?= session()->getFlashdata('mensaje') ?>
@@ -10,12 +11,15 @@
         </div>
     <?php endif; ?>
 
+    <!-- Si no hay ventas registradas, muestra un mensaje motivando a comprar -->
     <?php if (empty($ventas)): ?>
         <div class="alert alert-dark text-center mt-5" role="alert">
             <h4 class="alert-heading">No tenés compras registradas</h4>
             <p>Podés explorar nuestro catálogo y realizar tu primera compra.</p>
             <a class="btn btn-warning mt-3" href="<?= base_url('catalogo_productos_view') ?>">Ir al Catálogo</a>
         </div>
+
+        <!-- Si hay ventas, muestra la tabla con los datos -->
     <?php else: ?>
         <div class="table-responsive">
             <table class="table table-bordered table-striped text-center align-middle">
@@ -24,15 +28,9 @@
                         <th class="bg-black text-white">N° Orden</th>
                         <th class="bg-black text-white">Fecha</th>
                         <th class="bg-black text-white">Total</th>
-                        <th class="bg-black text-white  ">Ver Detalle</th>
-                        <thead>
-                            <tr class="text-center">
-                                <th>#</th>
-                                <th>Fecha</th>
-                                <th>Total</th>
-                                <th>Acciones</th>
-                            </tr>
-                        </thead>
+                        <th class="bg-black text-white">Ver Detalle</th>
+                    </tr>
+                </thead>
                 <tbody>
                     <?php foreach ($ventas as $venta): ?>
                         <tr class="text-center align-middle">
@@ -50,6 +48,7 @@
             </table>
         </div>
 
+        <!-- Mensaje de agradecimiento al final -->
         <div class="text-center mt-4">
             <p class="h5 text-success">Gracias por tu compra</p>
         </div>
