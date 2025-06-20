@@ -1,5 +1,5 @@
 <hr class="m-0">
-<div class="crud-container bg-black text-white d-flex flex-column" style="height: 550px">
+<div class="crud-container bg-black text-white d-flex flex-column" style="height: 800px">
 
     <!-- Botones -->
     <div class="d-flex justify-content-end mt-3 mx-4">
@@ -17,7 +17,7 @@
     </form>
 
     <!-- Vista escritorio: Tabla scrollable -->
-    <div class="d-none d-md-block mx-4 rounded bg-white shadow-sm border overflow-auto" style="max-height: 500px;">
+    <div class="d-none d-md-block mx-4 rounded bg-white shadow-sm border overflow-auto" style="min-height: 300px;">
         <table class="table table-bordered table-hover mb-0 text-center align-middle" style="min-width: 900px;">
             <thead class="bg-light sticky-top" style="top: 0; z-index: 1;">
                 <tr>
