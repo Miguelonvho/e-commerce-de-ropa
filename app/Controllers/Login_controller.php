@@ -16,11 +16,11 @@ class Login_controller extends Controller
         $session = session();
         $model = new Usuarios_model();
 
-        $email = $this->request->getVar('email');
+        $usuario = $this->request->getVar('usuario');
         $password = $this->request->getVar('pass');
 
         $data = $model
-            ->where('email', $email)
+            ->where('usuario', $usuario)
             ->where('baja', 'NO')  // solo usuarios activos
             ->orderBy('id', 'DESC')  // toma el más reciente
             ->first();
@@ -53,7 +53,7 @@ class Login_controller extends Controller
                 return redirect()->to('/iniciarsesion_view');
             }
         } else {
-            $session->setFlashdata('error_email', 'Correo no valido');
+            $session->setFlashdata('error_usuario', 'Usuario no valido');
             return redirect()->to('/iniciarsesion_view');
         }
     }

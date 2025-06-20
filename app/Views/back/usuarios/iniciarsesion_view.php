@@ -9,12 +9,12 @@
         <h1 class="fw-light mb-3">Iniciar sesión</h1>
 
         <div class="form-floating text-secondary">
-            <input placeholder="Correo" type="email" class="form-control" id="email" name="email"
-                value="<?= old('email') ?>">
-            <label for="email" class="form-label">Correo electrónico</label>
+            <input placeholder="Usuario" type="usuario" class="form-control" id="usuario" name="usuario"
+                value="<?= old('usuario') ?>">
+            <label for="usuario" class="form-label">Usuario</label>
             <div style="height:5vh;">
-                <?php if (session()->getFlashdata('error_email')) { ?>
-                    <p class="text-danger"><?= session()->getFlashdata('error_email') ?></p>
+                <?php if (session()->getFlashdata('error_usuario')) { ?>
+                    <p class="text-danger"><?= session()->getFlashdata('error_usuario') ?></p>
                 <?php } ?>
             </div>
         </div>
