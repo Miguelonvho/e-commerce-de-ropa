@@ -8,6 +8,7 @@ class Home extends BaseController
 
     public function __construct()
     {
+        // Inicializa el servicio de carrito al construir el controlador
         $this->cart = \Config\Services::cart();
     }
 
@@ -15,15 +16,16 @@ class Home extends BaseController
     {
         $data['titulo'] = 'Principal';
 
-        $productoModel = new \App\Models\Producto_Model(); // Asegurate de tener este modelo creado
+        $productoModel = new \App\Models\Producto_Model(); // Modelo de productos
 
-        // Trae 4 productos al azar o destacados
+        // Trae 4 productos no eliminados de forma aleatoria
         $data['destacados'] = $productoModel
             ->where('eliminado', 'NO')
-            ->orderBy('RAND()') // si querés que sean aleatorios
+            ->orderBy('RAND()') // Selección aleatoria
             ->limit(4)
             ->findAll();
 
+        // Carga las vistas principales de la página de inicio
         echo view('front/head_view', $data);
         echo view('front/nav_view');
         echo view('front/panel-carrito', ['cart' => \Config\Services::cart()]);
@@ -32,11 +34,12 @@ class Home extends BaseController
         echo view('front/footer_view');
     }
 
-
     public function detalles_producto()
     {
         $data['titulo'] = 'Detalles';
         $data['cart'] = $this->cart;
+
+        // Carga las vistas para la página de detalles de producto
         echo view('front/head_view', $data);
         echo view('front/nav_view', $data);
         echo view('front/panel-carrito', $data);
@@ -49,6 +52,8 @@ class Home extends BaseController
     {
         $data['titulo'] = 'Quienes somos';
         $data['cart'] = $this->cart;
+
+        // Carga las vistas para la sección "Quiénes somos"
         echo view('front/head_view', $data);
         echo view('front/nav_view', $data);
         echo view('front/panel-carrito', $data);
@@ -59,20 +64,18 @@ class Home extends BaseController
 
     public function plantilla_productos($categoria)
     {
+        // Ajusta el nombre de la categoría si es necesario
         if ($categoria == "Ninos") {
             $categoria = "Niños";
         }
-
-        $productosPorCategoria = [
-            // ... tu array de productos sin cambios ...
-        ];
-
+        
         $data = [
             'productos' => $productosPorCategoria[$categoria] ?? [],
             'titulo' => ucfirst($categoria),
-            'cart' => $this->cart  // PASO carrito
+            'cart' => $this->cart
         ];
 
+        // Carga las vistas para mostrar productos según la categoría seleccionada
         echo view('front/head_view', $data);
         echo view('front/nav_view', $data);
         echo view('front/panel-carrito', $data);
@@ -85,6 +88,8 @@ class Home extends BaseController
     {
         $data['titulo'] = 'Comercialización';
         $data['cart'] = $this->cart;
+
+        // Carga las vistas para la página de comercialización
         echo view('front/head_view', $data);
         echo view('front/nav_view', $data);
         echo view('front/panel-carrito', $data);
@@ -97,6 +102,8 @@ class Home extends BaseController
     {
         $data['titulo'] = 'Contacto';
         $data['cart'] = $this->cart;
+
+        // Carga las vistas para la sección de contacto
         echo view('front/head_view', $data);
         echo view('front/nav_view', $data);
         echo view('front/panel-carrito', $data);
@@ -108,6 +115,8 @@ class Home extends BaseController
     {
         $data['titulo'] = 'Términos y Usos';
         $data['cart'] = $this->cart;
+
+        // Carga las vistas para los términos y condiciones del sitio
         echo view('front/head_view', $data);
         echo view('front/nav_view', $data);
         echo view('front/panel-carrito', $data);
@@ -119,7 +128,9 @@ class Home extends BaseController
     public function registro()
     {
         $data['titulo'] = 'Registro';
-        // En registro no cargo carrito
+
+        // Carga las vistas del formulario de registro
+        // No se carga el carrito en esta página
         echo view('front/head_view', $data);
         echo view('front/nav_view', $data);
         echo view('back/usuarios/agregarusuario_view');
@@ -130,6 +141,8 @@ class Home extends BaseController
     {
         $data['titulo'] = 'Ingresar';
         $data['cart'] = $this->cart;
+
+        // Carga las vistas del formulario de inicio de sesión
         echo view('front/head_view', $data);
         echo view('front/nav_view', $data);
         echo view('front/panel-carrito', $data);
