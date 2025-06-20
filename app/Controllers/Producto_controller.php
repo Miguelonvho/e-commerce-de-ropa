@@ -278,8 +278,9 @@ class Producto_controller extends Controller
             session()->setFlashdata('fail', 'No se pudo actualizar el producto.');
         }
     
-        return redirect()->to(base_url('/editar_productos_view/' . $id));
-    }
+        return redirect()->to(base_url('/editar_productos_view/' . $id));
+    }
+    
 
     // Muestra el catálogo de productos con filtros
     public function catalogo()
